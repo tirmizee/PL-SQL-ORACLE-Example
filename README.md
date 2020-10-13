@@ -24,7 +24,10 @@
         dbms_output.put_line(vNumber);
     END;
 
-## SELECT INTO
+
+## Anchored Datatype
+
+## Select into
 
     SET SERVEROUTPUT ON;
 
