@@ -25,7 +25,7 @@
     END;
 
 
-## Anchored Datatype
+## Datatype
 
 ## Select into
 
