@@ -49,3 +49,8 @@
         dbms_output.put_line(vString);
         dbms_output.put_line(vNumber);
     END;
+
+
+### Reference
+
+- https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
