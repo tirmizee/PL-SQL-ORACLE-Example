@@ -23,3 +23,29 @@
         dbms_output.put_line(vString);
         dbms_output.put_line(vNumber);
     END;
+
+## SELECT INTO
+
+    SET SERVEROUTPUT ON;
+
+    DECLARE 
+        vString VARCHAR2(200);
+    BEGIN
+       SELECT password into vString from USERS WHERE username = 'tirmizee';
+       dbms_output.put_line(vString);
+    END;
+    /
+    DECLARE 
+        vString VARCHAR2(200);
+        vNumber NUMBER(1,0);
+    BEGIN
+        SELECT 
+            password, 
+            enabled 
+            into 
+            vString, 
+            vNumber  
+        from USERS WHERE username = 'tirmizee';
+        dbms_output.put_line(vString);
+        dbms_output.put_line(vNumber);
+    END;
