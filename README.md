@@ -38,13 +38,21 @@
        NULL;
     END;
 
-#### Declaring variables with initial value
+#### Declaring variables with initial or default value
 
     SET SERVEROUTPUT ON;
 
     DECLARE 
         vString VARCHAR2(20) := 'Hello world';
         vNumber NUMBER(20) := 2020;
+    BEGIN
+        dbms_output.put_line(vString);
+        dbms_output.put_line(vNumber);
+    END;
+    /
+     DECLARE 
+        vString VARCHAR2(20) DEFAULT 'Hello world';
+        vNumber NUMBER(20) DEFAULT 2020;
     BEGIN
         dbms_output.put_line(vString);
         dbms_output.put_line(vNumber);
