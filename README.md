@@ -60,6 +60,8 @@
 
 #### Variables constants
 
+you must initialize a constants at its variables declaration 
+
     SET SERVEROUTPUT ON;
 
     DECLARE 
