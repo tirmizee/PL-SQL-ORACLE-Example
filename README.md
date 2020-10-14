@@ -38,7 +38,7 @@
        NULL;
     END;
 
-#### Declaring variables with initial or default value
+#### Variables with initial or default value
 
     SET SERVEROUTPUT ON;
 
@@ -57,6 +57,27 @@
         dbms_output.put_line(vString);
         dbms_output.put_line(vNumber);
     END;
+
+#### Variables constants
+
+    SET SERVEROUTPUT ON;
+
+    DECLARE 
+        vPI CONSTANT NUMBER(7,6) := 3.141592;
+        vMsg CONSTANT NVARCHAR2(20) := 'This is constants';
+    BEGIN
+        dbms_output.put_line(vPI);
+        dbms_output.put_line(vMsg);
+    END;
+    /
+    DECLARE 
+        vPI CONSTANT NUMBER(7,6) DEFAULT 3.141592;
+        vMsg CONSTANT NVARCHAR2(20) DEFAULT 'This is constants';
+    BEGIN
+        dbms_output.put_line(vPI);
+        dbms_output.put_line(vMsg);
+    END;
+  
 
 ## Data type
 
