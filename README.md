@@ -12,6 +12,8 @@
 
 ## Variable
 
+#### Declaring variables
+
     variablename datatype;
 
 ...
