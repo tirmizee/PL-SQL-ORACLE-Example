@@ -232,6 +232,7 @@ you must initialize a constants at its declaration
     BEGIN
         IF vAge = 26 THEN
             dbms_output.put_line('Age is ' || vAge);
+            dbms_output.put_line('Age is ' || vAge);
         END IF;
         dbms_output.put_line('Finish');
     END;
