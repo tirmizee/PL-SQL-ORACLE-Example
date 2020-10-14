@@ -254,7 +254,21 @@ you must initialize a constants at its declaration
     ELSE
         statement;
     END IF;
+...
 
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        vNumber NUMBER(3) := 2;
+    BEGIN
+        IF MOD(vNumber, 2) = 0 THEN
+            dbms_output.put_line('vNumber is event');
+        ELSE 
+            dbms_output.put_line('vNumber is odd');
+        END IF;
+        dbms_output.put_line('Finish');
+    END;
+    
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
