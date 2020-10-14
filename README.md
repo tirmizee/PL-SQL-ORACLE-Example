@@ -12,6 +12,10 @@
 
 ## Variable
 
+    variablename datatype;
+
+...
+
     SET SERVEROUTPUT ON;
 
     DECLARE 
