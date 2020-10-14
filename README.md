@@ -223,6 +223,19 @@ you must initialize a constants at its declaration
         ...
     END IF;
 
+...
+
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        vAge number(2,0) := 26;
+    BEGIN
+        IF vAge = 26 THEN
+            dbms_output.put_line('Age is ' || vAge);
+        END IF;
+        dbms_output.put_line('Finish');
+    END;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
