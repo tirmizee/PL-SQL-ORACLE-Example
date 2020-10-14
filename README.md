@@ -59,7 +59,9 @@
         dbms_output.put_line(vCreateDate);
         dbms_output.put_line(vAcountExpiredDate);
     END;
-    /
+
+#### %TYPE
+
     DECLARE 
         vUserId USERS.USER_ID%TYPE;
         vUsername USERS.username%TYPE;
