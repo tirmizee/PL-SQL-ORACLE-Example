@@ -95,7 +95,7 @@
         dbms_output.put_line(vAcountExpiredDate);
     END;
 
-#### %ROW
+#### %ROWTYPE
 
     SET SERVEROUTPUT ON;
 
@@ -120,6 +120,17 @@
         dbms_output.put_line(vManagerId);
     END;
     /
+    DECLARE 
+        tempEmp employee%ROWTYPE;
+    BEGIN
+        SELECT * INTO tempEmp FROM employee WHERE EMP_ID = 1;
+        dbms_output.put_line(tempEmp.EMP_ID);
+        dbms_output.put_line(tempEmp.EMP_CODE);
+        dbms_output.put_line(tempEmp.EMP_FIRST_NAME);
+        dbms_output.put_line(tempEmp.EMP_LAST_NAME);
+        dbms_output.put_line(tempEmp.MANAGER_ID);
+    END;
+
 
 ## Select into
 
