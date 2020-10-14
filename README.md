@@ -30,21 +30,65 @@
     SET SERVEROUTPUT ON;
 
     DECLARE 
+        vUserId NUMBER(20,0);
         vUsername VARCHAR2(100);
         vPassword VARCHAR2(200);
+        vEnabled NUMBER(1,0);
+        vCreateDate TIMESTAMP(6);
+        vAcountExpiredDate DATE;
     BEGIN
-       SELECT username, password into vUsername, vPassword from USERS WHERE username = 'tirmizee';
-       dbms_output.put_line(vUsername);
-       dbms_output.put_line(vPassword);
+        SELECT 
+            USER_ID, 
+            username,
+            password, 
+            ENABLED, 
+            CREATE_DATE, 
+            ACCOUNT_EXPIRED_DATE
+            into 
+            vUserId, 
+            vUsername, 
+            vPassword, 
+            vEnabled, 
+            vCreateDate, 
+            vAcountExpiredDate
+        FROM USERS WHERE username = 'tirmizee';
+        dbms_output.put_line(vUserId);
+        dbms_output.put_line(vUsername);
+        dbms_output.put_line(vPassword);
+        dbms_output.put_line(vEnabled);
+        dbms_output.put_line(vCreateDate);
+        dbms_output.put_line(vAcountExpiredDate);
     END;
     /
     DECLARE 
-        vUsername users.username%TYPE;
-        vPassword users.password%TYPE;
+        vUserId USERS.USER_ID%TYPE;
+        vUsername USERS.username%TYPE;
+        vPassword USERS.password%TYPE;
+        vEnabled USERS.ENABLED%TYPE;
+        vCreateDate USERS.CREATE_DATE%TYPE;
+        vAcountExpiredDate USERS.ACCOUNT_EXPIRED_DATE%TYPE;
     BEGIN
-       SELECT username, password into vUsername, vPassword from USERS WHERE username = 'tirmizee';
-       dbms_output.put_line(vUsername);
-       dbms_output.put_line(vPassword);
+        SELECT 
+            USER_ID, 
+            username,
+            password, 
+            ENABLED, 
+            CREATE_DATE, 
+            ACCOUNT_EXPIRED_DATE
+            into 
+            vUserId, 
+            vUsername, 
+            vPassword, 
+            vEnabled, 
+            vCreateDate, 
+            vAcountExpiredDate
+        FROM USERS WHERE username = 'tirmizee';
+        dbms_output.put_line(vUserId);
+        dbms_output.put_line(vUsername);
+        dbms_output.put_line(vPassword);
+        dbms_output.put_line(vEnabled);
+        dbms_output.put_line(vCreateDate);
+        dbms_output.put_line(vAcountExpiredDate);
     END;
 
 ## Select into
