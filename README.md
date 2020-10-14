@@ -236,6 +236,16 @@ you must initialize a constants at its declaration
         END IF;
         dbms_output.put_line('Finish');
     END;
+    /
+    DECLARE
+        vFirstName VARCHAR2(100) := 'Pratya';
+        vLastName VARCHAR2(100) := 'Yeekhaday';
+    BEGIN
+        IF vFirstName = 'Pratya' AND vLastName = 'Yeekhaday' THEN
+            dbms_output.put_line('Fullname is ' || vFirstName || ' ' ||vlastname);
+        END IF;
+        dbms_output.put_line('Finish');
+    END;
 
 ### Reference
 
