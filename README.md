@@ -27,6 +27,26 @@
 
 ## Data type
 
+    SET SERVEROUTPUT ON;
+
+    DECLARE 
+        vUsername VARCHAR2(100);
+        vPassword VARCHAR2(200);
+    BEGIN
+       SELECT username, password into vUsername, vPassword from USERS WHERE username = 'tirmizee';
+       dbms_output.put_line(vUsername);
+       dbms_output.put_line(vPassword);
+    END;
+    /
+    DECLARE 
+        vUsername users.username%TYPE;
+        vPassword users.password%TYPE;
+    BEGIN
+       SELECT username, password into vUsername, vPassword from USERS WHERE username = 'tirmizee';
+       dbms_output.put_line(vUsername);
+       dbms_output.put_line(vPassword);
+    END;
+
 ## Select into
 
     SET SERVEROUTPUT ON;
