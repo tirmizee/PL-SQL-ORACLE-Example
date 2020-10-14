@@ -218,6 +218,11 @@ you must initialize a constants at its declaration
 
 #### IF - THEN
 
+    IF condition THEN
+        statement;
+        ...
+    END IF;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
