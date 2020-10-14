@@ -22,10 +22,7 @@
         vString VARCHAR2(20);
         vNumber NUMBER(20);
     BEGIN
-        vString := 'Hello world';
-        vNumber := 20000;
-        dbms_output.put_line(vString);
-        dbms_output.put_line(vNumber);
+       NULL;
     END;
 
 
