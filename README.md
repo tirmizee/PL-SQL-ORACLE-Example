@@ -60,7 +60,7 @@
 
 #### Variables constants
 
-you must initialize a constants at its variables declaration 
+you must initialize a constants at its declaration 
 
     SET SERVEROUTPUT ON;
 
