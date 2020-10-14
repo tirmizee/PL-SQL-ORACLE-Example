@@ -25,7 +25,7 @@
     END;
 
 
-## Datatype
+## Data type
 
 ## Select into
 
