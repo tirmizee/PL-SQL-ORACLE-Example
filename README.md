@@ -25,6 +25,16 @@
        NULL;
     END;
 
+####  Variable checking
+
+    SET SERVEROUTPUT ON;
+
+    DECLARE 
+        vString VARCHAR2(20) NOT NULL;
+        vNumber NUMBER(20) NOT NULL;
+    BEGIN
+       NULL;
+    END;
 
 ## Data type
 
