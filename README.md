@@ -27,6 +27,10 @@
 
 ## Data type
 
+    
+
+#### %TYPE
+
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -59,9 +63,7 @@
         dbms_output.put_line(vCreateDate);
         dbms_output.put_line(vAcountExpiredDate);
     END;
-
-#### %TYPE
-
+    /
     DECLARE 
         vUserId USERS.USER_ID%TYPE;
         vUsername USERS.username%TYPE;
@@ -92,6 +94,32 @@
         dbms_output.put_line(vCreateDate);
         dbms_output.put_line(vAcountExpiredDate);
     END;
+
+#### %ROW
+
+    SET SERVEROUTPUT ON;
+
+    DECLARE 
+        vEmpId NUMBER(19,0);
+        vEmpCode VARCHAR2(20 BYTE);
+        vEmpFirstName VARCHAR2(100 BYTE);
+        vEmpLastName VARCHAR2(100 BYTE);
+        vManagerId NUMBER(19,0);
+    BEGIN
+        SELECT * INTO
+           vEmpId,
+           vEmpCode,
+           vEmpFirstName,
+           vEmpLastName,
+           vManagerId
+        FROM employee WHERE EMP_ID = 1;
+        dbms_output.put_line(vEmpId);
+        dbms_output.put_line(vEmpCode);
+        dbms_output.put_line(vEmpFirstName);
+        dbms_output.put_line(vEmpLastName);
+        dbms_output.put_line(vManagerId);
+    END;
+    /
 
 ## Select into
 
