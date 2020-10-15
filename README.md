@@ -460,7 +460,6 @@ you must initialize a constants at its declaration
     SET SERVEROUTPU ON;
 
     DECLARE
-        vTemp employee%ROWTYPE;
         CURSOR CURSOR_EMPLOYEE IS 
         SELECT
             *
@@ -470,6 +469,7 @@ you must initialize a constants at its declaration
             dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
         END LOOP;
     END;
+
 
 
 ### Reference
