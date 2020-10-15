@@ -346,6 +346,13 @@ you must initialize a constants at its declaration
         dbms_output.put_line('Finish');
     END;
 
+#### While loop
+
+    WHILE condition LOOP
+        statement1;
+        statement1;
+    END LOOP;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
