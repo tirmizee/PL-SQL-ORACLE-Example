@@ -430,6 +430,22 @@ you must initialize a constants at its declaration
             dbms_output.put_line(vTemp.emp_code);
         CLOSE CURSOR_EMPLOYEE;
     END;
+    /
+    DECLARE
+        vTemp employee%ROWTYPE;
+        CURSOR CURSOR_EMPLOYEE IS 
+        SELECT
+            *
+        FROM employee;
+    BEGIN
+        OPEN CURSOR_EMPLOYEE;
+            LOOP
+                FETCH CURSOR_EMPLOYEE INTO vTemp; 
+                EXIT WHEN CURSOR_EMPLOYEE%NOTFOUND;
+                dbms_output.put_line(vTemp.emp_code);
+            END LOOP;
+        CLOSE CURSOR_EMPLOYEE;
+    END;
 
 ### Reference
 
