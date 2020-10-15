@@ -592,7 +592,7 @@ you must initialize a constants at its declaration
         RETURN (value);
     END;
 
-.
+#### Creating functions
 
     SET SERVEROUTPU ON;
 
@@ -609,6 +609,8 @@ you must initialize a constants at its declaration
     BEGIN
         dbms_output.put_line(vTemp);
     END;
+
+## Stored Procedure 
 
 ### Reference
 
