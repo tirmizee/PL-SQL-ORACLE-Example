@@ -525,6 +525,60 @@ you must initialize a constants at its declaration
        field_name data_type,
        ...N
     );
+.
+
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        TYPE customType IS RECORD (
+            username users.username%TYPE,
+            ENABLED users.enabled%TYPE,
+            FIRST_NAME profile.first_name%TYPE,
+            LAST_NAME profile.last_name%TYPE,
+            CITIZEN_ID profile.citizen_id%TYPE,
+            TEL profile.tel%TYPE,
+            EMAIL profile.email %TYPE
+        );
+        vDetail customType;
+        CURSOR CURSOR_DETAIL(pLimit number := 1) IS 
+        SELECT
+            u.username,
+            u.ENABLED,
+            p.FIRST_NAME,
+            p.LAST_NAME,
+            p.CITIZEN_ID,
+            p.TEL,
+            p.EMAIL
+        FROM users u
+        INNER JOIN profile p ON u.profile_id = p.profile_id
+        WHERE ROWNUM <= pLimit;
+    BEGIN
+        OPEN CURSOR_DETAIL(10);
+            LOOP 
+                FETCH CURSOR_DETAIL INTO vDetail;
+                EXIT WHEN CURSOR_DETAIL%NOTFOUND;
+                dbms_output.put_line(vdetail.username);
+                dbms_output.put_line(vdetail.ENABLED);
+                dbms_output.put_line(vdetail.FIRST_NAME);
+                dbms_output.put_line(vdetail.LAST_NAME);
+                dbms_output.put_line(vdetail.CITIZEN_ID);
+                dbms_output.put_line(vdetail.TEL);
+                dbms_output.put_line(vdetail.EMAIL);
+                dbms_output.put_line('END ROW');
+            END LOOP;
+        CLOSE CURSOR_DETAIL;
+        FOR temp IN CURSOR_DETAIL(2) LOOP
+            vDetail := temp;
+            dbms_output.put_line(vdetail.username);
+            dbms_output.put_line(vdetail.ENABLED);
+            dbms_output.put_line(vdetail.FIRST_NAME);
+            dbms_output.put_line(vdetail.LAST_NAME);
+            dbms_output.put_line(vdetail.CITIZEN_ID);
+            dbms_output.put_line(vdetail.TEL);
+            dbms_output.put_line(vdetail.EMAIL);
+            dbms_output.put_line('END ROW2');
+        END LOOP;
+    END;
 
 ### Reference
 
