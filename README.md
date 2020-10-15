@@ -541,17 +541,17 @@ you must initialize a constants at its declaration
         );
         vDetail customType;
         CURSOR CURSOR_DETAIL(pLimit number := 1) IS 
-        SELECT
-            u.username,
-            u.ENABLED,
-            p.FIRST_NAME,
-            p.LAST_NAME,
-            p.CITIZEN_ID,
-            p.TEL,
-            p.EMAIL
-        FROM users u
-        INNER JOIN profile p ON u.profile_id = p.profile_id
-        WHERE ROWNUM <= pLimit;
+            SELECT
+                u.username,
+                u.ENABLED,
+                p.FIRST_NAME,
+                p.LAST_NAME,
+                p.CITIZEN_ID,
+                p.TEL,
+                p.EMAIL
+            FROM users u
+            INNER JOIN profile p ON u.profile_id = p.profile_id
+            WHERE ROWNUM <= pLimit;
     BEGIN
         OPEN CURSOR_DETAIL(10);
             LOOP 
