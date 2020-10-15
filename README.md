@@ -412,6 +412,12 @@ you must initialize a constants at its declaration
 
 ## CURSOR
 
+- ### Implicit CURSOR 
+
+- ### Explicit CURSOR
+
+.
+
     CURSOR cursor_name IS select_statement;
 
 #### 
