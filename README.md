@@ -439,18 +439,22 @@ you must initialize a constants at its declaration
 
 #### Explicit Cursor fetch multiple row
 
+    SET SERVEROUTPU ON;
+
     DECLARE
-        vTemp employee%ROWTYPE;
+        vFirstName NVARCHAR2(100);
+        vLastName NVARCHAR2(100);
         CURSOR CURSOR_EMPLOYEE IS 
         SELECT
-            *
+            emp_first_name,
+            emp_last_name
         FROM employee;
     BEGIN
         OPEN CURSOR_EMPLOYEE;
             LOOP
-                FETCH CURSOR_EMPLOYEE INTO vTemp; 
+                FETCH CURSOR_EMPLOYEE INTO vFirstName, vLastName; 
                 EXIT WHEN CURSOR_EMPLOYEE%NOTFOUND;
-                dbms_output.put_line(vTemp.emp_code);
+                dbms_output.put_line(vFirstName || ' ' ||vLastName);
             END LOOP;
         CLOSE CURSOR_EMPLOYEE;
     END;
