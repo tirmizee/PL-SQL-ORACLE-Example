@@ -412,15 +412,15 @@ you must initialize a constants at its declaration
 
 ## CURSOR
 
-- ### Implicit CURSOR 
+- ### Implicit Cursor
 
-- ### Explicit CURSOR
+- ### Explicit Cursor
 
-.
+#### Syntag
 
     CURSOR cursor_name IS select_statement;
 
-#### 
+#### Explicit Cursor fetch single row
 
     SET SERVEROUTPU ON;
 
@@ -436,7 +436,9 @@ you must initialize a constants at its declaration
             dbms_output.put_line(vTemp.emp_code);
         CLOSE CURSOR_EMPLOYEE;
     END;
-    /
+
+#### Explicit Cursor fetch multiple row
+
     DECLARE
         vTemp employee%ROWTYPE;
         CURSOR CURSOR_EMPLOYEE IS 
