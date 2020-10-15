@@ -385,7 +385,13 @@ you must initialize a constants at its declaration
         dbms_output.put_line('Finish');
     END;
 
-    
+#### FOR Loop
+
+    FOR count IN [REVERSE_OPTIONAL] lower .. upper LOOP
+        statement;
+        statement;
+    END LOOP;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
