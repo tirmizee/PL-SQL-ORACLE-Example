@@ -330,6 +330,21 @@ you must initialize a constants at its declaration
         END LOOP;
         dbms_output.put_line('Finish');
     END;
+    
+##### Simple loop with exit when
+
+    DECLARE
+        vCount NUMBER(3) DEFAULT 0;
+        vResult NUMBER;
+    BEGIN
+        LOOP
+            vCount := vCount + 1;
+            vResult := 19 * vCount;
+            dbms_output.put_line('count '|| vCount || ' result ' || vResult);
+            EXIT WHEN vCount >= 10;
+        END LOOP;
+        dbms_output.put_line('Finish');
+    END;
 
 ### Reference
 
