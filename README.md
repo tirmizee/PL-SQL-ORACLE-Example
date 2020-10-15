@@ -387,7 +387,7 @@ you must initialize a constants at its declaration
 
 #### FOR Loop
 
-    FOR count IN [REVERSE_OPTIONAL] lower .. upper LOOP
+    FOR count IN [REVERSE] lower .. upper LOOP
         statement;
         statement;
     END LOOP;
