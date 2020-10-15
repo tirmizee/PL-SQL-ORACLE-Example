@@ -312,7 +312,7 @@ you must initialize a constants at its declaration
         EXIT statement;
     END LOOP;
 
-...
+##### Simple loop with exit
 
     SET SERVEROUTPU ON;
 
