@@ -416,7 +416,7 @@ you must initialize a constants at its declaration
 
 - ### Explicit Cursor
 
-#### Syntag
+#### Syntax
 
     CURSOR cursor_name IS select_statement;
 
@@ -581,6 +581,10 @@ you must initialize a constants at its declaration
     END;
     
 ## Functions 
+
+#### Syntax
+
+
 
 ### Reference
 
