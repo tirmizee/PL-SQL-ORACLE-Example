@@ -470,7 +470,7 @@ you must initialize a constants at its declaration
         END LOOP;
     END;
 
-#### Explicit Cursor with Parameterized
+#### Explicit Cursor with parameterized
 
     CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
 .
@@ -498,6 +498,22 @@ you must initialize a constants at its declaration
             dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
         END LOOP;
     END;
+   
+#### Explicit Cursor with parameterized and default value   
+   
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        CURSOR CURSOR_EMPLOYEE(pEmpId NUMBER := 1, pName NVARCHAR2 := 'PPP') IS 
+        SELECT
+            *
+        FROM employee WHERE emp_id > pEmpId AND emp_first_name <> pName; 
+    BEGIN
+        FOR row_cursor IN CURSOR_EMPLOYEE LOOP
+            dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
+        END LOOP;
+    END;
+
     
 ### Reference
 
