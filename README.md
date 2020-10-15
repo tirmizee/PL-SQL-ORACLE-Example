@@ -348,8 +348,6 @@ you must initialize a constants at its declaration
 
 #### While loop
 
-``` + diffcondition```
-
     WHILE diffcondition LOOP
         statement1;
         statement1;
