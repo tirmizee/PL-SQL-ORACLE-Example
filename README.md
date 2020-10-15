@@ -592,6 +592,24 @@ you must initialize a constants at its declaration
         RETURN (value);
     END;
 
+.
+
+    SET SERVEROUTPU ON;
+
+    CREATE OR REPLACE FUNCTION funcAdd(num1 NUMBER, num2 NUMBER) RETURN NUMBER
+    IS
+        vResult NUMBER;
+    BEGIN
+        vResult := num1 + num2;
+        RETURN vResult;
+    END;
+    /
+    DECLARE
+        vTemp NUMBER := funcAdd(10, 20);
+    BEGIN
+        dbms_output.put_line(vTemp);
+    END;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
