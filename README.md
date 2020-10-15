@@ -348,6 +348,7 @@ you must initialize a constants at its declaration
 
 #### While loop
 
+    <font color="red">This is some text!</font>
     WHILE diffcondition LOOP
         statement1;
         statement1;
