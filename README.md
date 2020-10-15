@@ -457,6 +457,21 @@ you must initialize a constants at its declaration
 
 #### Cursor FOR Loop
 
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        vTemp employee%ROWTYPE;
+        CURSOR CURSOR_EMPLOYEE IS 
+        SELECT
+            *
+        FROM employee WHERE emp_id > 1; 
+    BEGIN
+        FOR row_cursor IN CURSOR_EMPLOYEE LOOP
+            dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
+        END LOOP;
+    END;
+
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
