@@ -473,9 +473,8 @@ you must initialize a constants at its declaration
 #### Explicit Cursor with Parameterized
 
     CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
-
 .
-
+    
     SET SERVEROUTPU ON;
 
     DECLARE
