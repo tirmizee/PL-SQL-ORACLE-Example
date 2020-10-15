@@ -312,6 +312,25 @@ you must initialize a constants at its declaration
         EXIT statement;
     END LOOP;
 
+...
+
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        vCount NUMBER(3) DEFAULT 0;
+        vResult NUMBER;
+    BEGIN
+        LOOP
+            vCount := vCount + 1;
+            vResult := 19 * vCount;
+            dbms_output.put_line('count '|| vCount || ' result ' || vResult);
+            IF vCount >= 10 THEN
+                EXIT;
+            END IF;
+        END LOOP;
+        dbms_output.put_line('Finish');
+    END;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
