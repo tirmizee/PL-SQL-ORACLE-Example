@@ -309,6 +309,7 @@ you must initialize a constants at its declaration
     LOOP
         statement1;
         statement2;
+        EXIT statement;
     END LOOP;
 
 ### Reference
