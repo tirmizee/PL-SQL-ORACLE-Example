@@ -304,6 +304,13 @@ you must initialize a constants at its declaration
 
 ## LOOP statement
 
+#### Simple loop
+
+    LOOP
+        statement1;
+        statement2;
+    END LOOP;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
