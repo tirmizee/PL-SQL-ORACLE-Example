@@ -584,7 +584,13 @@ you must initialize a constants at its declaration
 
 #### Syntax
 
-
+    CREATE [OR REPLACE] FUNCTION function_name(Parameter 1, Parameter 1...) RETURN data_type
+    IS
+        Declare variable...;
+    BEGIN
+        executable statement;
+        RETURN (value);
+    END;
 
 ### Reference
 
