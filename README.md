@@ -579,6 +579,8 @@ you must initialize a constants at its declaration
             dbms_output.put_line('END ROW2');
         END LOOP;
     END;
+    
+## Functions 
 
 ### Reference
 
