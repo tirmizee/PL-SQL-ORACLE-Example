@@ -273,13 +273,34 @@ you must initialize a constants at its declaration
 
     IF condition1 THEN
         statement;
-    ELSEIF condition2 THEN
+    ELSIF condition2 THEN
         statement;
-    ELSEIF condition3 THEN
+    ELSIF condition3 THEN
         statement;
     ELSE
         statement;
     END IF;
+
+...
+
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        vScore NUMBER(3) := 90;
+    BEGIN
+        IF vScore >= 80 THEN
+            dbms_output.put_line('Grade A');
+        ELSIF vScore >= 70 THEN
+            dbms_output.put_line('Grade B');
+        ELSIF vScore >= 60 THEN
+            dbms_output.put_line('Grade C');
+        ELSIF vScore >= 50 THEN
+            dbms_output.put_line('Grade D');
+        ELSE
+            dbms_output.put_line('Grade F');
+        END IF;
+        dbms_output.put_line('Finish');
+    END;
 
 ### Reference
 
