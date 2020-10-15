@@ -455,7 +455,7 @@ you must initialize a constants at its declaration
         CLOSE CURSOR_EMPLOYEE;
     END;
 
-#### Cursor FOR Loop
+#### Explicit Cursor FOR Loop
 
     SET SERVEROUTPU ON;
 
@@ -470,7 +470,24 @@ you must initialize a constants at its declaration
         END LOOP;
     END;
 
+#### Explicit Cursor with Parameterized
 
+    CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
+
+.
+
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        CURSOR CURSOR_EMPLOYEE(pEmpId NUMBER) IS 
+        SELECT
+            *
+        FROM employee WHERE emp_id > pEmpId; 
+    BEGIN
+        FOR row_cursor IN CURSOR_EMPLOYEE(1) LOOP
+            dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
+        END LOOP;
+    END;
 
 ### Reference
 
