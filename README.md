@@ -584,7 +584,7 @@ you must initialize a constants at its declaration
 
 #### Syntax
 
-    CREATE [OR REPLACE] FUNCTION function_name(Parameter 1, Parameter 1...) RETURN data_type
+    CREATE [OR REPLACE] FUNCTION function_name(Parameter 1, Parameter 2,...) RETURN data_type
     IS
         Declare variable...;
     BEGIN
@@ -611,6 +611,15 @@ you must initialize a constants at its declaration
     END;
 
 ## Stored Procedure 
+
+    CREATE [OR REPLACE] PROCEDURE procedure_name(Parameter 1, Parameter 2,...) 
+    IS
+        Declare variable...;
+    BEGIN
+        executable statement;
+    EXCEPTION
+        executable statement;
+    END procedure_name;
 
 ### Reference
 
