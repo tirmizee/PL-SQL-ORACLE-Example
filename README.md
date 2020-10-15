@@ -353,6 +353,39 @@ you must initialize a constants at its declaration
         statement1;
     END LOOP;
 
+...
+
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        vCount NUMBER(3) DEFAULT 0;
+        vResult NUMBER;
+    BEGIN
+        WHILE vCount <= 10 LOOP
+            vResult := 19 * vCount;
+            dbms_output.put_line('count '|| vCount || ' result ' || vResult);
+            vCount := vCount + 1;
+        END LOOP;
+        dbms_output.put_line('Finish');
+    END;
+    /
+    DECLARE
+        vTest BOOLEAN DEFAULT TRUE;
+        vCount NUMBER(3) DEFAULT 0;
+        vResult NUMBER;
+    BEGIN
+        WHILE vTest LOOP
+            vResult := 19 * vCount;
+            dbms_output.put_line('count '|| vCount || ' result ' || vResult);
+            vCount := vCount + 1;
+            IF vCount >= 10 THEN
+                vTest := FALSE;
+            END IF;
+        END LOOP;
+        dbms_output.put_line('Finish');
+    END;
+
+    
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
