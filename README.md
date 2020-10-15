@@ -520,6 +520,11 @@ you must initialize a constants at its declaration
 
 ## Record Datatype
 
+    TYPE type_name IS RECORD (
+       field_name data_type,
+       field_name data_type,
+       ...N
+    );
 
 ### Reference
 
