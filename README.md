@@ -392,6 +392,24 @@ you must initialize a constants at its declaration
         statement;
     END LOOP;
 
+...
+
+    SET SERVEROUTPU ON;
+
+    BEGIN
+        FOR counter IN 1..10 LOOP
+            dbms_output.put_line('counter ' || counter);
+        END LOOP;
+        dbms_output.put_line('Finish');
+    END;
+    /
+    BEGIN
+        FOR counter IN REVERSE 1..10 LOOP
+            dbms_output.put_line('counter ' || counter);
+        END LOOP;
+        dbms_output.put_line('Finish');
+    END;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
