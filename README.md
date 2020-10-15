@@ -269,6 +269,18 @@ you must initialize a constants at its declaration
         dbms_output.put_line('Finish');
     END;
     
+#### IF-THEN-ELSIF    
+
+    IF condition1 THEN
+        statement;
+    ELSEIF condition2 THEN
+        statement;
+    ELSEIF condition3 THEN
+        statement;
+    ELSE
+        statement;
+    END IF;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
