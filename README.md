@@ -410,6 +410,12 @@ you must initialize a constants at its declaration
         dbms_output.put_line('Finish');
     END;
 
+## CURSOR
+
+    CURSOR cursor_name IS select_statement;
+
+#### 
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
