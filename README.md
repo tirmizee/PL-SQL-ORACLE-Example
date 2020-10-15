@@ -487,7 +487,18 @@ you must initialize a constants at its declaration
             dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
         END LOOP;
     END;
-
+    /
+    DECLARE
+        CURSOR CURSOR_EMPLOYEE(pEmpId NUMBER, pName NVARCHAR2) IS 
+        SELECT
+            *
+        FROM employee WHERE emp_id > pEmpId AND emp_first_name <> pName; 
+    BEGIN
+        FOR row_cursor IN CURSOR_EMPLOYEE(1,'PPP') LOOP
+            dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
+        END LOOP;
+    END;
+    
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
