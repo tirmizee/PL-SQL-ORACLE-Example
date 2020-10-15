@@ -518,7 +518,9 @@ you must initialize a constants at its declaration
         END LOOP;
     END;
 
-    
+## Record Datatype
+
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
