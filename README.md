@@ -348,7 +348,9 @@ you must initialize a constants at its declaration
 
 #### While loop
 
-    WHILE ``` + diffcondition``` LOOP
+``` + diffcondition```
+
+    WHILE diffcondition LOOP
         statement1;
         statement1;
     END LOOP;
