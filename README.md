@@ -499,7 +499,7 @@ you must initialize a constants at its declaration
     END;
 
 ## CURSOR
-
+A Cursor is a pointer to this context area
 - <b>Implicit Cursor</b>
 - <b>Explicit Cursor</b>
 
