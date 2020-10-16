@@ -10,6 +10,9 @@
       Exception handling statement
     END;
 
+- A PL/SQL block without a name is Anonymous block. 
+- A block that has a name is called a Stored Procedure.
+
 ## Variable
 
 #### Declaring variables
