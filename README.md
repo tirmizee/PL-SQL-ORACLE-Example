@@ -706,7 +706,7 @@ you must initialize a constants at its declaration
         executable statement;
     END procedure_name;
 
-#### Simple Procedure
+#### Stored Procedure without parameters
 
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
         vCode NVARCHAR2(20) DEFAULT '001';
@@ -719,7 +719,7 @@ you must initialize a constants at its declaration
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
 
-#### Simple Procedure with handle exception
+#### Stored Procedure with handle exception
 
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
         vCode NVARCHAR2(20);
