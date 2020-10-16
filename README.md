@@ -310,7 +310,7 @@ you must initialize a constants at its declaration
         ELSE statement;
     END CASE;
 
-.
+##### Simple Case Expression
 
     SET SERVEROUTPU ON;
 
@@ -319,14 +319,32 @@ you must initialize a constants at its declaration
         vResult NVARCHAR2(10);
     BEGIN
         CASE vscore
-            WHEN 0 THEN vResult := 'ONE';
-            WHEN 1 THEN vResult := 'TWO';
-            WHEN 2 THEN vResult := 'THREE';
-            WHEN 3 THEN vResult := 'FOUR';
-            WHEN 4 THEN vResult := 'FIVE';
-            WHEN 5 THEN vResult := 'SIX';
-            WHEN 6 THEN vResult := 'SEVEN';
-            WHEN 7 THEN vResult := 'EIGHT';
+            WHEN 1 THEN vResult := 'ONE';
+            WHEN 2 THEN vResult := 'TWO';
+            WHEN 3 THEN vResult := 'THREE';
+            WHEN 4 THEN vResult := 'FOUR';
+            WHEN 5 THEN vResult := 'FIVE';
+            WHEN 6 THEN vResult := 'SIX';
+            WHEN 7 THEN vResult := 'SEVEN';
+            WHEN 8 THEN vResult := 'EIGHT';
+            ELSE vResult := 'ERROR';
+        END CASE;
+        dbms_output.put_line(vResult);
+    END;
+    /
+    DECLARE
+        vScore NVARCHAR2(20) := 'THREE';
+        vResult NUMBER(2);
+    BEGIN
+        CASE vscore
+            WHEN 'ONE'    THEN vResult := 1;
+            WHEN 'TWO'    THEN vResult := 2;
+            WHEN 'THREE'  THEN vResult := 3;
+            WHEN 'FOUR'   THEN vResult := 4;
+            WHEN 'FIVE'   THEN vResult := 5;
+            WHEN 'SIX'    THEN vResult := 6;
+            WHEN 'SEVEN'  THEN vResult := 7;
+            WHEN 'EIGHT'  THEN vResult := 8;
             ELSE vResult := 'ERROR';
         END CASE;
         dbms_output.put_line(vResult);
