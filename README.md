@@ -760,6 +760,54 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC PROC_WITH_PARAMETER(1,1);
 
+#### Stored Procedure with parameters OUT
+
+    CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER_OUT (
+        inProfileId   IN  NUMBER , 
+        outFirstName  OUT NVARCHAR2,
+        outLastName   OUT NVARCHAR2,
+        outCitizentId OUT NVARCHAR2,
+        outEmail      OUT NVARCHAR2
+    ) AS
+        ecode   NUMBER;
+        emesg   VARCHAR2(200);
+    BEGIN
+        SELECT 
+            first_name,
+            last_name,
+            citizen_id,
+            email
+            INTO
+            outFirstName,
+            outLastName,
+            outCitizentId,
+            outEmail
+        FROM profile WHERE profile_id = inProfileId;
+        dbms_output.put_line('');
+    EXCEPTION
+        WHEN OTHERS THEN
+            ecode := SQLCODE;
+            emesg := SQLERRM;
+            dbms_output.put_line( 'EXCEPTION '||TO_CHAR(ecode) || '-' || emesg);
+    END PROC_WITH_PARAMETER_OUT;
+    /
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        inProfileId   NUMBER(20,0) DEFAULT 1;
+        outFirstName  NVARCHAR2(200);
+        outLastName   NVARCHAR2(200);
+        outCitizentId NVARCHAR2(200);
+        outEmail      NVARCHAR2(200);
+    BEGIN
+        PROC_WITH_PARAMETER_OUT(inProfileId, outFirstName, outLastName, outCitizentId, outEmail);
+        dbms_output.put_line(outFirstName);
+        dbms_output.put_line(outLastName);
+        dbms_output.put_line(outCitizentId);
+        dbms_output.put_line(outEmail);
+    END;
+
+
 #### Stored Procedure with handle exception
 
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
