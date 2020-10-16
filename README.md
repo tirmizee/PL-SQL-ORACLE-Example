@@ -514,6 +514,13 @@ you must initialize a constants at its declaration
 
 - <b>CLOSE:</b> This statement is used to close the cursor and the memory allocated to the cursor will be released.
 
+### Cursor attributes 
+
+- <b>%ROWCOUNT:</b> It tells how many rows are returned by the cursor.
+- <b>%ISOPEN:</b> This attribute returns Boolean which means TRUE if the cursor is open or else FALSE.
+- <b>%FOUND:</b> This attribute also returns Boolean. TRUE if successful fetch has been executed and FALSE if there is unsuccessful fetch (no row returned).
+- <b>%NOTFOUND:</b> This attribute returns opposite of the %FOUND attribute. FALSE if the row is fetched and TRUE if no row is fetched.
+
 #### Syntax
 
     CURSOR cursor_name IS select_statement;
