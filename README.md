@@ -715,7 +715,7 @@ you must initialize a constants at its declaration
 - <b>OUT</b> type parameter gets values from the Stored Procedure.
 - <b>IN OUT</b> type parameter sends and gets values from the procedure.
 
-PL/SQL procedure has defined IN type as default parameter. 
+PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter. 
 
 #### Stored Procedure without parameters
 
