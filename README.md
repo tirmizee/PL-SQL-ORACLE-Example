@@ -634,6 +634,23 @@ you must initialize a constants at its declaration
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
 
+#### Simple Procedure with handle exception
+
+    CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
+        vCode NVARCHAR2(20);
+        vName NVARCHAR2(100);
+    BEGIN
+        vCode := '00100000000000000000000000000000000000000000000000000';
+        vName := 'Pratya Yeekhaday';
+        dbms_output.put_line(vCode);
+        dbms_output.put_line(vName);
+    EXCEPTION
+      WHEN OTHERS THEN
+        dbms_output.put_line('EXCEPTION' || SQLCODE || ' : ' || SQLERRM);
+    END SIMPLE_PROCEDURE;
+    /
+    SET SERVEROUTPU ON;
+    EXEC SIMPLE_PROCEDURE;
 
 ### Reference
 
