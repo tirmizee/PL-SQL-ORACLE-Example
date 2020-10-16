@@ -507,11 +507,8 @@ you must initialize a constants at its declaration
 ### Cursor Action
 
 - <b>DECLARE:</b> the programmer actually creates a named context area for the Select statement. The select statement is declared in this section of the PL/SQL program.
-
 - <b>OPEN:</b> In this section oracle actually allocates memory for the cursor.
-
 - <b>FETCH:</b> In this section actual execution starts. The select statement fetches the records from the database and stores it in the allocated memory. The data is fetched record by record way. It is a record level activity. So the set of records is also called Active Set.
-
 - <b>CLOSE:</b> This statement is used to close the cursor and the memory allocated to the cursor will be released.
 
 ### Cursor attributes 
