@@ -350,6 +350,8 @@ you must initialize a constants at its declaration
         dbms_output.put_line(vResult);
     END;
 
+##### Searched Case Expression
+
 ## LOOP statement
 
 #### Simple loop
