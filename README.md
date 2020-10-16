@@ -729,6 +729,8 @@ PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter.
     /
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
+    
+ #### Stored Procedure with parameters   
 
 #### Stored Procedure with handle exception
 
