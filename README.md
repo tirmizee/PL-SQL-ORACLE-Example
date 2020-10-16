@@ -352,6 +352,41 @@ you must initialize a constants at its declaration
 
 ##### Searched Case Expression
 
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        vFirstname NVARCHAR2(50) := 'Pratya';
+        vLastname NVARCHAR2(50) := 'Yeekhaday';
+        vResult NVARCHAR2(50);
+    BEGIN
+        CASE 
+            WHEN vFirstname = 'Pratya' AND vlastname = 'Yeekhaday' THEN vResult := 'Tirmizee';
+            WHEN vFirstname = 'Pratya1' AND vlastname = 'Yeekhaday1' THEN vResult := 'Tirmizee1';
+            WHEN vFirstname = 'Pratya2' AND vlastname = 'Yeekhaday2' THEN vResult := 'Tirmizee2';
+            ELSE vResult := 'ERROR';
+        END CASE;
+        dbms_output.put_line(vResult);
+    END;
+    /
+    DECLARE
+        vText NVARCHAR2(20) := 'THREE';
+        vNumber NUMBER(2) := 3;
+        vResult NUMBER(2);
+    BEGIN
+        CASE 
+            WHEN vText= 'ONE'   AND vNumber = 1 THEN vResult := 1;
+            WHEN vText= 'TWO'   AND vNumber = 2 THEN vResult := 2;
+            WHEN vText= 'THREE' AND vNumber = 3 THEN vResult := 3;
+            WHEN vText= 'FOUR'  AND vNumber = 4 THEN vResult := 4;
+            WHEN vText= 'FIVE'  AND vNumber = 5 THEN vResult := 5;
+            WHEN vText= 'SIX'   AND vNumber = 6 THEN vResult := 6;
+            WHEN vText= 'SEVEN' AND vNumber = 7 THEN vResult := 7;
+            WHEN vText= 'EIGHT' AND vNumber = 8 THEN vResult := 8;
+            ELSE vResult := 'ERROR';
+        END CASE;
+        dbms_output.put_line(vResult);
+    END;
+
 ## LOOP statement
 
 #### Simple loop
