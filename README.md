@@ -709,6 +709,14 @@ you must initialize a constants at its declaration
         executable statement;
     END procedure_name;
 
+#### Stored Procedure parameters
+
+- <b>IN</b> type parameter sends values to a Stored Procedure.
+- <b>OUT</b> type parameter gets values from the Stored Procedure.
+- <b>IN OUT</b> type parameter sends and gets values from the procedure.
+
+PL/SQL procedure has defined IN type as default parameter. 
+
 #### Stored Procedure without parameters
 
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
