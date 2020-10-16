@@ -501,7 +501,6 @@ you must initialize a constants at its declaration
 ## CURSOR
 
 - #### Implicit Cursor
-
 - #### Explicit Cursor
 
 ### Cursor Action
