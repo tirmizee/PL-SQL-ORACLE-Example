@@ -500,8 +500,8 @@ you must initialize a constants at its declaration
 
 ## CURSOR
 
-- #### Implicit Cursor
-- #### Explicit Cursor
+- <b>Implicit Cursor</b>
+- <b>Explicit Cursor</b>
 
 ### Cursor Action
 
