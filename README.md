@@ -301,6 +301,36 @@ you must initialize a constants at its declaration
         END IF;
         dbms_output.put_line('Finish');
     END;
+    
+#### Case Expression
+
+    CASE search_expression
+        WHEN input_expression THEN statement;
+        ....
+        ELSE statement;
+    END CASE;
+
+.
+
+    SET SERVEROUTPU ON;
+
+    DECLARE
+        vScore NUMBER(3) := 2;
+        vResult NVARCHAR2(10);
+    BEGIN
+        CASE vscore
+            WHEN 0 THEN vResult := 'ONE';
+            WHEN 1 THEN vResult := 'TWO';
+            WHEN 2 THEN vResult := 'THREE';
+            WHEN 3 THEN vResult := 'FOUR';
+            WHEN 4 THEN vResult := 'FIVE';
+            WHEN 5 THEN vResult := 'SIX';
+            WHEN 6 THEN vResult := 'SEVEN';
+            WHEN 7 THEN vResult := 'EIGHT';
+            ELSE vResult := 'ERROR';
+        END CASE;
+        dbms_output.put_line(vResult);
+    END;
 
 ## LOOP statement
 
