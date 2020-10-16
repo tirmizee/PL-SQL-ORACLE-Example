@@ -621,6 +621,20 @@ you must initialize a constants at its declaration
         executable statement;
     END procedure_name;
 
+#### Simple Procedure
+
+    CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
+        vCode NVARCHAR2(20) DEFAULT '001';
+        vName NVARCHAR2(100) := 'Pratya Yeekhaday';
+    BEGIN
+        dbms_output.put_line(vCode);
+        dbms_output.put_line(vName);
+    END SIMPLE_PROCEDURE;
+    /
+    SET SERVEROUTPU ON;
+    EXEC SIMPLE_PROCEDURE;
+
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
