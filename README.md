@@ -732,6 +732,8 @@ PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter.
     
 #### Stored Procedure with parameters   
 
+PL/SQL procedure has defined IN type as default parameter.
+
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER(pUserId NUMBER, pEnable NUMBER) 
     AS
         vUser USERS%ROWTYPE;
