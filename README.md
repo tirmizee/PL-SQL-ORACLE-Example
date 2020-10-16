@@ -746,6 +746,20 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC PROC_WITH_PARAMETER(1,1);
 
+#### Stored Procedure with parameters IN 
+
+    CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER(pUserId IN NUMBER , pEnable IN NUMBER) 
+    AS
+        vUser USERS%ROWTYPE;
+    BEGIN
+        SELECT * INTO vUser FROM USERS WHERE user_id = pUserId AND enabled = pEnable;
+        dbms_output.put_line(vUser.username);
+        dbms_output.put_line(vUser.ENABLED);
+    END PROC_WITH_PARAMETER;
+    /
+    SET SERVEROUTPU ON;
+    EXEC PROC_WITH_PARAMETER(1,1);
+
 #### Stored Procedure with handle exception
 
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
