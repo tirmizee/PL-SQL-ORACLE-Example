@@ -620,6 +620,8 @@ A Cursor is a pointer to this context area
     END;
 
 ### Ref Cursors
+- <b>Strong Ref Cursor</b>
+- <b>Weak Ref Cursor</b>
 
 ## Record Datatype
 
