@@ -629,6 +629,14 @@ A Cursor is a pointer to this context area
 
     Weak ref cursors are those which do not have any return type.
 
+#### Syntax of Strong Ref Cursors
+
+    TYPE cursor_variable_name IS REF CURSOR RETURN (return_type);
+
+#### Syntax of Weak Ref Cursors
+
+    TYPE ref_cursor_name IS REF CURSOR;
+
 ## Record Datatype
 
     TYPE type_name IS RECORD (
