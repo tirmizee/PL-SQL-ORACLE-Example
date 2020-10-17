@@ -661,6 +661,22 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
             dbms_output.put_line(vTemp.EMP_LAST_NAME);
         CLOSE cursor_employee;
     END;
+    /
+    DECLARE
+        TYPE ref_employee IS REF CURSOR RETURN employee%ROWTYPE;
+        cursor_employee ref_employee;
+        vTemp employee%ROWTYPE;
+    BEGIN
+        OPEN cursor_employee FOR SELECT * FROM employee;
+            LOOP 
+                FETCH cursor_employee INTO vTemp;
+                EXIT WHEN cursor_employee%NOTFOUND;
+                dbms_output.put_line(vTemp.EMP_CODE);
+                dbms_output.put_line(vTemp.EMP_FIRST_NAME);
+                dbms_output.put_line(vTemp.EMP_LAST_NAME);
+            END LOOP;
+        CLOSE cursor_employee;
+    END;
 
 ## Record Datatype
 
