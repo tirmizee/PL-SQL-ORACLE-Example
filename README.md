@@ -621,6 +621,8 @@ A Cursor is a pointer to this context area
 
 ### Ref Cursors
 
+It is a PL/SQL datatype using which you can declare a special type of variable called Cursor Variable.
+
 - <b>Strong Ref Cursor</b>
     
     Any Ref Cursor which has a fixed return type is called a Strong Ref Cursor.
@@ -628,6 +630,12 @@ A Cursor is a pointer to this context area
 - <b>Weak Ref Cursor</b>
 
     Weak ref cursors are those which do not have any return type.
+    
+| Ref Cursor | Cursor |
+| ------------- | ------------- |
+| Ref Cursor is PL/SQL data type whose value is the memory address of aquery | Oracle create memory area |
+| it is dynamic | it is static |
+
 
 #### Syntax of Strong Ref Cursors
 
