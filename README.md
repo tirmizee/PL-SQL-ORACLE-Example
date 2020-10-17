@@ -957,6 +957,27 @@ PL/SQL procedure has defined IN type as default parameter.
 
 #### Stored Procedure with SYS_REFCURSOR parameters OUT
 
+    CREATE OR REPLACE PROCEDURE PROC_REFCURSOR_OUT(pEefCur OUT SYS_REFCURSOR)
+    AS
+    BEGIN
+        OPEN pEefCur FOR 
+            SELECT EMP_FIRST_NAME,EMP_LAST_NAME FROM employee;
+    END;
+    /
+    DECLARE
+        ref_cur SYS_REFCURSOR;
+        firstName employee.emp_first_name%TYPE;
+        lastName employee.emp_last_name%TYPE;
+    BEGIN
+        PROC_REFCURSOR_OUT(ref_cur);
+        LOOP
+            FETCH ref_cur INTO firstName, lastName;
+            EXIT WHEN ref_cur%NOTFOUND;
+            dbms_output.put_line(firstName);
+            dbms_output.put_line(lastName);
+        END LOOP;
+        CLOSE ref_cur;
+    END;
 
 
 #### Stored Procedure with handle exception
