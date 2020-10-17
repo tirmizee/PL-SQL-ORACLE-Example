@@ -734,6 +734,25 @@ BEGIN
     CLOSE cursor_employee;
 END;
 
+#### SYS_REFCURSOR
+
+SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Oracle database software.
+
+    SET SERVEROUTPU ON;
+    DECLARE
+        vFirstName NVARCHAR2(100);
+        vLastName NVARCHAR2(100);
+        CURSOR_EMPLOYEE SYS_REFCURSOR;
+    BEGIN
+        OPEN CURSOR_EMPLOYEE FOR 
+            SELECT EMP_FIRST_NAME, EMP_LAST_NAME FROM employee;
+            LOOP
+                FETCH CURSOR_EMPLOYEE INTO vFirstName, vLastName;
+                EXIT WHEN CURSOR_EMPLOYEE%NOTFOUND;
+                DBMS_OUTPUT.PUT_LINE(CURSOR_EMPLOYEE%ROWCOUNT ||' ' || vFirstName ||' '||vLastName);
+            END LOOP;
+        CLOSE CURSOR_EMPLOYEE;
+    END;
 
 ## Record Datatype
 
