@@ -619,6 +619,8 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
+### Ref Cursors
+
 ## Record Datatype
 
     TYPE type_name IS RECORD (
