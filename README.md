@@ -718,6 +718,22 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_detail;
     END;
 
+#### Weak Ref Cursors
+
+SET SERVEROUTPU ON;
+DECLARE
+    TYPE ref_employee IS REF CURSOR;
+    cursor_employee ref_employee;
+    vTemp employee%ROWTYPE;
+BEGIN
+    OPEN cursor_employee FOR SELECT * FROM employee WHERE emp_id = 1;
+        FETCH cursor_employee INTO vTemp;
+        dbms_output.put_line(vTemp.EMP_CODE);
+        dbms_output.put_line(vTemp.EMP_FIRST_NAME);
+        dbms_output.put_line(vTemp.EMP_LAST_NAME);
+    CLOSE cursor_employee;
+END;
+
 
 ## Record Datatype
 
