@@ -621,6 +621,7 @@ A Cursor is a pointer to this context area
 
 ### Ref Cursors
 - <b>Strong Ref Cursor</b>
+    Any Ref Cursor which has a fixed return type is called a Strong Ref Cursor.
 - <b>Weak Ref Cursor</b>
 
 ## Record Datatype
