@@ -955,6 +955,9 @@ PL/SQL procedure has defined IN type as default parameter.
         dbms_output.put_line(outEmail);
     END;
 
+#### Stored Procedure with SYS_REFCURSOR parameters OUT
+
+
 
 #### Stored Procedure with handle exception
 
