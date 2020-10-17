@@ -678,6 +678,47 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_employee;
     END;
 
+#### Strong Ref Cursors with Defined Record Datatype
+
+    SET SERVEROUTPU ON;
+    DECLARE
+        TYPE type_detail IS RECORD (
+            username users.username%TYPE,
+            ENABLED users.enabled%TYPE,
+            FIRST_NAME profile.first_name%TYPE,
+            LAST_NAME profile.last_name%TYPE,
+            CITIZEN_ID profile.citizen_id%TYPE,
+            TEL profile.tel%TYPE,
+            EMAIL profile.email%TYPE
+        );
+        TYPE ref_detail IS REF CURSOR RETURN type_detail;
+        cursor_detail ref_detail;
+        vTemp type_detail;
+    BEGIN
+        OPEN cursor_detail FOR 
+            SELECT
+                u.username,
+                u.ENABLED,
+                p.FIRST_NAME,
+                p.LAST_NAME,
+                p.CITIZEN_ID,
+                p.TEL,
+                p.EMAIL
+            FROM users u
+            INNER JOIN profile p ON u.profile_id = p.profile_id
+            WHERE p.profile_id = 1;
+            FETCH cursor_detail INTO vTemp;
+            dbms_output.put_line(vTemp.username);
+            dbms_output.put_line(vTemp.ENABLED);
+            dbms_output.put_line(vTemp.FIRST_NAME);
+            dbms_output.put_line(vTemp.LAST_NAME);
+            dbms_output.put_line(vTemp.CITIZEN_ID);
+            dbms_output.put_line(vTemp.TEL);
+            dbms_output.put_line(vTemp.EMAIL);
+        CLOSE cursor_detail;
+    END;
+
+
 ## Record Datatype
 
     TYPE type_name IS RECORD (
