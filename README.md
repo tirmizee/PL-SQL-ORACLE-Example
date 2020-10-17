@@ -633,9 +633,10 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
     
 | Ref Cursor | Cursor |
 | ------------- | ------------- |
-| Ref Cursor is PL/SQL data type whose value is the memory address of aquery | Oracle create memory area |
+| Ref Cursor is PL/SQL data type | Oracle creates context area for processing an SQL statement which contains all information  |
 | it is dynamic | it is static |
-
+| can be changed at runtime | can not be change at runtime |
+| can be returned to client | can not be returned to client |
 
 #### Syntax of Strong Ref Cursors
 
