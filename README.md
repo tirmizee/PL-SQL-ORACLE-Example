@@ -1020,6 +1020,36 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
 #### Package body
 
+    CREATE OR REPLACE PACKAGE BODY PKG_SIMPLE AS
+     
+         FUNCTION PRT_STRING RETURN NVARCHAR2 IS
+            BEGIN
+                RETURN 'Hello world';
+            END PRT_STRING;
+
+        FUNCTION PRT_STRING(fname NVARCHAR2, lname NVARCHAR2) RETURN NVARCHAR2 
+            IS
+                results NVARCHAR2(200) DEFAULT '';
+            BEGIN
+                results := fname || ' ' || lname;
+                RETURN results;
+            END PRT_STRING;
+
+        PROCEDURE PROC_STRING IS 
+            BEGIN
+                 dbms_output.put_line('Hello world');
+            END PROC_STRING;
+
+        PROCEDURE PROC_STRING(fname NVARCHAR2, lname NVARCHAR2) 
+            IS
+                results NVARCHAR2(200) DEFAULT '';
+            BEGIN 
+                results := fname || ' ' || lname;
+                dbms_output.put_line(results);
+            END PROC_STRING;
+
+    END PKG_SIMPLE;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
