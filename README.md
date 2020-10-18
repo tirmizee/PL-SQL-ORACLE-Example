@@ -226,6 +226,28 @@ you must initialize a constants at its declaration
     [USING <bind_variable_value>]
     [RETURNING|RETURN-INTO <clause>];  
 
+
+#### Using Immediate
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        temp employee%ROWTYPE;
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE = ' || q'['EM001']';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp;
+        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
+    END;
+    /
+    DECLARE
+        temp NUMBER(3);
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT COUNT(*) FROM EMPLOYEE';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp;
+        DBMS_OUTPUT.PUT_LINE (temp);
+    END;
+
 ## Conditional Statements
 
 #### IF - THEN
