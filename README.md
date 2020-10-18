@@ -1059,6 +1059,13 @@ Calling notation is a way of providing values to the parameters of a subroutine 
         PKG_SIMPLE.PROC_STRING;
         PKG_SIMPLE.PROC_STRING('PRATYA','YEEKHADAY');
     END;
+    /
+    SELECT 
+        PKG_SIMPLE.PRT_STRING,
+        PKG_SIMPLE.PRT_STRING('PRATYA','YEEKHADAY')
+    FROM DUAL;
+    EXEC PKG_SIMPLE.PROC_STRING;
+    EXEC PKG_SIMPLE.PROC_STRING('PRATYA','YEEKHADAY');
 
 ### Reference
 
