@@ -227,7 +227,7 @@ you must initialize a constants at its declaration
     [RETURNING|RETURN-INTO <clause>];  
 
 
-#### Using Immediate
+#### Immediate INTO
 
     SET SERVEROUTPUT ON;
     DECLARE
