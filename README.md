@@ -1078,6 +1078,11 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 - <b>A system event.</b>
 - <b>A User Events</b>
 
+### OLD and NEW Pseudorecords
+
+- <b>:old</b> - refers to Old Value
+- <b>:new</b> - refers to New value
+
 ### Avoid trigger
 
 - <b>Do not create recursive triggers.</b>
