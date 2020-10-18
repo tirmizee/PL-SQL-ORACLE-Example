@@ -1073,7 +1073,7 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 ### Events Which Fires the Database Triggers
 
-- <b>A DML Statement</b> 
+- <b>A DML Statement</b> INSERT, UPDATE, and DELETE
 - <b>A DDL Statement</b>
 - <b>A system event.</b>
 - <b>A User Events</b>
