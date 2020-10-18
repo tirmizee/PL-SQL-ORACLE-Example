@@ -1078,6 +1078,22 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 - <b>A system event.</b>
 - <b>A User Events</b>
 
+####  Trigger syntax
+
+    CREATE [OR REPLACE] TRIGGER ttrigger_name
+    {BEFORE|AFTER} triggering_event ON table_name
+    [FOR EACH ROW]
+    [FOLLOWS another_trigger_name]
+    [ENABLE/DISABLE]
+    [WHEN condition]
+    DECLARE
+      declaration statements
+    BEGIN
+      executable statements
+    EXCEPTION
+      exception-handling statements
+    END;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
