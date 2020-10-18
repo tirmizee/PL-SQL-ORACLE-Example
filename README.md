@@ -1078,6 +1078,10 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 - <b>A system event.</b>
 - <b>A User Events</b>
 
+### Avoid trigger
+
+- <b>Do not create recursive triggers.</b>
+
 #### Trigger syntax
 
     CREATE [OR REPLACE] TRIGGER ttrigger_name
