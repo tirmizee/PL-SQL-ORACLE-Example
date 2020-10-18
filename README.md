@@ -1071,6 +1071,12 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
 Triggers are named PL/SQL blocks which are stored in the database.  We can also say that they are specialized stored programs which execute implicitly when a triggering event occurs. This means we cannot call and execute them directly instead they only get triggered by events in the database.
 
+### Events Which Fires the Database Triggers
+
+- <b>A DML Statement</b> 
+- <b>A DDL Statement</b>
+- <b>A system event.</b>
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
