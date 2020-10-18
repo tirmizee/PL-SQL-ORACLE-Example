@@ -1163,6 +1163,12 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
  
 ## Transaction Control Language (TCL)
 
+#### TCL Statements available in Oracle 
+
+- <b>COMMIT</b>       : Make changes done in  transaction permanent.
+- <b>ROLLBACK</b>     : Rollbacks the state of database to the last commit point.
+- <b>SAVEPOINT</b>    : Use to specify a point in transaction to which later you can rollback.
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
