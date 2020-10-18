@@ -1006,6 +1006,9 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
 ## Package 
 
+- Package header
+- Package body
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
