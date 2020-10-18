@@ -1083,6 +1083,12 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 - <b>:old</b> - refers to Old Value
 - <b>:new</b> - refers to New value
 
+#### For the row that the trigger is processing
+
+- For an <b>INSERT</b> trigger, OLD contains no values, and NEW contains the new values.
+- For an <b>UPDATE</b> trigger, OLD contains the old values, and NEW contains the new values.
+- For a <b>DELETE</b> trigger, OLD contains the old values, and NEW contains no values.
+    
 ### Avoid trigger
 
 - <b>Do not create recursive triggers.</b>
