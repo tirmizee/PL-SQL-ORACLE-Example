@@ -1114,6 +1114,34 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
         UPDATE employee set emp_code = 'EM001' WHERE emp_code = 'EM001';
     END;
     
+ #### Trigger multiple event
+    
+    CREATE OR REPLACE TRIGGER TRG_EMPLOYEE_UPDATE
+    AFTER INSERT OR UPDATE OR DELETE ON employee
+    FOR EACH ROW
+    ENABLE
+    DECLARE
+        vUser NVARCHAR2(200);
+    BEGIN
+        SELECT user INTO vUser FROM DUAL;
+        IF INSERTING THEN
+            DBMS_OUTPUT.PUT_LINE('user ' || vUser || ' insert employee');
+        ELSIF UPDATING THEN
+            DBMS_OUTPUT.PUT_LINE('user ' || vUser || ' update employee');
+        ELSIF DELETING THEN
+            DBMS_OUTPUT.PUT_LINE('user ' || vUser || ' delete employee');
+        END IF;
+    EXCEPTION
+        WHEN OTHERS THEN
+            NULL;
+    END;
+    /
+    BEGIN
+        UPDATE employee set emp_code = 'EM001' WHERE emp_code = 'EM001';
+        INSERT INTO employee VALUES( 4 ,'EM004','temp','temp',null);
+        DELETE FROM employee WHERE emp_id = 4;
+    END;
+    
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
