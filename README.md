@@ -191,7 +191,7 @@ you must initialize a constants at its declaration
     END;
 
 
-## Select into
+### Select into
 
     SET SERVEROUTPUT ON;
 
@@ -216,6 +216,15 @@ you must initialize a constants at its declaration
         dbms_output.put_line(vString);
         dbms_output.put_line(vNumber);
     END;
+
+### Execute Immediate
+
+#### Immediate Syntax
+
+    EXECUTE IMMEDIATE <dynamic_query>
+    [INTO <variable>]
+    [USING <bind_variable_value>]
+    [RETURNING|RETURN-INTO <clause>];  
 
 ## Conditional Statements
 
@@ -1160,7 +1169,9 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
         INSERT INTO employee VALUES( 4 ,'EM004','temp','temp',null);
         DELETE FROM employee WHERE emp_id = 4;
     END;
- 
+
+
+
 ## Transaction Control Language (TCL)
 
 #### TCL Statements available in Oracle 
