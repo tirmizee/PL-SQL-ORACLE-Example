@@ -1002,6 +1002,8 @@ PL/SQL procedure has defined IN type as default parameter.
 
 ### Calling Notation 
 
+Calling notation is a way of providing values to the parameters of a subroutine such as PL/SQL function or a stored procedure.
+
 ## Package 
 
 ### Reference
