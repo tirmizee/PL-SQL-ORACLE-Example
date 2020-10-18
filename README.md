@@ -1093,6 +1093,11 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 - <b>Do not create recursive triggers.</b>
 
+### Disabling or Enabling a Single Trigger
+
+    ALTER TRIGGER eval_change_trigger DISABLE;
+    ALTER TRIGGER eval_change_trigger ENABLE;
+
 #### Trigger syntax
 
     CREATE [OR REPLACE] TRIGGER ttrigger_name
