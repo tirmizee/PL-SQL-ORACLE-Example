@@ -1050,6 +1050,16 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
     END PKG_SIMPLE;
 
+#### Using package
+
+    SET SERVEROUTPU ON;
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.PRT_STRING);
+        DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.PRT_STRING('PRATYA','YEEKHADAY'));
+        PKG_SIMPLE.PROC_STRING;
+        PKG_SIMPLE.PROC_STRING('PRATYA','YEEKHADAY');
+    END;
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
