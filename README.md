@@ -1160,7 +1160,9 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
         INSERT INTO employee VALUES( 4 ,'EM004','temp','temp',null);
         DELETE FROM employee WHERE emp_id = 4;
     END;
-    
+ 
+## Transaction Control Language (TCL)
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
