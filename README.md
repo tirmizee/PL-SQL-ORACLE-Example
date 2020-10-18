@@ -1067,6 +1067,8 @@ Calling notation is a way of providing values to the parameters of a subroutine 
     EXEC PKG_SIMPLE.PROC_STRING;
     EXEC PKG_SIMPLE.PROC_STRING('PRATYA','YEEKHADAY');
 
+## Triggers 
+
 ### Reference
 
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
