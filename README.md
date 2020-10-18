@@ -754,7 +754,9 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         CLOSE CURSOR_EMPLOYEE;
     END;
 
-## Record Datatype
+## Datatype
+
+#### Record Datatype
 
     TYPE type_name IS RECORD (
        field_name data_type,
