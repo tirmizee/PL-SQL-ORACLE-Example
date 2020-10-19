@@ -250,6 +250,8 @@ you must initialize a constants at its declaration
         END LOOP;
     END;
 
+#### Collection Data Types
+
 ### Select into
 
     SET SERVEROUTPUT ON;
