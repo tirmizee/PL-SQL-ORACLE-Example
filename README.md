@@ -86,8 +86,6 @@ you must initialize a constants at its declaration
 
 ## Data type
 
-    
-
 #### %TYPE
 
     SET SERVEROUTPUT ON;
@@ -288,7 +286,7 @@ you must initialize a constants at its declaration
     [RETURNING|RETURN-INTO <clause>];  
 
 
-#### Immediate INTO
+#### Immediate with INTO
 
     SET SERVEROUTPUT ON;
     DECLARE
@@ -308,6 +306,8 @@ you must initialize a constants at its declaration
         EXECUTE IMMEDIATE vDynamicQuery INTO temp;
         DBMS_OUTPUT.PUT_LINE (temp);
     END;
+
+#### Immediate with USING 
 
 ## Conditional Statements
 
