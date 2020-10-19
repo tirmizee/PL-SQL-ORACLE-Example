@@ -620,7 +620,7 @@ you must initialize a constants at its declaration
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/15135199/96413139-6733e700-1215-11eb-821d-00313cb60c8e.png" width="700">
+  <img src="https://user-images.githubusercontent.com/15135199/96413139-6733e700-1215-11eb-821d-00313cb60c8e.png" width="650">
 </p>
 
 A Cursor is a pointer to this context area
