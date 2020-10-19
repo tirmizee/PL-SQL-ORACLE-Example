@@ -1104,6 +1104,25 @@ PL/SQL procedure has defined IN type as default parameter.
              DBMS_OUTPUT.PUT_LINE ('OTHERS');
     END;
 
+#### Nested blocks exception handling
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        V_CODE VARCHAR2(100);
+        V_EMP_ID NUMBER;  
+    BEGIN
+        SELECT EMP_CODE INTO V_CODE FROM EMPLOYEE WHERE EMP_CODE = 'EM001'; 
+        DBMS_OUTPUT.PUT_LINE('EMPLOYEE CODE IS: '||V_CODE);
+        BEGIN
+            SELECT EMP_ID INTO V_EMP_ID FROM EMPLOYEE WHERE EMP_ID = 100;
+            DBMS_OUTPUT.PUT_LINE('EMPLOYEE ID IS : '||V_EMP_ID);
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN DBMS_OUTPUT.PUT_LINE('NO EMP_ID FOUND FOR '||V_CODE);
+        END;    
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN DBMS_OUTPUT.PUT_LINE('NO EMP_CODE FOUND FOR '||V_CODE);
+    END;
+
 ### Calling Notation 
 
 Calling notation is a way of providing values to the parameters of a subroutine such as PL/SQL function or a stored procedure.
