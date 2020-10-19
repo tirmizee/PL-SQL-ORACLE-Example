@@ -256,6 +256,25 @@ you must initialize a constants at its declaration
 
     TYPE nested_table_name IS TABLE OF element_type [NOT NULL];
 
+.
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        TYPE NUMBERS_TYPE IS TABLE OF NUMBER;
+        v_numbers  NUMBERS_TYPE DEFAULT NUMBERS_TYPE (9,18,27,36,45,54,63,72,81,90);
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE ('Value Stored at index 1 in NT is ' ||v_numbers (1)); 
+        DBMS_OUTPUT.PUT_LINE ('Value Stored at index 2 in NT is ' ||v_numbers (2));
+        DBMS_OUTPUT.PUT_LINE ('Value Stored at index 3 in NT is ' ||v_numbers (3));
+        DBMS_OUTPUT.PUT_LINE ('Value Stored at index 4 in NT is ' ||v_numbers (5));
+        DBMS_OUTPUT.PUT_LINE ('Value Stored at index 5 in NT is ' ||v_numbers (6));
+
+        FOR i IN 1..v_numbers.COUNT LOOP
+            DBMS_OUTPUT.PUT_LINE ('Value Stored at index 1 in NT is ' ||v_numbers(i)); 
+        END LOOP;
+
+    END;
+
 ### Select into
 
     SET SERVEROUTPUT ON;
