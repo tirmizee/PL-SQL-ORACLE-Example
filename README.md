@@ -252,6 +252,10 @@ you must initialize a constants at its declaration
 
 #### Collection Data Types
 
+#### Simple Nested Table Types
+
+    TYPE nested_table_name IS TABLE OF element_type [NOT NULL];
+
 ### Select into
 
     SET SERVEROUTPUT ON;
