@@ -278,6 +278,19 @@ you must initialize a constants at its declaration
 
 ### Execute Immediate
 
+    SET SERVEROUTPUT ON;
+    DECLARE
+        temp employee%ROWTYPE;
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE   = :EMP_CODE AND EMP_FIRST_NAME = :EMP_FIRST_NAME';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp USING 'EM001', 'Pratyaya' ;
+        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+             DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
+    END;
+
 #### Immediate Syntax
 
     EXECUTE IMMEDIATE <dynamic_query>
