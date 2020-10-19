@@ -282,6 +282,20 @@ you must initialize a constants at its declaration
 #### VARRAYs Type
     
     TYPE type_name IS [VARRAY | VARYING ARRAY] (size_limit) OF element_type;
+.
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        TYPE ARRAYS_TYPE IS VARRAY(5) OF NVARCHAR2(5);
+        V_ARRAYS ARRAYS_TYPE DEFAULT ARRAYS_TYPE('A','B','C','D',NULL);
+    BEGIN
+        FOR i IN 1..V_ARRAYS.COUNT LOOP
+            DBMS_OUTPUT.PUT_LINE ('Value Stored at index ' || i || ' in NT is ' ||V_ARRAYS (i)); 
+        END LOOP;
+        FOR i IN 1..V_ARRAYS.LIMIT LOOP
+            DBMS_OUTPUT.PUT_LINE ('Value Stored at index ' || i || ' in NT is ' ||V_ARRAYS (i)); 
+        END LOOP;
+    END;
 
 ### Select into
 
