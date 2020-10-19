@@ -256,7 +256,11 @@ you must initialize a constants at its declaration
 
     TYPE nested_table_name IS TABLE OF element_type [NOT NULL];
 
-.
+#### Create Nested table as Database Object 
+
+    CREATE OR REPLACE TYPE NUMBERS_TYPE IS TABLE OF NUMBER;
+
+#### Simple Nested table in PL/SQL block
 
     SET SERVEROUTPUT ON;
     DECLARE
