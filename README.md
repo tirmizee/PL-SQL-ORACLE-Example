@@ -1054,6 +1054,21 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
 
+## Exception
+
+### Exception type
+
+### Syntax
+
+    DECLARE
+        declare variable statement
+    BEGIN
+        execute statement
+    EXCEPTION
+    WHEN EXCEPTION_NAME THEN
+        execute statement
+    END;
+
 ### Calling Notation 
 
 Calling notation is a way of providing values to the parameters of a subroutine such as PL/SQL function or a stored procedure.
