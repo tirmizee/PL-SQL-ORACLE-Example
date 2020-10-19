@@ -279,6 +279,10 @@ you must initialize a constants at its declaration
 
     END;
 
+#### VARRAYs Type
+    
+    TYPE type_name IS [VARRAY | VARYING ARRAY] (size_limit) OF element_type;
+
 ### Select into
 
     SET SERVEROUTPUT ON;
