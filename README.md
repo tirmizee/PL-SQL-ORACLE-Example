@@ -1058,6 +1058,9 @@ PL/SQL procedure has defined IN type as default parameter.
 
 ### Exception type
 
+- <b>NO_DATA_FOUND</b>
+- <b>OTHERS</b>
+
 ### Syntax
 
     DECLARE
@@ -1067,6 +1070,38 @@ PL/SQL procedure has defined IN type as default parameter.
     EXCEPTION
     WHEN EXCEPTION_NAME THEN
         execute statement
+    END;
+
+#### Single exception handling
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        temp employee%ROWTYPE;
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE   = :EMP_CODE AND EMP_FIRST_NAME = :EMP_FIRST_NAME';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp USING 'EM001', 'Pratyayaa' ;
+        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+             DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
+    END;
+
+#### Multiple exception handling
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        temp employee%ROWTYPE;
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE   = :EMP_CODE AND EMP_FIRST_NAME = :EMP_FIRST_NAME';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp USING 'EM001', 'Pratyayaa' ;
+        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+             DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
+        WHEN OTHERS THEN
+             DBMS_OUTPUT.PUT_LINE ('OTHERS');
     END;
 
 ### Calling Notation 
