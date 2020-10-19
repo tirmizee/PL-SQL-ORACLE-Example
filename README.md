@@ -852,7 +852,7 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_employee;
     END;
 
-#### SYS_REFCURSOR
+#### Weak Ref Cursors SYS_REFCURSOR
 
 SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Oracle database software.
 
