@@ -628,11 +628,10 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
     FORALL index IN bound_clauses 
         [SAVE EXCEPTION]
         DML statement;
-
-...
 - <b>SAVE EXCEPTION</b> is an optional choice which keeps the FORALL statement running even when DML statement causes an exception. These exceptions are saved in a cursor attribute called SQL%Bulk_Exceptions.
 - <b>DML Statement</b> DML statement could be any DML statement like INSERT, UPDATE or DELETE
-...
+
+#### FORALL simple with insert   
 
     SET SERVEROUTPUT ON;
     DECLARE
