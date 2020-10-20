@@ -617,7 +617,11 @@ you must initialize a constants at its declaration
         dbms_output.put_line('Finish');
     END;
 
-#### FORALL Loop
+#### FORALL
+
+FORALL statement helps to process bulk data in an optimized manner by sending DML statements or a MERGE statement (if you are using 11g or above) in batches from PL/SQL engine to SQL engine. <b>FORALL is not FOR LOOP</b>
+
+
 
 ### Select into
 
