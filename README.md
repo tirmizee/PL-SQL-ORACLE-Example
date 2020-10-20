@@ -334,117 +334,7 @@ you must initialize a constants at its declaration
         END LOOP;
     END;
 
-### Select into
 
-    SET SERVEROUTPUT ON;
-
-    DECLARE 
-        vString VARCHAR2(200);
-    BEGIN
-       SELECT password into vString from USERS WHERE username = 'tirmizee';
-       dbms_output.put_line(vString);
-    END;
-    /
-    DECLARE 
-        vString VARCHAR2(200);
-        vNumber NUMBER(1,0);
-    BEGIN
-        SELECT 
-            password, 
-            enabled 
-            into 
-            vString, 
-            vNumber  
-        from USERS WHERE username = 'tirmizee';
-        dbms_output.put_line(vString);
-        dbms_output.put_line(vNumber);
-    END;
-
-### Execute Immediate
-
-    SET SERVEROUTPUT ON;
-    DECLARE
-        temp employee%ROWTYPE;
-        vDynamicQuery NVARCHAR2(200);
-    BEGIN
-        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE   = :EMP_CODE AND EMP_FIRST_NAME = :EMP_FIRST_NAME';
-        EXECUTE IMMEDIATE vDynamicQuery INTO temp USING 'EM001', 'Pratyaya' ;
-        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
-    EXCEPTION
-        WHEN NO_DATA_FOUND THEN
-             DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
-    END;
-
-#### Immediate Syntax
-
-    EXECUTE IMMEDIATE <dynamic_query>
-    [INTO <variable>]
-    [USING <bind_variable_value>]
-    [RETURNING|RETURN-INTO <clause>];  
-
-
-#### Immediate with INTO
-
-    SET SERVEROUTPUT ON;
-    DECLARE
-        temp employee%ROWTYPE;
-        vDynamicQuery NVARCHAR2(200);
-    BEGIN
-        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE = ' || q'['EM001']';
-        EXECUTE IMMEDIATE vDynamicQuery INTO temp;
-        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
-    END;
-    /
-    DECLARE
-        temp NUMBER(3);
-        vDynamicQuery NVARCHAR2(200);
-    BEGIN
-        vDynamicQuery := 'SELECT COUNT(*) FROM EMPLOYEE';
-        EXECUTE IMMEDIATE vDynamicQuery INTO temp;
-        DBMS_OUTPUT.PUT_LINE (temp);
-    END;
-
-#### Immediate with USING 
-
-    SET SERVEROUTPUT ON;
-    DECLARE
-        temp employee%ROWTYPE;
-        vDynamicQuery NVARCHAR2(200);
-    BEGIN
-        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE   = :EMP_CODE AND EMP_FIRST_NAME = :EMP_FIRST_NAME';
-        EXECUTE IMMEDIATE vDynamicQuery INTO temp USING 'EM001', 'Pratyaya' ;
-        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
-    EXCEPTION
-        WHEN NO_DATA_FOUND THEN
-             DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
-    END;
-
-#### Immediate with BULK COLLECT INTO
-
-    SET SERVEROUTPUT ON;
-    DECLARE
-        TYPE LIST_TYPE IS TABLE OF NVARCHAR2(100);
-        V_LIST_OF_CODE LIST_TYPE;
-        V_QUERY NVARCHAR2(200);
-    BEGIN
-        V_QUERY := 'SELECT EMP_CODE FROM EMPLOYEE WHERE EMP_CODE LIKE :EMP_CODE';
-        EXECUTE IMMEDIATE V_QUERY BULK COLLECT INTO V_LIST_OF_CODE USING '%0%';
-        FOR I IN 1..V_LIST_OF_CODE.COUNT LOOP
-            DBMS_OUTPUT.PUT_LINE (I || ' : ' || V_LIST_OF_CODE(I));
-        END LOOP;
-    END;
-    /
-    DECLARE
-        TYPE LIST_TYPE IS TABLE OF EMPLOYEE%ROWTYPE;
-        V_LIST_OF_EMPLOYEE LIST_TYPE;
-        V_QUERY NVARCHAR2(200);
-    BEGIN
-        V_QUERY := 'SELECT * FROM EMPLOYEE WHERE EMP_CODE LIKE :EMP_CODE';
-        EXECUTE IMMEDIATE V_QUERY BULK COLLECT INTO V_LIST_OF_EMPLOYEE USING '%0%';
-        FOR I IN 1..V_LIST_OF_EMPLOYEE.COUNT LOOP
-            DBMS_OUTPUT.PUT_LINE (I || ' : ' || V_LIST_OF_EMPLOYEE(I).EMP_CODE || ', ' || V_LIST_OF_EMPLOYEE(I).EMP_FIRST_NAME);
-        END LOOP;
-    END;
 
 ## Conditional Statements
 
@@ -725,6 +615,120 @@ you must initialize a constants at its declaration
             dbms_output.put_line('counter ' || counter);
         END LOOP;
         dbms_output.put_line('Finish');
+    END;
+
+#### FORALL Loop
+
+### Select into
+
+    SET SERVEROUTPUT ON;
+
+    DECLARE 
+        vString VARCHAR2(200);
+    BEGIN
+       SELECT password into vString from USERS WHERE username = 'tirmizee';
+       dbms_output.put_line(vString);
+    END;
+    /
+    DECLARE 
+        vString VARCHAR2(200);
+        vNumber NUMBER(1,0);
+    BEGIN
+        SELECT 
+            password, 
+            enabled 
+            into 
+            vString, 
+            vNumber  
+        from USERS WHERE username = 'tirmizee';
+        dbms_output.put_line(vString);
+        dbms_output.put_line(vNumber);
+    END;
+
+### Execute Immediate
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        temp employee%ROWTYPE;
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE   = :EMP_CODE AND EMP_FIRST_NAME = :EMP_FIRST_NAME';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp USING 'EM001', 'Pratyaya' ;
+        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+             DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
+    END;
+
+#### Immediate Syntax
+
+    EXECUTE IMMEDIATE <dynamic_query>
+    [INTO <variable>]
+    [USING <bind_variable_value>]
+    [RETURNING|RETURN-INTO <clause>];  
+
+
+#### Immediate with INTO
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        temp employee%ROWTYPE;
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE = ' || q'['EM001']';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp;
+        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
+    END;
+    /
+    DECLARE
+        temp NUMBER(3);
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT COUNT(*) FROM EMPLOYEE';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp;
+        DBMS_OUTPUT.PUT_LINE (temp);
+    END;
+
+#### Immediate with USING 
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        temp employee%ROWTYPE;
+        vDynamicQuery NVARCHAR2(200);
+    BEGIN
+        vDynamicQuery := 'SELECT * FROM EMPLOYEE  WHERE EMP_CODE   = :EMP_CODE AND EMP_FIRST_NAME = :EMP_FIRST_NAME';
+        EXECUTE IMMEDIATE vDynamicQuery INTO temp USING 'EM001', 'Pratyaya' ;
+        DBMS_OUTPUT.PUT_LINE (temp.EMP_FIRST_NAME);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+             DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
+    END;
+
+#### Immediate with BULK COLLECT INTO
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        TYPE LIST_TYPE IS TABLE OF NVARCHAR2(100);
+        V_LIST_OF_CODE LIST_TYPE;
+        V_QUERY NVARCHAR2(200);
+    BEGIN
+        V_QUERY := 'SELECT EMP_CODE FROM EMPLOYEE WHERE EMP_CODE LIKE :EMP_CODE';
+        EXECUTE IMMEDIATE V_QUERY BULK COLLECT INTO V_LIST_OF_CODE USING '%0%';
+        FOR I IN 1..V_LIST_OF_CODE.COUNT LOOP
+            DBMS_OUTPUT.PUT_LINE (I || ' : ' || V_LIST_OF_CODE(I));
+        END LOOP;
+    END;
+    /
+    DECLARE
+        TYPE LIST_TYPE IS TABLE OF EMPLOYEE%ROWTYPE;
+        V_LIST_OF_EMPLOYEE LIST_TYPE;
+        V_QUERY NVARCHAR2(200);
+    BEGIN
+        V_QUERY := 'SELECT * FROM EMPLOYEE WHERE EMP_CODE LIKE :EMP_CODE';
+        EXECUTE IMMEDIATE V_QUERY BULK COLLECT INTO V_LIST_OF_EMPLOYEE USING '%0%';
+        FOR I IN 1..V_LIST_OF_EMPLOYEE.COUNT LOOP
+            DBMS_OUTPUT.PUT_LINE (I || ' : ' || V_LIST_OF_EMPLOYEE(I).EMP_CODE || ', ' || V_LIST_OF_EMPLOYEE(I).EMP_FIRST_NAME);
+        END LOOP;
     END;
 
 ## CURSOR
