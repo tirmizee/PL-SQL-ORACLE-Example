@@ -1319,6 +1319,36 @@ PL/SQL procedure has defined IN type as default parameter.
 
 Calling notation is a way of providing values to the parameters of a subroutine such as PL/SQL function or a stored procedure.
 
+#### Types of Calling Notations
+
+- <b>Positional Notation</b>
+- <b>Named Notation</b>
+- <b>Mixed calling notation</b>
+
+### Using Named Calling Notation
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+
+        PROCEDURE CALCULATE1(p_num1 IN NUMBER, p_num2 IN NUMBER, p_num3 IN NUMBER DEFAULT 0) AS
+            BEGIN
+                DBMS_OUTPUT.PUT_LINE (p_num1);
+                DBMS_OUTPUT.PUT_LINE (p_num2);
+                DBMS_OUTPUT.PUT_LINE (p_num3);
+            END CALCULATE1;
+
+        PROCEDURE CALCULATE2(p_num1 IN NUMBER, p_num2 IN NUMBER DEFAULT 0, p_num3 IN NUMBER ) AS
+            BEGIN
+                DBMS_OUTPUT.PUT_LINE (p_num1);
+                DBMS_OUTPUT.PUT_LINE (p_num2);
+                DBMS_OUTPUT.PUT_LINE (p_num3);
+            END CALCULATE2;
+            
+    BEGIN
+        CALCULATE1(3,4);
+        CALCULATE2(p_num3 => 10,p_num1 => 4);
+    END;
+
 ## Package 
 
 - Package header
