@@ -260,6 +260,11 @@ you must initialize a constants at its declaration
 
     CREATE OR REPLACE TYPE NUMBERS_TYPE IS TABLE OF NUMBER;
 
+- <b>COUNT</b>
+- <b>LIMIT</b>
+- <b>FIRST</b>
+- <b>LAST</b>
+
 #### Simple Nested table in PL/SQL block
 
     SET SERVEROUTPUT ON;
