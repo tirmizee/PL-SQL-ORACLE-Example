@@ -264,6 +264,8 @@ you must initialize a constants at its declaration
 - <b>LIMIT</b>
 - <b>FIRST</b>
 - <b>LAST</b>
+- <b>EXTEND</b>
+- <b>DELETE</b>
 
 #### Simple Nested table in PL/SQL block
 
