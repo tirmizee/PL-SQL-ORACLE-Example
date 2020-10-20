@@ -856,7 +856,7 @@ A Cursor is a pointer to this context area
         CLOSE CURSOR_EMPLOYEE;
     END;
 
-#### Explicit Cursor FOR Loop
+#### Static Cursor FOR Loop
 
     SET SERVEROUTPU ON;
 
@@ -871,7 +871,21 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
-#### Explicit Cursor with parameterized
+#### Static Cursor FOR LOOP with a SELECT statement
+
+    SET SERVEROUTPU ON;
+    DECLARE
+    BEGIN
+        FOR row_cursor IN (
+            SELECT
+                *
+            FROM employee WHERE emp_id > 150000
+        ) LOOP
+            dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
+        END LOOP;
+    END;
+
+#### Static Cursor with parameterized
 
     CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
 .
@@ -900,7 +914,7 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
    
-#### Explicit Cursor with parameterized and default value   
+#### Static Cursor with parameterized and default value   
    
     SET SERVEROUTPU ON;
 
