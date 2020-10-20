@@ -652,6 +652,29 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         ROLLBACK;
     END;
 
+#### FORALL simple with update   
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        TYPE TYPE_EMPLOYEE IS TABLE OF employee%ROWTYPE ;
+
+        V_LIST_EMPLOYEE   TYPE_EMPLOYEE;
+        V_SIZE            NUMBER DEFAULT 100000;
+    BEGIN
+        SELECT * BULK COLLECT INTO V_LIST_EMPLOYEE FROM employee;
+        FOR i IN 1..V_LIST_EMPLOYEE.COUNT LOOP
+            V_LIST_EMPLOYEE(i).MANAGER_ID := 1;
+        END LOOP;
+
+        FORALL i IN 1..V_LIST_EMPLOYEE.COUNT
+            UPDATE employee SET 
+                EMP_CODE = V_LIST_EMPLOYEE(i).EMP_CODE,
+                EMP_FIRST_NAME = V_LIST_EMPLOYEE(i).EMP_FIRST_NAME,
+                EMP_LAST_NAME = V_LIST_EMPLOYEE(i).EMP_LAST_NAME,
+                MANAGER_ID = V_LIST_EMPLOYEE(i).MANAGER_ID
+            WHERE EMP_ID = V_LIST_EMPLOYEE(i).EMP_ID;
+        COMMIT;
+    END;
 
 ### Select into
 
