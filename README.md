@@ -630,7 +630,28 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         DML statement;
 
 - <b>SAVE EXCEPTION</b> is an optional choice which keeps the FORALL statement running even when DML statement causes an exception. These exceptions are saved in a cursor attribute called SQL%Bulk_Exceptions.
-- <b>DML Statement</b> DML statement could be any DML statement like INSERT, UPDATE or DELETE.
+- <b>DML Statement</b> DML statement could be any DML statement like INSERT, UPDATE or DELETE
+.
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        TYPE TYPE_EMPLOYEE IS TABLE OF employee%ROWTYPE ;
+
+        V_LIST_EMPLOYEE   TYPE_EMPLOYEE  DEFAULT TYPE_EMPLOYEE();
+        V_SIZE            NUMBER         DEFAULT 100000;
+    BEGIN
+        V_LIST_EMPLOYEE.EXTEND(V_SIZE); 
+        FOR i IN 1..V_SIZE LOOP
+            V_LIST_EMPLOYEE(i).EMP_CODE        := 'EM999';
+            V_LIST_EMPLOYEE(i).EMP_FIRST_NAME  := 'TEMP';
+            V_LIST_EMPLOYEE(i).EMP_LAST_NAME   := 'TEMP';
+        END LOOP;
+
+        FORALL i IN 1..V_SIZE
+            INSERT INTO employee VALUES V_LIST_EMPLOYEE(i);
+        ROLLBACK;
+    END;
+
 
 ### Select into
 
