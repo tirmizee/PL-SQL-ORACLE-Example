@@ -284,6 +284,38 @@ you must initialize a constants at its declaration
 
     END;
 
+#### Simple Nested table (delete and exist)
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        TYPE LIST_TYPE IS TABLE OF VARCHAR2(10);
+        V_LIST LIST_TYPE DEFAULT LIST_TYPE('A',NULL,'C',NULL,'E');
+    BEGIN
+        FOR i IN V_LIST.FIRST..V_LIST.LAST LOOP
+            DBMS_OUTPUT.PUT_LINE('Value First '||V_LIST.FIRST||', Last '||V_LIST.LAST||', Count '|| V_LIST.COUNT || ', Limit ' || V_LIST.LIMIT ); 
+            IF V_LIST(i) IS NOT NULL THEN
+                DBMS_OUTPUT.PUT_LINE('Stored at index ' || i || ' in NT is ' ||V_LIST (i)); 
+            ELSE 
+                DBMS_OUTPUT.PUT_LINE('Stored at index ' || i || ' in NT is NULL'); 
+            END IF;
+        END LOOP;
+    END;
+    /
+    DECLARE
+        TYPE LIST_TYPE IS TABLE OF VARCHAR2(10);
+        V_LIST LIST_TYPE DEFAULT LIST_TYPE('A','B','C','D','E');
+    BEGIN
+        V_LIST.DELETE(2,3);
+        FOR i IN 1..V_LIST.LAST LOOP
+            DBMS_OUTPUT.PUT_LINE('Value First '||V_LIST.FIRST||', Last '||V_LIST.LAST||', Count '|| V_LIST.COUNT || ', Limit ' || V_LIST.LIMIT );
+            IF V_LIST.EXISTS(i)THEN
+                DBMS_OUTPUT.PUT_LINE('Stored at index ' || i || ' in NT is ' ||V_LIST (i)); 
+            ELSE 
+                DBMS_OUTPUT.PUT_LINE('Stored at index ' || i || ' in NT is NULL'); 
+            END IF;
+        END LOOP;
+    END;
+
 #### VARRAYs Type
     
     TYPE type_name IS [VARRAY | VARYING ARRAY] (size_limit) OF element_type;
