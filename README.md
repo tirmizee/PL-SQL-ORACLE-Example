@@ -621,7 +621,13 @@ you must initialize a constants at its declaration
 
 FORALL statement helps to process bulk data in an optimized manner by sending DML statements or a MERGE statement (if you are using 11g or above) in batches from PL/SQL engine to SQL engine. <b>FORALL is not FOR LOOP</b>
 
+#### FORALL syntax 
 
+    FORALL index IN bound_clauses 
+        [SAVE EXCEPTION]
+        DML statement;
+
+<b>SAVE EXCEPTION</b> is an optional choice which keeps the FORALL statement running even when DML statement causes an exception. These exceptions are saved in a cursor attribute called SQL%Bulk_Exceptions.
 
 ### Select into
 
