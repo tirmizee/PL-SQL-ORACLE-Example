@@ -1094,6 +1094,26 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         dbms_output.put_line(vTemp);
     END;
 
+#### Nested function
+    
+    CREATE OR REPLACE FUNCTION nested_func(p_number1 NUMBER DEFAULT 0, p_number2 NUMBER DEFAULT 0) RETURN NUMBER
+    AS
+        FUNCTION nested_func(p_number1 NUMBER DEFAULT 0, p_number2 NUMBER DEFAULT 0) RETURN NUMBER 
+        AS
+            results number;
+        BEGIN
+            results := p_number1 + p_number2;
+            RETURN results;
+        END nested_func;
+    BEGIN
+      RETURN nested_func(p_number1, p_number2);
+    END;
+    /
+    SET SERVEROUTPUT ON;
+    BEGIN
+        dbms_output.put_line(nested_func(10, 20));
+    END;
+
 ## Stored Procedure 
 
     CREATE [OR REPLACE] PROCEDURE procedure_name(Parameter 1, Parameter 2,...) 
