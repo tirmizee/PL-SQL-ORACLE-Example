@@ -1066,8 +1066,6 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
     
 ## Functions 
 
-#### Syntax
-
     CREATE [OR REPLACE] FUNCTION function_name(Parameter 1, Parameter 2,...) RETURN data_type
     IS
         Declare variable...;
@@ -1076,7 +1074,7 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         RETURN (value);
     END;
 
-#### Creating functions
+#### Functions with simple
 
     SET SERVEROUTPU ON;
 
@@ -1345,7 +1343,7 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 - <b>Named Notation</b>
 - <b>Mixed calling notation</b>
 
-### Using Named Calling Notation
+#### Using Named Calling Notation
 
     SET SERVEROUTPUT ON;
     DECLARE
