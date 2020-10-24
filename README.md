@@ -353,6 +353,24 @@ Varray is a collection method in which the size of the array is fixed. The array
         END LOOP;
     END;
 
+####  Associative array Type
+
+    TYPE aArray_name IS TABLE OF element_datatype [Not Null] INDEX BY index_elements_datatype;
+
+####  Associative array with simple 
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        TYPE books IS TABLE OF NUMBER INDEX BY VARCHAR2 (20);
+        isbn books;
+    BEGIN
+    -- How to insert data into the associative array 
+        isbn('Oracle Database') := -999;
+        isbn('MySQL') := 999; 
+        DBMS_OUTPUT.PUT_LINE ('Value '||isbn ('Oracle Database'));
+        DBMS_OUTPUT.PUT_LINE ('Value '||isbn ('MySQL'));
+    END;
+
 ## Conditional Statements
 
 #### IF - THEN
