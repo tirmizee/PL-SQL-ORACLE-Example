@@ -252,6 +252,10 @@ you must initialize a constants at its declaration
 
 #### Collection Data Types
 
+- <b>Nested Tables</b> : List
+- <b>Variable Sized Arrays or VARRAYs</b> : Array
+- <b>Associative arrays</b> : Map
+
 #### Collection Methods
 
 - <b>EXISTS</b> :
