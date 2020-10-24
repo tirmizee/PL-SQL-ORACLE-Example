@@ -1397,6 +1397,24 @@ PL/SQL procedure has defined IN type as default parameter.
             DBMS_OUTPUT.PUT_LINE('Error Error - Your Divisor is Zero');
     END;
 
+#### Exceptions handling with RAISE_APPLICATION_ERROR
+    
+    -- syntax
+    raise_application_error (error_number, message , [{TRUE | FALSE}]);
+
+    SET SERVEROUTPUT ON;
+    ACCEPT var_age NUMBER PROMPT 'What is yor age';
+    DECLARE
+        age NUMBER := &var_age;
+    BEGIN
+        IF age < 18 THEN
+            RAISE_APPLICATION_ERROR (-20008, 'you should be 18 or above for the DRINK!');
+        END IF; 
+        DBMS_OUTPUT.PUT_LINE ('Sure, What would you like to have?'); 
+
+        EXCEPTION WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE (SQLERRM);
+    END;
 
 #### Nested blocks exception handling
 
