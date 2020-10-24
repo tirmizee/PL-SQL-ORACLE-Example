@@ -252,6 +252,20 @@ you must initialize a constants at its declaration
 
 #### Collection Data Types
 
+#### Collection Methods
+
+- <b>EXISTS</b> :
+- <b>COUNT</b> :
+- <b>LIMIT</b> :
+- <b>FIRST</b> :
+- <b>LAST</b> :
+- <b>EXTEND</b> :
+- <b>DELETE</b> :
+- <b>PRIOR</b> :
+- <b>NEXT</b> :
+- <b>TRIM</b> : 
+- <b>DELETE</b> :
+
 #### Nested Tables
 
 A Nested table is a collection in which the size of the array is not fixed. It has the numeric subscript type. 
@@ -263,13 +277,6 @@ A Nested table is a collection in which the size of the array is not fixed. It h
 #### Nested table as Database Object 
 
     CREATE OR REPLACE TYPE NUMBERS_TYPE IS TABLE OF NUMBER;
-
-- <b>COUNT</b>
-- <b>LIMIT</b>
-- <b>FIRST</b>
-- <b>LAST</b>
-- <b>EXTEND</b>
-- <b>DELETE</b>
 
 #### Nested table with simple
 
@@ -341,8 +348,6 @@ Varray is a collection method in which the size of the array is fixed. The array
             DBMS_OUTPUT.PUT_LINE ('Value Stored at index ' || i || ' in NT is ' ||V_ARRAYS (i)); 
         END LOOP;
     END;
-
-
 
 ## Conditional Statements
 
