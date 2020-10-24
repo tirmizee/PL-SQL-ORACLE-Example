@@ -370,6 +370,17 @@ Varray is a collection method in which the size of the array is fixed. The array
         DBMS_OUTPUT.PUT_LINE ('Value '||isbn ('Oracle Database'));
         DBMS_OUTPUT.PUT_LINE ('Value '||isbn ('MySQL'));
     END;
+    /
+    DECLARE
+        TYPE books IS TABLE OF VARCHAR2 (20) INDEX BY PLS_INTEGER;
+        isbn books;
+    BEGIN
+    -- How to insert data into the associative array 
+        isbn(1) := 'Oracle Database';
+        isbn(2) := 'MySQL'; 
+        DBMS_OUTPUT.PUT_LINE ('Value '||isbn (1));
+        DBMS_OUTPUT.PUT_LINE ('Value '||isbn (2));
+    END;
 
 ## Conditional Statements
 
