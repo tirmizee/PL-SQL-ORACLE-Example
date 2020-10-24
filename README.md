@@ -1364,7 +1364,7 @@ PL/SQL procedure has defined IN type as default parameter.
              DBMS_OUTPUT.PUT_LINE ('OTHERS');
     END;
 
-#### Raise exceptions handling
+#### Exceptions handling with Raise 
 
     SET SERVEROUTPUT ON
     BEGIN
@@ -1379,6 +1379,8 @@ PL/SQL procedure has defined IN type as default parameter.
         WHEN NO_DATA_FOUND THEN
             DBMS_OUTPUT.put_line('NO_DATA_FOUND Raised');
     END;
+
+#### Exceptions handling with user-define
 
 #### Nested blocks exception handling
 
