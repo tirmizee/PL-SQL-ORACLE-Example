@@ -1380,7 +1380,23 @@ PL/SQL procedure has defined IN type as default parameter.
             DBMS_OUTPUT.put_line('NO_DATA_FOUND Raised');
     END;
 
-#### Exceptions handling with user-define
+#### Exceptions handling with User-define
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        v_dividend NUMBER := 24;
+        v_divisor NUMBER := 0;
+        v_result NUMBER;
+      ex_arithmetic EXCEPTION;
+    BEGIN
+        IF v_divisor = 0 THEN
+            RAISE ex_arithmetic;
+        END IF;
+    EXCEPTION 
+        WHEN ex_arithmetic THEN
+            DBMS_OUTPUT.PUT_LINE('Error Error - Your Divisor is Zero');
+    END;
+
 
 #### Nested blocks exception handling
 
