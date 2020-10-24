@@ -1415,6 +1415,57 @@ PL/SQL procedure has defined IN type as default parameter.
         EXCEPTION WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE (SQLERRM);
     END;
+    
+ #### Exceptions handling with PRAGMA EXCEPTION_INIT
+ 
+    SET SERVEROUTPUT ON;
+    DECLARE
+        ex_age    EXCEPTION;
+        ex_name   EXCEPTION;
+        v_age     NUMBER        := 18;
+        v_name    VARCHAR2(100) := 'tirmizee';
+
+        PRAGMA    EXCEPTION_INIT(ex_age, -20008);
+        PRAGMA    EXCEPTION_INIT(ex_name, -20009);
+    BEGIN
+        IF v_age < 18 THEN
+            RAISE ex_age;
+        END IF;
+        IF v_name = 'tirmizee' THEN
+            RAISE ex_name;
+        END IF;
+        DBMS_OUTPUT.PUT_LINE('Sure! What would you like to have?');
+
+        EXCEPTION 
+            WHEN ex_age THEN
+                DBMS_OUTPUT.PUT_LINE(SQLERRM);  
+            WHEN ex_name THEN
+                DBMS_OUTPUT.PUT_LINE(SQLERRM);  
+    END;
+    /
+    DECLARE
+        ex_age    EXCEPTION;
+        ex_name   EXCEPTION;
+        v_age     NUMBER        := 18;
+        v_name    VARCHAR2(100) := 'tirmizee';
+
+        PRAGMA    EXCEPTION_INIT(ex_age, -20008);
+        PRAGMA    EXCEPTION_INIT(ex_name, -20009);
+    BEGIN
+        IF v_age < 18 THEN
+            RAISE_APPLICATION_ERROR(-20008, 'You should be 18 or above for the drinks!');
+        END IF;
+        IF v_name = 'tirmizee' THEN
+            RAISE_APPLICATION_ERROR(-20009, 'can not be tirmizee');
+        END IF;
+        DBMS_OUTPUT.PUT_LINE('Sure! What would you like to have?');
+
+        EXCEPTION 
+            WHEN ex_age THEN
+                DBMS_OUTPUT.PUT_LINE(SQLERRM);  
+            WHEN ex_name THEN
+                DBMS_OUTPUT.PUT_LINE(SQLERRM);  
+    END;
 
 #### Nested blocks exception handling
 
