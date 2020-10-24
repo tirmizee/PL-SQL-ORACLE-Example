@@ -1314,6 +1314,22 @@ PL/SQL procedure has defined IN type as default parameter.
              DBMS_OUTPUT.PUT_LINE ('OTHERS');
     END;
 
+#### Raise exceptions handling
+
+    SET SERVEROUTPUT ON
+    BEGIN
+        UPDATE employees
+            SET salary = 10000
+        WHERE employee_id = 9999;
+        IF SQL%ROWCOUNT = 0 THEN
+            RAISE NO_DATA_FOUND;
+        END IF;
+        DBMS_OUTPUT.put_line('NO_DATA_FOUND Not Raised');
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.put_line('NO_DATA_FOUND Raised');
+    END;
+
 #### Nested blocks exception handling
 
     SET SERVEROUTPUT ON;
