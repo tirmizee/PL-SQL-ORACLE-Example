@@ -252,11 +252,15 @@ you must initialize a constants at its declaration
 
 #### Collection Data Types
 
-#### Simple Nested Table Types
+#### Nested Tables
+
+A Nested table is a collection in which the size of the array is not fixed. It has the numeric subscript type. 
+
+#### Nested Table syntax
 
     TYPE nested_table_name IS TABLE OF element_type [NOT NULL];
 
-#### Create Nested table as Database Object 
+#### Nested table as Database Object 
 
     CREATE OR REPLACE TYPE NUMBERS_TYPE IS TABLE OF NUMBER;
 
@@ -267,7 +271,7 @@ you must initialize a constants at its declaration
 - <b>EXTEND</b>
 - <b>DELETE</b>
 
-#### Simple Nested table in PL/SQL block
+#### Nested table with simple
 
     SET SERVEROUTPUT ON;
     DECLARE
@@ -286,7 +290,7 @@ you must initialize a constants at its declaration
 
     END;
 
-#### Simple Nested table (delete and exist)
+#### Nested table (delete and exist)
 
     SET SERVEROUTPUT ON;
     DECLARE
@@ -319,6 +323,8 @@ you must initialize a constants at its declaration
     END;
 
 #### VARRAYs Type
+
+Varray is a collection method in which the size of the array is fixed. The array size cannot be exceeded than its fixed value.     
     
     TYPE type_name IS [VARRAY | VARYING ARRAY] (size_limit) OF element_type;
 .
