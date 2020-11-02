@@ -1679,9 +1679,15 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 ## DIRECTORY
 
+    CREATE [OR REPLACE] DIRECTORY directory_name AS 'path_name'
+
 #### Creating a Directory
 
     CREATE OR REPLACE DIRECTORY bfile_dir AS '/usr/bin/bfile_dir';
+
+#### Grant Permission
+
+    GRANT READ ON DIRECTORY bfile_dir TO userName;
 
 ## Transaction Control Language (TCL)
 
