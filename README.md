@@ -1677,7 +1677,11 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
         DELETE FROM employee WHERE emp_id = 4;
     END;
 
+## DIRECTORY
 
+#### Creating a Directory
+
+    CREATE OR REPLACE DIRECTORY bfile_dir AS '/usr/bin/bfile_dir';
 
 ## Transaction Control Language (TCL)
 
