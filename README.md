@@ -1690,6 +1690,29 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
     GRANT READ ON DIRECTORY USER_DIR TO userName;
     GRANT READ ON DIRECTORY USER_DIR TO PUBLIC;
 
+### UTL_FILE
+
+#### Read a single line of files
+
+    SET SERVEROUTPUT ON;
+    DECLARE
+        v_length NUMBER DEFAULT 200;
+        v_file UTL_FILE.FILE_TYPE;
+        v_line NVARCHAR2(200);
+    BEGIN
+        v_file := UTL_FILE.FOPEN('TEMP_DIR', 'temp.txt', 'R', 200);
+        UTL_FILE.GET_LINE(v_file, v_line);
+        UTL_FILE.FCLOSE(v_file);
+
+        DBMS_OUTPUT.PUT_LINE (v_line); 
+
+        EXCEPTION 
+            WHEN NO_DATA_FOUND THEN
+                DBMS_OUTPUT.PUT_LINE ('File not found.'); 
+    END;
+
+
+
 ## Transaction Control Language (TCL)
 
 #### TCL Statements available in Oracle 
