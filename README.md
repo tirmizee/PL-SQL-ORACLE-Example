@@ -2031,6 +2031,7 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
     GRANT READ ON DIRECTORY USER_DIR TO PUBLIC;
 
 </b>
+
 ### UTL_FILE
 
 UTL_FILE package, PL/SQL programs can read and write operating system text files.
@@ -2047,6 +2048,7 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
         RETURN file_type;
 
 </b>
+
 - <b>FCLOSE</b>
 - <b>GET_LINE</b>
 - <b>PUT_LINE</b>
@@ -2087,6 +2089,7 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 </b>
 
 #### Read a multiple line of file
+
 <b>
     
     SET SERVEROUTPUT ON;
