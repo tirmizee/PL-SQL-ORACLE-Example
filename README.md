@@ -12,6 +12,7 @@
     END;
 
 </b>
+
 - A PL/SQL block without a name is Anonymous block. 
 - A block that has a name is called a Stored Procedure or Function.
 
@@ -23,7 +24,9 @@
     variablename datatype;
 
 </b>
+
 ...
+
 <b>
     
     SET SERVEROUTPUT ON;
@@ -36,6 +39,7 @@
     END;
 
 </b>
+
 ####  Variable checking
 <b>
     
@@ -49,6 +53,7 @@
     END;
 
 </b>
+
 #### Variables with initial or default value
 <b>
     
@@ -71,6 +76,7 @@
     END;
 
 </b>
+
 #### Variables constants
 
 you must initialize a constants at its declaration 
@@ -95,6 +101,7 @@ you must initialize a constants at its declaration
     END;
   
 </b>
+
 ## Data type
 
 #### %TYPE
