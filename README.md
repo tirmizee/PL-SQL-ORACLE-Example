@@ -2224,8 +2224,8 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         v_file_name_desc    NVARCHAR2(200) DEFAULT 'temp3.txt';
     BEGIN
         UTL_FILE.FCOPY(
-            src_location  => v_dir, 
-            src_filename  => v_file_name, 
+            src_location   => v_dir, 
+            src_filename   => v_file_name, 
             dest_location  => v_dir, 
             dest_filename  => v_file_name_desc
         );
