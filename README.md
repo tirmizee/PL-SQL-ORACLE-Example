@@ -1734,6 +1734,8 @@ Opening mode
 - <b>WB</b> write byte mode.
 - <b>AB</b> append byte mode.
 
+If you try to open a file specifying 'a' or 'ab' for open_mode but the file does not exist, the file is created in write mode.
+
 #### Read a single line of file
 
     SET SERVEROUTPUT ON;
