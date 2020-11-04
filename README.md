@@ -351,6 +351,7 @@ A Nested table is a collection in which the size of the array is not fixed. It h
     
 #### Nested table (delete and exist)
 <b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         TYPE LIST_TYPE IS TABLE OF VARCHAR2(10);
