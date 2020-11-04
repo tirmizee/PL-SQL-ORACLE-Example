@@ -2079,6 +2079,20 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
 
 </b>
 
+- <b>FRENAME</b>
+
+<b>
+    
+    UTL_FILE.FRENAME (
+         src_location  IN VARCHAR2,
+         src_filename  IN VARCHAR2, 
+         dest_location IN VARCHAR2,
+         dest_filename IN VARCHAR2,
+         overwrite IN BOOLEAN DEFAULT FALSE
+    );
+
+</b>
+    
 Opening mode
 
 - <b>A</b> append text.
