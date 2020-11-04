@@ -1760,7 +1760,8 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 </b>
 
 #### Read a multiple line of file
-
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         v_line NVARCHAR2(200);
@@ -1776,9 +1777,13 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         END LOOP;
         UTL_FILE.FCLOSE(v_file);
     END;
+    
+</b>
 
 #### Write file
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         v_file         UTL_FILE.FILE_TYPE;
@@ -1795,8 +1800,12 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         DBMS_OUTPUT.PUT_LINE ('Finish.'); 
     END;
 
+</b>
+    
 #### Append file
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         v_file         UTL_FILE.FILE_TYPE;
@@ -1813,6 +1822,8 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         DBMS_OUTPUT.PUT_LINE ('Finish.'); 
     END;
 
+</b>
+    
 ## Transaction Control Language (TCL)
 
 #### TCL Statements available in Oracle 
