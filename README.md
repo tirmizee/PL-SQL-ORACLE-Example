@@ -1738,7 +1738,23 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
         UTL_FILE.FCLOSE(v_file);
     END;
 
+#### Write file
 
+    SET SERVEROUTPUT ON;
+    DECLARE
+        v_file         UTL_FILE.FILE_TYPE;
+        v_line         NVARCHAR2(200);
+        v_dir          NVARCHAR2(200) DEFAULT 'TEMP_DIR';
+        v_file_name    NVARCHAR2(200) DEFAULT 'temp.txt';
+    BEGIN
+        v_file := UTL_FILE.FOPEN(v_dir, v_file_name, 'W', 200);
+        FOR I IN 1..20 LOOP
+            v_line := '0000000000' || i;
+            UTL_FILE.PUT_LINE(v_file, v_line);
+        END LOOP;
+        UTL_FILE.FCLOSE(v_file); 
+        DBMS_OUTPUT.PUT_LINE ('Finish.'); 
+    END;
 
 ## Transaction Control Language (TCL)
 
