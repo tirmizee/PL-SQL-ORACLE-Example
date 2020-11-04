@@ -1699,7 +1699,7 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
 - <b>FCLOSE</b>
 - <b>GET_LINE</b>
 - <b>PUT_LINE</b>
-
+- <b>IS_OPEN</b>
 
 #### Read a single line of file
 
