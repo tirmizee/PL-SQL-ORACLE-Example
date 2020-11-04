@@ -2093,7 +2093,7 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
 
 </b>
     
-Opening mode
+ UTL_FILE Mode
 
 - <b>A</b> append text.
 - <b>R</b> read text.
