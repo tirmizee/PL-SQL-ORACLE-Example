@@ -3,8 +3,6 @@
 
 #### <a name="section-1"></a>Split large file into multiple file
 
-...
-
 <b>
 
     SET SERVEROUTPUT ON;
