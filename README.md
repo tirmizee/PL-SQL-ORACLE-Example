@@ -1022,11 +1022,11 @@ A Cursor is a pointer to this context area
 
 #### Syntax
 
-<b>
+
     
     CURSOR cursor_name IS select_statement;
 
-</b>
+
     
 #### Explicit Cursor fetch single row
 
