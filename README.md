@@ -1692,6 +1692,8 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 ### UTL_FILE
 
+UTL_FILE package, PL/SQL programs can read and write operating system text files.
+
 - <b>FILE_TYPE</b>
 - <b>FOPEN</b>
 - <b>FCLOSE</b>
