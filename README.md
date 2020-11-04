@@ -2247,7 +2247,7 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 
 </b>
 
-#### Rename file
+#### Rename or move file
 
 <b>
     
