@@ -2064,6 +2064,21 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
 
 </b>
 
+- <b>FCOPY</b>
+
+<b>
+    
+    UTL_FILE.FCOPY (
+        src_location     IN VARCHAR2,
+        src_filename     IN VARCHAR2,
+        dest_location    IN VARCHAR2,
+        dest_filename    IN VARCHAR2,
+        start_line       IN BINARY_INTEGER DEFAULT 1,
+        end_line         IN BINARY_INTEGER DEFAULT NULL
+    );
+
+</b>
+
 Opening mode
 
 - <b>A</b> append text.
