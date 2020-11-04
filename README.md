@@ -1702,17 +1702,20 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
     CREATE OR REPLACE DIRECTORY USER_DIR AS '/usr/bin/bfile_dir';
 
 #### Grant Permission
-
+<b>
+    
     GRANT READ ON DIRECTORY USER_DIR TO userName;
     GRANT READ ON DIRECTORY USER_DIR TO PUBLIC;
 
+</b>
 ### UTL_FILE
 
 UTL_FILE package, PL/SQL programs can read and write operating system text files.
 
 - <b>FILE_TYPE</b>
 - <b>FOPEN</b>
-
+<b>
+    
         UTL_FILE.FOPEN (
            location     IN VARCHAR2,
            filename     IN VARCHAR2,
@@ -1720,6 +1723,7 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
            max_linesize IN BINARY_INTEGER) 
         RETURN file_type;
 
+</b>
 - <b>FCLOSE</b>
 - <b>GET_LINE</b>
 - <b>PUT_LINE</b>
