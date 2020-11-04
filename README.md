@@ -1,6 +1,6 @@
 # PL-SQL-ORACLE-Example
 
-Sample PL/SQL Programs.
+Sample PL/SQL Programs. https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 
 ## Block
 <b>
@@ -2283,9 +2283,6 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 - <b>ROLLBACK</b>     : Rollbacks the state of database to the last commit point.
 - <b>SAVEPOINT</b>    : Use to specify a point in transaction to which later you can rollback.
 
-### Example
-
-- https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 
 ### Reference
 
