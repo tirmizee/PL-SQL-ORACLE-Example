@@ -1022,15 +1022,15 @@ A Cursor is a pointer to this context area
 
 #### Syntax
 
-
+<b>
     
     CURSOR cursor_name IS select_statement;
 
-
+</b>
     
 #### Explicit Cursor fetch single row
 
-<b>
+
     
     SET SERVEROUTPU ON;
 
@@ -1047,7 +1047,7 @@ A Cursor is a pointer to this context area
         CLOSE CURSOR_EMPLOYEE;
     END;
 
-</b>
+
     
 #### Explicit Cursor fetch multiple row
 
