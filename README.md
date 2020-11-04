@@ -2246,6 +2246,34 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
     END;
 
 </b>
+
+#### Rename file
+
+<b>
+    
+    DECLARE
+        v_dir               NVARCHAR2(200) DEFAULT 'TEMP_DIR';
+        v_file_name         NVARCHAR2(200) DEFAULT 'temp.txt';
+        v_file_rename       NVARCHAR2(200) DEFAULT 'rename.txt';
+    BEGIN
+        UTL_FILE.FRENAME(v_dir, v_file_name, v_dir, v_file_rename, TRUE);
+    END;
+    /
+    DECLARE
+        v_dir               NVARCHAR2(200) DEFAULT 'TEMP_DIR';
+        v_file_name         NVARCHAR2(200) DEFAULT 'rename.txt';
+        v_file_rename       NVARCHAR2(200) DEFAULT 'rename2.txt';
+    BEGIN
+        UTL_FILE.FRENAME(
+            src_location   => v_dir, 
+            src_filename   => v_file_name, 
+            dest_location  => v_dir, 
+            dest_filename  => v_file_rename, 
+            overwrite      => TRUE
+        );
+    END;    
+
+</b>
     
 ## Transaction Control Language (TCL)
 
