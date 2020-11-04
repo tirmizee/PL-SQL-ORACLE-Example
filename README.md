@@ -2163,7 +2163,34 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
     END;
 
 </b>
+
+#### Remove file
+
+<b>
     
+    SET SERVEROUTPUT ON;
+    DECLARE
+        v_file         UTL_FILE.FILE_TYPE;
+        v_line         NVARCHAR2(200);
+        v_dir          NVARCHAR2(200) DEFAULT 'TEMP_DIR';
+        v_file_name    NVARCHAR2(200) DEFAULT 'temp1.txt';
+    BEGIN
+        v_file := UTL_FILE.FOPEN(v_dir, v_file_name, 'W', 200);
+        v_line := '0000000000';
+        UTL_FILE.PUT_LINE(v_file, v_line);
+        UTL_FILE.FCLOSE(v_file); 
+        DBMS_OUTPUT.PUT_LINE ('Finish.'); 
+    END;
+    /
+    DECLARE
+        v_dir          NVARCHAR2(200) DEFAULT 'TEMP_DIR';
+        v_file_name    NVARCHAR2(200) DEFAULT 'temp1.txt';
+    BEGIN
+        UTL_FILE.fremove (v_dir, v_file_name);
+    END;
+
+</b>
+
 ## Transaction Control Language (TCL)
 
 #### TCL Statements available in Oracle 
