@@ -17,7 +17,13 @@
         END LOOP;
         UTL_FILE.FCLOSE(v_file);
     END;
-    /
+
+</b>
+
+procedure 
+
+<b>
+
     SET SERVEROUTPUT ON;
 
     CREATE OR REPLACE PROCEDURE SPRIT_FILE(
@@ -56,7 +62,13 @@
         END LOOP;
         DBMS_OUTPUT.PUT_LINE ('Finish.'); 
     END;
-    /
+
+</b>
+
+using
+
+<b>
+
     BEGIN
        SPRIT_FILE (
             file_name   => 'transaction.csv', 
