@@ -313,8 +313,12 @@ A Nested table is a collection in which the size of the array is not fixed. It h
 
 #### Nested Table syntax
 
+<b>
+    
     TYPE nested_table_name IS TABLE OF element_type [NOT NULL];
 
+</b>
+    
 #### Nested table as Database Object 
 <b>
     
@@ -666,6 +670,8 @@ Varray is a collection method in which the size of the array is fixed. The array
     
 ##### Simple loop with exit
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -682,9 +688,12 @@ Varray is a collection method in which the size of the array is fixed. The array
         END LOOP;
         dbms_output.put_line('Finish');
     END;
+
+</b>
     
 ##### Simple loop with exit when
-
+<b>
+    
     DECLARE
         vCount NUMBER(3) DEFAULT 0;
         vResult NUMBER;
@@ -698,15 +707,22 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+</b>
+    
 #### While loop
-
+<b>
+    
     WHILE diffcondition LOOP
         statement1;
         statement1;
     END LOOP;
 
+</b>
+    
 ...
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -737,15 +753,23 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+</b>
+    
 #### FOR Loop
 
+<b>
+    
     FOR count IN [REVERSE] lower .. upper LOOP
         statement;
         statement;
     END LOOP;
 
+</b>
+
 ...
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     BEGIN
@@ -762,19 +786,27 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+</b>
+    
 #### FORALL
 
 FORALL statement helps to process bulk data in an optimized manner by sending DML statements or a MERGE statement (if you are using 11g or above) in batches from PL/SQL engine to SQL engine. <b>FORALL is not FOR LOOP</b>
 
 #### FORALL syntax 
 
+<b>
+    
     FORALL index IN bound_clauses 
         [SAVE EXCEPTION]
         DML statement;
+
+</b>
+    
 - <b>SAVE EXCEPTION</b> is an optional choice which keeps the FORALL statement running even when DML statement causes an exception. These exceptions are saved in a cursor attribute called SQL%Bulk_Exceptions.
 - <b>DML Statement</b> DML statement could be any DML statement like INSERT, UPDATE or DELETE
 
 #### FORALL simple with insert   
+<b>
 
     SET SERVEROUTPUT ON;
     DECLARE
@@ -795,8 +827,12 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         ROLLBACK;
     END;
 
+</b>
+    
 #### FORALL simple with update   
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         TYPE TYPE_EMPLOYEE IS TABLE OF employee%ROWTYPE ;
@@ -819,8 +855,12 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         COMMIT;
     END;
 
+</b>
+    
 ### Select into
 
+<b>
+    
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -845,8 +885,12 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         dbms_output.put_line(vNumber);
     END;
 
+</b>
+    
 ### Execute Immediate
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         temp employee%ROWTYPE;
@@ -860,16 +904,23 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
+</b>
+
 #### Immediate Syntax
 
+<b>
+    
     EXECUTE IMMEDIATE <dynamic_query>
     [INTO <variable>]
     [USING <bind_variable_value>]
     [RETURNING|RETURN-INTO <clause>];  
 
-
+</b>
+    
 #### Immediate with INTO
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         temp employee%ROWTYPE;
@@ -889,8 +940,12 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         DBMS_OUTPUT.PUT_LINE (temp);
     END;
 
+</b>
+    
 #### Immediate with USING 
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         temp employee%ROWTYPE;
@@ -904,8 +959,12 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
+</b>
+    
 #### Immediate with BULK COLLECT INTO
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         TYPE LIST_TYPE IS TABLE OF NVARCHAR2(100);
@@ -931,6 +990,8 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         END LOOP;
     END;
 
+</b>
+    
 ## CURSOR
 
 
@@ -958,10 +1019,16 @@ A Cursor is a pointer to this context area
 
 #### Syntax
 
+<b>
+    
     CURSOR cursor_name IS select_statement;
 
+</b>
+    
 #### Explicit Cursor fetch single row
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -977,8 +1044,12 @@ A Cursor is a pointer to this context area
         CLOSE CURSOR_EMPLOYEE;
     END;
 
+</b>
+    
 #### Explicit Cursor fetch multiple row
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -999,8 +1070,12 @@ A Cursor is a pointer to this context area
         CLOSE CURSOR_EMPLOYEE;
     END;
 
+</b>
+    
 #### Static Cursor FOR Loop
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -1014,8 +1089,12 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
+</b>
+    
 #### Static Cursor FOR LOOP with a SELECT statement
 
+<b>
+    
     SET SERVEROUTPU ON;
     DECLARE
     BEGIN
@@ -1028,10 +1107,17 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
+</b>
+    
 #### Static Cursor with parameterized
 
+<b>
+    
     CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
+
+<b/>
 .
+<b>
     
     SET SERVEROUTPU ON;
 
@@ -1056,9 +1142,13 @@ A Cursor is a pointer to this context area
             dbms_output.put_line(row_cursor.emp_code || ' ' || row_cursor.EMP_FIRST_NAME);
         END LOOP;
     END;
-   
+
+</b>
+
 #### Static Cursor with parameterized and default value   
-   
+
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -1072,6 +1162,8 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
+</b>
+    
 ### Ref Cursors
 
 It is a PL/SQL datatype using which you can declare a special type of variable called Cursor Variable.
@@ -1093,14 +1185,24 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
 
 #### Syntax of Strong Ref Cursors
 
+<b>
+    
     TYPE cursor_variable_name IS REF CURSOR RETURN (return_type);
 
+</b>
+    
 #### Syntax of Weak Ref Cursors
 
+<b>
+    
     TYPE ref_cursor_name IS REF CURSOR;
 
+</b>
+    
 #### Strong Ref Cursors
 
+<b>
+    
     SET SERVEROUTPU ON;
     DECLARE
         TYPE ref_employee IS REF CURSOR RETURN employee%ROWTYPE;
@@ -1131,8 +1233,12 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_employee;
     END;
 
+</b>
+    
 #### Strong Ref Cursors with Defined Record Datatype
 
+<b>
+    
     SET SERVEROUTPU ON;
     DECLARE
         TYPE type_detail IS RECORD (
@@ -1171,8 +1277,12 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_detail;
     END;
 
+</b>
+    
 #### Weak Ref Cursors
 
+<b>
+    
     SET SERVEROUTPU ON;
     DECLARE
         TYPE ref_employee IS REF CURSOR;
@@ -1187,10 +1297,14 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_employee;
     END;
 
+</b>
+    
 #### Weak Ref Cursors SYS_REFCURSOR
 
 SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Oracle database software.
 
+<b>
+    
     SET SERVEROUTPU ON;
     DECLARE
         vFirstName NVARCHAR2(100);
@@ -1206,9 +1320,13 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
             END LOOP;
         CLOSE CURSOR_EMPLOYEE;
     END;
+
+</b>
     
 ## Functions 
 
+<b>
+    
     CREATE [OR REPLACE] FUNCTION function_name(Parameter 1, Parameter 2,...) RETURN data_type
     IS
         Declare variable...;
@@ -1217,8 +1335,12 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         RETURN (value);
     END;
 
+</b>
+    
 #### Functions with simple
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     CREATE OR REPLACE FUNCTION funcAdd(num1 NUMBER, num2 NUMBER) RETURN NUMBER
@@ -1235,7 +1357,11 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         dbms_output.put_line(vTemp);
     END;
 
+</b>
+    
 #### Nested function
+
+<b>
     
     CREATE OR REPLACE FUNCTION nested_func(p_number1 NUMBER DEFAULT 0, p_number2 NUMBER DEFAULT 0) RETURN NUMBER
     AS
@@ -1255,8 +1381,12 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         dbms_output.put_line(nested_func(10, 20));
     END;
 
+</b>
+    
 ## Stored Procedure 
 
+<b>
+    
     CREATE [OR REPLACE] PROCEDURE procedure_name(Parameter 1, Parameter 2,...) 
     IS
         Declare variable...;
@@ -1266,6 +1396,8 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         executable statement;
     END procedure_name;
 
+</b>
+    
 #### Stored Procedure parameters
 
 - <b>IN</b> type parameter sends values to a Stored Procedure.
@@ -1276,6 +1408,8 @@ PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter.
 
 #### Stored Procedure without parameters
 
+<b>
+    
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
         vCode NVARCHAR2(20) DEFAULT '001';
         vName NVARCHAR2(100) := 'Pratya Yeekhaday';
@@ -1286,11 +1420,15 @@ PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter.
     /
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
+
+</b>
     
 #### Stored Procedure with parameters   
 
 PL/SQL procedure has defined IN type as default parameter.
 
+<b>
+    
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER(pUserId NUMBER, pEnable NUMBER) 
     AS
         vUser USERS%ROWTYPE;
@@ -1303,8 +1441,12 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC PROC_WITH_PARAMETER(1,1);
 
+</b>
+    
 #### Stored Procedure with parameters IN 
 
+<b>
+    
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER(pUserId IN NUMBER , pEnable IN NUMBER) 
     AS
         vUser USERS%ROWTYPE;
@@ -1317,8 +1459,12 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC PROC_WITH_PARAMETER(1,1);
 
+</b>
+    
 #### Stored Procedure with parameters OUT
 
+<b>
+    
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER_OUT (
         inProfileId   IN  NUMBER , 
         outFirstName  OUT NVARCHAR2,
@@ -1364,8 +1510,12 @@ PL/SQL procedure has defined IN type as default parameter.
         dbms_output.put_line(outEmail);
     END;
 
+</b>
+    
 #### Stored Procedure with SYS_REFCURSOR parameters OUT
 
+<b>
+    
     CREATE OR REPLACE PROCEDURE PROC_REFCURSOR_OUT(pEefCur OUT SYS_REFCURSOR)
     AS
     BEGIN
@@ -1388,9 +1538,12 @@ PL/SQL procedure has defined IN type as default parameter.
         CLOSE ref_cur;
     END;
 
+</b>
 
 #### Stored Procedure with handle exception
 
+<b>
+    
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
         vCode NVARCHAR2(20);
         vName NVARCHAR2(100);
@@ -1407,6 +1560,8 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
 
+</b>
+    
 ## Exception
 
 ### Exception type
@@ -1416,6 +1571,8 @@ PL/SQL procedure has defined IN type as default parameter.
 
 ### Syntax
 
+<b>
+    
     DECLARE
         declare variable statement
     BEGIN
@@ -1425,8 +1582,12 @@ PL/SQL procedure has defined IN type as default parameter.
         execute statement
     END;
 
+</b>
+    
 #### Single exception handling
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         temp employee%ROWTYPE;
@@ -1440,8 +1601,12 @@ PL/SQL procedure has defined IN type as default parameter.
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
+</b>
+    
 #### Multiple exception handling
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         temp employee%ROWTYPE;
@@ -1457,8 +1622,12 @@ PL/SQL procedure has defined IN type as default parameter.
              DBMS_OUTPUT.PUT_LINE ('OTHERS');
     END;
 
+</b>
+    
 #### Exceptions handling with Raise 
 
+<b>
+    
     SET SERVEROUTPUT ON
     BEGIN
         UPDATE employees
@@ -1473,8 +1642,12 @@ PL/SQL procedure has defined IN type as default parameter.
             DBMS_OUTPUT.put_line('NO_DATA_FOUND Raised');
     END;
 
+</b>
+    
 #### Exceptions handling with User-define
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         v_dividend NUMBER := 24;
@@ -1490,7 +1663,11 @@ PL/SQL procedure has defined IN type as default parameter.
             DBMS_OUTPUT.PUT_LINE('Error Error - Your Divisor is Zero');
     END;
 
+</b>
+    
 #### Exceptions handling with RAISE_APPLICATION_ERROR
+
+<b>
     
     -- syntax
     raise_application_error (error_number, message , [{TRUE | FALSE}]);
@@ -1508,9 +1685,13 @@ PL/SQL procedure has defined IN type as default parameter.
         EXCEPTION WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE (SQLERRM);
     END;
+ 
+ </b>
     
  #### Exceptions handling with PRAGMA EXCEPTION_INIT
  
+ <b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         ex_age    EXCEPTION;
@@ -1560,8 +1741,12 @@ PL/SQL procedure has defined IN type as default parameter.
                 DBMS_OUTPUT.PUT_LINE(SQLERRM);  
     END;
 
+</b>
+    
 #### Nested blocks exception handling
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         V_CODE VARCHAR2(100);
@@ -1579,6 +1764,8 @@ PL/SQL procedure has defined IN type as default parameter.
         WHEN NO_DATA_FOUND THEN DBMS_OUTPUT.PUT_LINE('NO EMP_CODE FOUND FOR '||V_CODE);
     END;
 
+</b>
+    
 ### Calling Notation 
 
 Calling notation is a way of providing values to the parameters of a subroutine such as PL/SQL function or a stored procedure.
@@ -1591,6 +1778,8 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
 #### Using Named Calling Notation
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
 
@@ -1613,6 +1802,8 @@ Calling notation is a way of providing values to the parameters of a subroutine 
         CALCULATE2(p_num3 => 10,p_num1 => 4);
     END;
 
+</b>
+    
 ## Package 
 
 - Package header
@@ -1620,6 +1811,8 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
 #### Package header
 
+<b>
+    
     CREATE OR REPLACE PACKAGE PKG_SIMPLE AS
         MAX_NUMBER NUMBER DEFAULT 999;
         MIN_NUMBER NUMBER DEFAULT 0;
@@ -1634,8 +1827,12 @@ Calling notation is a way of providing values to the parameters of a subroutine 
         PROCEDURE PROC_STRING(fname NVARCHAR2, lname NVARCHAR2);
     END PKG_SIMPLE;
 
+</b>
+    
 #### Package body
 
+<b>
+    
     CREATE OR REPLACE PACKAGE BODY PKG_SIMPLE AS
      
          FUNCTION PRT_STRING RETURN NVARCHAR2 IS
@@ -1666,8 +1863,12 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
     END PKG_SIMPLE;
 
+</b>
+    
 #### Using package
 
+<b>
+    
     SET SERVEROUTPU ON;
     DECLARE
         v_simple PKG_SIMPLE.SIMPLE_TYPE;
@@ -1692,6 +1893,8 @@ Calling notation is a way of providing values to the parameters of a subroutine 
     EXEC PKG_SIMPLE.PROC_STRING;
     EXEC PKG_SIMPLE.PROC_STRING('PRATYA','YEEKHADAY');
 
+</b>
+    
 ## Triggers 
 
 Triggers are named PL/SQL blocks which are stored in the database.  We can also say that they are specialized stored programs which execute implicitly when a triggering event occurs. This means we cannot call and execute them directly instead they only get triggered by events in the database.
@@ -1719,11 +1922,17 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 ### Disabling or Enabling a Single Trigger
 
+<b>
+    
     ALTER TRIGGER eval_change_trigger DISABLE;
     ALTER TRIGGER eval_change_trigger ENABLE;
 
+</b>
+    
 #### Trigger syntax
 
+<b>
+    
     CREATE [OR REPLACE] TRIGGER ttrigger_name
     {BEFORE|AFTER} triggering_event ON table_name
     [FOR EACH ROW]
@@ -1738,8 +1947,12 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
       exception-handling statements
     END;
 
+</b>
+    
 #### Trigger single event
 
+<b>
+    
     CREATE OR REPLACE TRIGGER TRG_EMPLOYEE_UPDATE
         AFTER UPDATE ON employee
         FOR EACH ROW
@@ -1757,8 +1970,12 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
     BEGIN
         UPDATE employee set emp_code = 'EM001' WHERE emp_code = 'EM001';
     END;
+ 
+ </b>
     
  #### Trigger multiple event
+  
+ <b>
     
     CREATE OR REPLACE TRIGGER TRG_EMPLOYEE_UPDATE
     AFTER INSERT OR UPDATE OR DELETE ON employee
@@ -1786,14 +2003,24 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
         DELETE FROM employee WHERE emp_id = 4;
     END;
 
+</b>
+    
 ## DIRECTORY
 
+<b>
+    
     CREATE [OR REPLACE] DIRECTORY directory_name AS 'path_name'
 
+</b>
+    
 #### Creating a Directory
 
+<b>
+    
     CREATE OR REPLACE DIRECTORY USER_DIR AS '/usr/bin/bfile_dir';
 
+</b>
+    
 #### Grant Permission
 <b>
     
