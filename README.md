@@ -1712,6 +1712,14 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
 
 - <b>FILE_TYPE</b>
 - <b>FOPEN</b>
+
+        UTL_FILE.FOPEN (
+           location     IN VARCHAR2,
+           filename     IN VARCHAR2,
+           open_mode    IN VARCHAR2,
+           max_linesize IN BINARY_INTEGER) 
+        RETURN file_type;
+
 - <b>FCLOSE</b>
 - <b>GET_LINE</b>
 - <b>PUT_LINE</b>
