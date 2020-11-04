@@ -1532,6 +1532,7 @@ Calling notation is a way of providing values to the parameters of a subroutine 
             FIELD_1   NUMBER(10,0), 
             FIELD_2   NVARCHAR2(20)
         );
+        TYPE LIST_TYPE IS TABLE OF NUMBER;
         FUNCTION PRT_STRING RETURN NVARCHAR2;
         FUNCTION PRT_STRING(fname NVARCHAR2, lname NVARCHAR2) RETURN NVARCHAR2;
         PROCEDURE PROC_STRING;
@@ -1574,15 +1575,18 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
     SET SERVEROUTPU ON;
     DECLARE
-        v_p PKG_SIMPLE.SIMPLE_TYPE;
+        v_simple PKG_SIMPLE.SIMPLE_TYPE;
+        v_list   PKG_SIMPLE.LIST_TYPE := PKG_SIMPLE.LIST_TYPE(1,2,3,4,5);
     BEGIN
-        v_p.FIELD_1 := 1111;
-        v_p.FIELD_2 := 'PPPPPPP';
-        DBMS_OUTPUT.PUT_LINE(v_p.FIELD_1 || v_p.FIELD_2);
+        v_simple.FIELD_1 := 1111;
+        v_simple.FIELD_2 := 'PPPPPPP';
+        DBMS_OUTPUT.PUT_LINE(v_simple.FIELD_1 || v_simple.FIELD_2);
+        DBMS_OUTPUT.PUT_LINE(v_list(1) || v_list(2) || v_list(3) || v_list(4));
         DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.PRT_STRING);
         DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.PRT_STRING('PRATYA','YEEKHADAY'));
         PKG_SIMPLE.PROC_STRING;
         PKG_SIMPLE.PROC_STRING('PRATYA','YEEKHADAY');
+    END;,'YEEKHADAY');
     END;
     /
     SELECT 
