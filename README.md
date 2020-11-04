@@ -2025,6 +2025,7 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 </b>
     
 #### Grant Permission
+
 <b>
     
     GRANT READ ON DIRECTORY USER_DIR TO userName;
@@ -2038,6 +2039,7 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
 
 - <b>FILE_TYPE</b>
 - <b>FOPEN</b>
+
 <b>
     
         UTL_FILE.FOPEN (
