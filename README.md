@@ -1077,6 +1077,7 @@ A Cursor is a pointer to this context area
     
 #### Static Cursor FOR Loop
 
+<b>
     
     SET SERVEROUTPU ON;
 
@@ -1091,7 +1092,7 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
-
+<b>
     
 #### Static Cursor FOR LOOP with a SELECT statement
 
@@ -1113,11 +1114,11 @@ A Cursor is a pointer to this context area
     
 #### Static Cursor with parameterized
 
-<b>
+
     
     CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
 
-<b/>
+
 
 .
 
