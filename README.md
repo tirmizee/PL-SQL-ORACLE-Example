@@ -1,7 +1,8 @@
 # PL-SQL-ORACLE-Example
 
 ## Block
-
+<b>
+    
     DECLARE
       Declartion statement
     BEGIN 
@@ -10,17 +11,21 @@
       Exception handling statement
     END;
 
+</b>
 - A PL/SQL block without a name is Anonymous block. 
 - A block that has a name is called a Stored Procedure or Function.
 
 ## Variable
 
 #### Declaring variables
-
+<b>
+    
     variablename datatype;
 
+</b>
 ...
-
+<b>
+    
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -30,8 +35,10 @@
        NULL;
     END;
 
+</b>
 ####  Variable checking
-
+<b>
+    
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -41,8 +48,10 @@
        NULL;
     END;
 
+</b>
 #### Variables with initial or default value
-
+<b>
+    
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -61,10 +70,12 @@
         dbms_output.put_line(vNumber);
     END;
 
+</b>
 #### Variables constants
 
 you must initialize a constants at its declaration 
-
+<b>
+    
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -83,7 +94,7 @@ you must initialize a constants at its declaration
         dbms_output.put_line(vMsg);
     END;
   
-
+</b>
 ## Data type
 
 #### %TYPE
