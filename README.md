@@ -2206,6 +2206,33 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 
 </b>
 
+#### Copy file
+
+<b>
+    
+    DECLARE
+        v_dir               NVARCHAR2(200) DEFAULT 'TEMP_DIR';
+        v_file_name         NVARCHAR2(200) DEFAULT 'temp.txt';
+        v_file_name_desc    NVARCHAR2(200) DEFAULT 'temp2.txt';
+    BEGIN
+        UTL_FILE.FCOPY(v_dir, v_file_name, v_dir, v_file_name_desc);
+    END;
+    /
+    DECLARE
+        v_dir               NVARCHAR2(200) DEFAULT 'TEMP_DIR';
+        v_file_name         NVARCHAR2(200) DEFAULT 'temp2.txt';
+        v_file_name_desc    NVARCHAR2(200) DEFAULT 'temp3.txt';
+    BEGIN
+        UTL_FILE.FCOPY(
+            src_location  => v_dir, 
+            src_filename  => v_file_name, 
+            dest_location  => v_dir, 
+            dest_filename  => v_file_name_desc
+        );
+    END;
+
+</b>
+    
 ## Transaction Control Language (TCL)
 
 #### TCL Statements available in Oracle 
