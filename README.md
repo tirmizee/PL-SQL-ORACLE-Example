@@ -1528,6 +1528,10 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 #### Package header
 
     CREATE OR REPLACE PACKAGE PKG_SIMPLE AS
+        TYPE SIMPLE_TYPE IS RECORD (
+            FIELD_1   NUMBER(10,0), 
+            FIELD_2   NVARCHAR2(20)
+        );
         FUNCTION PRT_STRING RETURN NVARCHAR2;
         FUNCTION PRT_STRING(fname NVARCHAR2, lname NVARCHAR2) RETURN NVARCHAR2;
         PROCEDURE PROC_STRING;
@@ -1569,7 +1573,12 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 #### Using package
 
     SET SERVEROUTPU ON;
+    DECLARE
+        v_p PKG_SIMPLE.SIMPLE_TYPE;
     BEGIN
+        v_p.FIELD_1 := 1111;
+        v_p.FIELD_2 := 'PPPPPPP';
+        DBMS_OUTPUT.PUT_LINE(v_p.FIELD_1 || v_p.FIELD_2);
         DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.PRT_STRING);
         DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.PRT_STRING('PRATYA','YEEKHADAY'));
         PKG_SIMPLE.PROC_STRING;
