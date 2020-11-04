@@ -3,6 +3,8 @@
 
 #### <a name="section-1"></a>Split large file into multiple file
 
+Create temp file
+
 <b>
   
     SET SERVEROUTPUT ON;
@@ -20,7 +22,7 @@
 
 </b>
 
-procedure 
+Create SPRIT_FILE procedure.
 
 <b>
 
@@ -65,7 +67,7 @@ procedure
 
 </b>
 
-using
+Using SPRIT_FILE procedure.
 
 <b>
 
