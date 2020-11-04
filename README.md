@@ -1119,7 +1119,9 @@ A Cursor is a pointer to this context area
     CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
 
 <b/>
+
 .
+
 <b>
     
     SET SERVEROUTPU ON;
