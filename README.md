@@ -2044,7 +2044,7 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
            location     IN VARCHAR2,
            filename     IN VARCHAR2,
            open_mode    IN VARCHAR2,
-           max_linesize IN BINARY_INTEGER) 
+           max_linesize IN BINARY_INTEGER ) 
         RETURN file_type;
 
 </b>
@@ -2053,6 +2053,16 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
 - <b>GET_LINE</b>
 - <b>PUT_LINE</b>
 - <b>IS_OPEN</b>
+- <b>FREMOVE</b>
+
+<b>
+    
+    UTL_FILE.FREMOVE (
+       location IN VARCHAR2,
+       filename IN VARCHAR2
+    );
+
+</b>
 
 Opening mode
 
