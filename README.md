@@ -1692,6 +1692,13 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 ### UTL_FILE
 
+- <b>FILE_TYPE</b>
+- <b>FOPEN</b>
+- <b>FCLOSE</b>
+- <b>GET_LINE</b>
+- <b>PUT_LINE</b>
+
+
 #### Read a single line of file
 
     SET SERVEROUTPUT ON;
