@@ -1528,6 +1528,8 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 #### Package header
 
     CREATE OR REPLACE PACKAGE PKG_SIMPLE AS
+        MAX_NUMBER NUMBER DEFAULT 999;
+        MIN_NUMBER NUMBER DEFAULT 0;
         TYPE SIMPLE_TYPE IS RECORD (
             FIELD_1   NUMBER(10,0), 
             FIELD_2   NVARCHAR2(20)
@@ -1580,13 +1582,14 @@ Calling notation is a way of providing values to the parameters of a subroutine 
     BEGIN
         v_simple.FIELD_1 := 1111;
         v_simple.FIELD_2 := 'PPPPPPP';
+        DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.MIN_NUMBER);
+        DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.MAX_NUMBER);
         DBMS_OUTPUT.PUT_LINE(v_simple.FIELD_1 || v_simple.FIELD_2);
         DBMS_OUTPUT.PUT_LINE(v_list(1) || v_list(2) || v_list(3) || v_list(4));
         DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.PRT_STRING);
         DBMS_OUTPUT.PUT_LINE(PKG_SIMPLE.PRT_STRING('PRATYA','YEEKHADAY'));
         PKG_SIMPLE.PROC_STRING;
         PKG_SIMPLE.PROC_STRING('PRATYA','YEEKHADAY');
-    END;,'YEEKHADAY');
     END;
     /
     SELECT 
