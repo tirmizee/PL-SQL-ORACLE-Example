@@ -1730,7 +1730,7 @@ Opening mode
 - <b>A</b> append text.
 - <b>R</b> read text.
 - <b>W</b> write text.
-- <b>RB/b> read byte mode.
+- <b>RB</b> read byte mode.
 - <b>WB</b> write byte mode.
 - <b>AB</b> append byte mode.
 
@@ -1738,6 +1738,8 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 
 #### Read a single line of file
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         v_length NUMBER DEFAULT 200;
@@ -1754,6 +1756,8 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
             WHEN NO_DATA_FOUND THEN
                 DBMS_OUTPUT.PUT_LINE ('File not found.'); 
     END;
+
+</b>
 
 #### Read a multiple line of file
 
