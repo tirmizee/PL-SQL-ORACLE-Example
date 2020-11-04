@@ -105,7 +105,8 @@ you must initialize a constants at its declaration
 ## Data type
 
 #### %TYPE
-
+<b>
+    
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -170,8 +171,10 @@ you must initialize a constants at its declaration
         dbms_output.put_line(vAcountExpiredDate);
     END;
 
+</b>
+    
 #### %ROWTYPE
-
+<b>
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -206,14 +209,22 @@ you must initialize a constants at its declaration
         dbms_output.put_line(tempEmp.MANAGER_ID);
     END;
 
+</b>
+    
 #### Record type
-
+<b>
+    
     TYPE type_name IS RECORD (
        field_name data_type,
        field_name data_type,
        ...N
     );
+
+</b>
+
 .
+
+<b>
 
     SET SERVEROUTPU ON;
 
@@ -268,6 +279,8 @@ you must initialize a constants at its declaration
         END LOOP;
     END;
 
+</b>
+    
 #### Collection Data Types
 
 A homogeneous single dimension data structure which is made up of elements of same datatype is called collection in Oracle Database. In simple language we can say that, an array in Oracle Database is called Collection.
@@ -303,11 +316,16 @@ A Nested table is a collection in which the size of the array is not fixed. It h
     TYPE nested_table_name IS TABLE OF element_type [NOT NULL];
 
 #### Nested table as Database Object 
-
+<b>
+    
     CREATE OR REPLACE TYPE NUMBERS_TYPE IS TABLE OF NUMBER;
 
+</b>
+    
 #### Nested table with simple
 
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         TYPE NUMBERS_TYPE IS TABLE OF NUMBER;
@@ -325,8 +343,10 @@ A Nested table is a collection in which the size of the array is not fixed. It h
 
     END;
 
+</b>
+    
 #### Nested table (delete and exist)
-
+<b>
     SET SERVEROUTPUT ON;
     DECLARE
         TYPE LIST_TYPE IS TABLE OF VARCHAR2(10);
@@ -357,13 +377,21 @@ A Nested table is a collection in which the size of the array is not fixed. It h
         END LOOP;
     END;
 
+</b>
+    
 #### VARRAYs Type
 
 Varray is a collection method in which the size of the array is fixed. The array size cannot be exceeded than its fixed value.     
+
+<b>
     
     TYPE type_name IS [VARRAY | VARYING ARRAY] (size_limit) OF element_type;
-.
 
+</b>
+
+.
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         TYPE ARRAYS_TYPE IS VARRAY(5) OF NVARCHAR2(5);
@@ -377,12 +405,18 @@ Varray is a collection method in which the size of the array is fixed. The array
         END LOOP;
     END;
 
+</b>
+    
 ####  Associative array Type
-
+<b>
+    
     TYPE aArray_name IS TABLE OF element_datatype [Not Null] INDEX BY index_elements_datatype;
 
+</b>
+    
 ####  Associative array with simple 
-
+<b>
+    
     SET SERVEROUTPUT ON;
     DECLARE
         TYPE books IS TABLE OF NUMBER INDEX BY VARCHAR2 (20);
@@ -406,16 +440,23 @@ Varray is a collection method in which the size of the array is fixed. The array
         DBMS_OUTPUT.PUT_LINE ('Value '||isbn (2));
     END;
 
+</b>
+    
 ## Conditional Statements
 
 #### IF - THEN
-
+<b>
+    
     IF condition THEN
         statement;
         ...
     END IF;
 
+</b>
+
 ...
+
+<b>
 
     SET SERVEROUTPU ON;
 
@@ -439,15 +480,24 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+</b>
+    
 #### IF-THEN-ELSE
 
+<b>
+    
     IF condition THEN
         statement;
     ELSE
         statement;
     END IF;
+
+</b>
+
 ...
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -460,9 +510,13 @@ Varray is a collection method in which the size of the array is fixed. The array
         END IF;
         dbms_output.put_line('Finish');
     END;
+ 
+ </b>
     
 #### IF-THEN-ELSIF    
 
+<b>
+    
     IF condition1 THEN
         statement;
     ELSIF condition2 THEN
@@ -473,8 +527,12 @@ Varray is a collection method in which the size of the array is fixed. The array
         statement;
     END IF;
 
+</b>
+    
 ...
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -493,17 +551,25 @@ Varray is a collection method in which the size of the array is fixed. The array
         END IF;
         dbms_output.put_line('Finish');
     END;
+ 
+ </b>
     
 #### Case Expression
 
+<b>
+    
     CASE search_expression
         WHEN input_expression THEN statement;
         ....
         ELSE statement;
     END CASE;
 
+</b>
+    
 ##### Simple Case Expression
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -542,8 +608,12 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line(vResult);
     END;
 
+</b>
+    
 ##### Searched Case Expression
 
+<b>
+    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -579,16 +649,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line(vResult);
     END;
 
+</b>
+    
 ## LOOP statement
 
 #### Simple loop
-
+<b>
+    
     LOOP
         statement1;
         statement2;
         EXIT statement;
     END LOOP;
 
+</b>
+    
 ##### Simple loop with exit
 
     SET SERVEROUTPU ON;
