@@ -3,7 +3,7 @@
 
 #### <a name="section-1"></a>Split large file into multiple file
 
-Create temp file
+...
 
 <b>
   
@@ -22,7 +22,7 @@ Create temp file
 
 </b>
 
-Create SPRIT_FILE procedure.
+...
 
 <b>
 
@@ -67,7 +67,7 @@ Create SPRIT_FILE procedure.
 
 </b>
 
-Using SPRIT_FILE procedure.
+...
 
 <b>
 
