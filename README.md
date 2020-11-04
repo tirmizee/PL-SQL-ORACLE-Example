@@ -1030,7 +1030,7 @@ A Cursor is a pointer to this context area
     
 #### Explicit Cursor fetch single row
 
-
+<b>
     
     SET SERVEROUTPU ON;
 
@@ -1047,7 +1047,7 @@ A Cursor is a pointer to this context area
         CLOSE CURSOR_EMPLOYEE;
     END;
 
-
+</b>
     
 #### Explicit Cursor fetch multiple row
 
@@ -1077,7 +1077,6 @@ A Cursor is a pointer to this context area
     
 #### Static Cursor FOR Loop
 
-<b>
     
     SET SERVEROUTPU ON;
 
@@ -1092,7 +1091,7 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
-</b>
+
     
 #### Static Cursor FOR LOOP with a SELECT statement
 
