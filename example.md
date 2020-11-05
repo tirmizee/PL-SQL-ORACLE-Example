@@ -64,3 +64,6 @@
 </b>
 
 #### <a name="section-2"></a>Read a text file into  table
+
+- STRING_TO_TABLE
+- UTL_FILE
