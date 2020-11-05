@@ -2,7 +2,6 @@
 ## Examples
 
 - #### [Split large file into multiple file](#section-1)
-
 - #### [Read a text file into  table](#section-2)
 
 #### <a name="section-1"></a>Split large file into multiple file
