@@ -1,6 +1,8 @@
 # PL-SQL-ORACLE-Example
 
-Sample PL/SQL Programs. https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
+Sample PL/SQL Programs. 
+
+https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 
 ## Block
 <b>
