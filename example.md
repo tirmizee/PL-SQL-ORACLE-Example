@@ -94,10 +94,11 @@
         AS
             v_chars             LIST_CAHR       DEFAULT LIST_CAHR();
             v_strings           LIST_STRING     DEFAULT LIST_STRING();
-            v_strings_length    NUMBER          DEFAULT v_strings.COUNT;
+            v_length            NUMBER          DEFAULT v_strings.COUNT;
             v_start             NUMBER          DEFAULT 0;
+            v_split_start       NUMBER          DEFAULT 0;
+            v_split_length      NUMBER          DEFAULT 0;
             v_first             BOOLEAN         DEFAULT TRUE;
-            v_string            NVARCHAR2(200);
         BEGIN
             FOR i IN 1..LENGTH(text) LOOP
 
@@ -105,26 +106,32 @@
                 v_chars(i) := SUBSTR( text, i, 1 );
 
                 IF v_first AND v_chars(i) = separator THEN
-                    v_strings_length := 1;
+                    v_length := 1;
+                    v_split_start := v_start;
+                    v_split_length :=  i - 1;
                     v_strings.EXTEND(1);
-                    v_strings(v_strings_length) := SUBSTR(text, v_start, i - 1);
+                    v_strings(v_length) := SUBSTR(text, v_split_start, v_split_length);
                     v_start := i;
                     v_first := FALSE;
                     CONTINUE;
                 END IF;
 
                 IF v_chars(i) = separator THEN
-                    v_strings_length := v_strings_length + 1;
+                    v_length := v_length + 1;
+                    v_split_start :=  v_start + 1;
+                    v_split_length :=  i - (v_start + 1);
                     v_strings.EXTEND(1);
-                    v_strings(v_strings_length) := SUBSTR(text, v_start + 1, i - (v_start + 1));
+                    v_strings(v_length) := SUBSTR(text, v_split_start, v_split_length);
                     v_start := i;
                     CONTINUE;
                 END IF;
 
                 IF i = LENGTH(text) THEN
                     v_strings.EXTEND(1);
-                    v_strings_length := v_strings_length + 1;
-                    v_strings(v_strings_length) := SUBSTR(text, v_start + 1, i + 1);
+                    v_split_start :=  v_start + 1;
+                    v_split_length := i + 1;
+                    v_length := v_length + 1;
+                    v_strings(v_length) := SUBSTR(text, v_split_start, v_split_length);
                 END IF;
 
             END LOOP;
