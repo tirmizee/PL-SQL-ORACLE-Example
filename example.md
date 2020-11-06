@@ -4,9 +4,8 @@
 - #### [Split large file into multiple file](#section-1)
 - #### [Read a text file into  table](#section-2)
 
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
 
-#### <a name="section-1"></a> ` Split large file into multiple file `
+#### <a name="section-1"></a> 1 Split large file into multiple file 
 
 <b>
 
@@ -66,7 +65,7 @@
 
 </b>
 
-#### <a name="section-2"></a>Read a text file into  table
+#### <a name="section-2"></a> 2 Read a text file into  table
 
 - UTL_FILE
 
