@@ -74,7 +74,8 @@
 <b>
     
     CREATE OR REPLACE PACKAGE STRING_UTILS AS
-
+    
+        TYPE LIST_CAHR IS TABLE OF CHAR(1);
         TYPE LIST_STRING IS TABLE OF NVARCHAR2(500);
 
         FUNCTION SPLIT_TEXT( text NVARCHAR2, separator CHAR DEFAULT ':') RETURN LIST_STRING;
@@ -84,6 +85,55 @@
 </b>
 
 ##### Create package body
+
+<b>
+    
+    CREATE OR REPLACE PACKAGE BODY STRING_UTILS AS
+
+        FUNCTION SPLIT_TEXT( text NVARCHAR2, separator CHAR DEFAULT ':') RETURN LIST_STRING
+        AS
+            v_chars             LIST_CAHR       DEFAULT LIST_CAHR();
+            v_strings           LIST_STRING     DEFAULT LIST_STRING();
+            v_strings_length    NUMBER          DEFAULT v_strings.COUNT;
+            v_start             NUMBER          DEFAULT 0;
+            v_first             BOOLEAN         DEFAULT TRUE;
+            v_string            NVARCHAR2(200);
+        BEGIN
+            FOR i IN 1..LENGTH(text) LOOP
+
+                v_chars.EXTEND(1);
+                v_chars(i) := SUBSTR( text, i, 1 );
+
+                IF v_first AND v_chars(i) = separator THEN
+                    v_strings_length := 1;
+                    v_strings.EXTEND(1);
+                    v_strings(v_strings_length) := SUBSTR(text, v_start, i - 1);
+                    v_start := i;
+                    v_first := FALSE;
+                    CONTINUE;
+                END IF;
+
+                IF v_chars(i) = separator THEN
+                    v_strings_length := v_strings_length + 1;
+                    v_strings.EXTEND(1);
+                    v_strings(v_strings_length) := SUBSTR(text, v_start + 1, i - (v_start + 1));
+                    v_start := i;
+                    CONTINUE;
+                END IF;
+
+                IF i = LENGTH(text) THEN
+                    v_strings.EXTEND(1);
+                    v_strings_length := v_strings_length + 1;
+                    v_strings(v_strings_length) := SUBSTR(text, v_start + 1, i + 1);
+                END IF;
+
+            END LOOP;
+            RETURN v_strings;
+        END SPLIT_TEXT;
+
+    END STRING_UTILS;
+
+</b>
 
 ### <a name="section-3"></a> 3. Read a text file into table.
 
