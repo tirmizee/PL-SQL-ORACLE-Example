@@ -5,15 +5,9 @@
 - #### [Read a text file into  table](#section-2)
 
 
-- text in red
-+ text in green
-! text in orange
-# text in gray
-
 
 #### <a name="section-1"></a> ` Split large file into multiple file `
 
-```diff
 
 <b>
 
@@ -58,7 +52,6 @@
 
 </b>
 
-```
 
 ##### Using
 
