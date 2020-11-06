@@ -1,9 +1,9 @@
 
 ## Examples
 
-- #### [1. Split large file into multiple file](#section-1)
-- #### [2. Creating StringUtils package.](#section-2)
-- #### [3. Read a text file into  table](#section-3)
+ #### [1. Split large file into multiple file](#section-1)
+ #### [2. Creating StringUtils package.](#section-2)
+ #### [3. Read a text file into  table](#section-3)
 
 
 ### <a name="section-1"></a> 1. Split large file into multiple file 
