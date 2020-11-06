@@ -67,8 +67,6 @@
 
 #### <a name="section-2"></a> 2. Read a text file into  table
 
-- UTL_FILE
-
 <b>
     
     DROP TABLE temp_file;
