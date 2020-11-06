@@ -2,7 +2,7 @@
 ## Examples
 
 - #### [1. Split large file into multiple file](#section-1)
-- #### [2. Creating String util package.](#section-2)
+- #### [2. Creating StringUtils package.](#section-2)
 - #### [3. Read a text file into  table](#section-3)
 
 
@@ -67,7 +67,7 @@
 </b>
 
 
-### <a name="section-2"></a> 2. Creating String util package. 
+### <a name="section-2"></a> 2. Creating StringUtils package. 
 
 ##### Create package header
 
@@ -132,6 +132,21 @@
         END SPLIT_TEXT;
 
     END STRING_UTILS;
+
+</b>
+
+##### Using
+
+<b>
+
+    DECLARE
+        v_strings STRING_UTILS.LIST_STRING;
+    BEGIN 
+        v_strings := STRING_UTILS.split_text('12,9993,3,3,99,11,1,333333333333,4', ',');
+        FOR i IN 1..v_strings.COUNT LOOP
+            DBMS_OUTPUT.PUT_LINE(v_strings(i));
+        END LOOP;
+    END;
 
 </b>
 
