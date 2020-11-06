@@ -4,14 +4,16 @@
 - #### [Split large file into multiple file](#section-1)
 - #### [Read a text file into  table](#section-2)
 
-```diff
+
 - text in red
 + text in green
 ! text in orange
 # text in gray
-```
 
-#### <a name="section-1"></a> ```diff - Split large file into multiple file ```
+
+#### <a name="section-1"></a> ` Split large file into multiple file `
+
+```diff
 
 <b>
 
@@ -55,6 +57,8 @@
     END;
 
 </b>
+
+```
 
 ##### Using
 
