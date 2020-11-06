@@ -4,7 +4,7 @@
 - #### [Split large file into multiple file](#section-1)
 - #### [Read a text file into  table](#section-2)
 
-#### <a name="section-1"></a><font color="red">Split large file into multiple file</font>
+#### <a name="section-1"></a><b style='color:red'>Split large file into multiple file</b>
 
 <b>
 
