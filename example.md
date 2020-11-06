@@ -6,7 +6,7 @@
 - #### [3. Read a text file into  table](#section-3)
 
 
-#### <a name="section-1"></a> 1. Split large file into multiple file 
+### <a name="section-1"></a> 1. Split large file into multiple file 
 
 <b>
 
@@ -67,7 +67,9 @@
 </b>
 
 
-#### <a name="section-2"></a> 2. Creating String util package. 
+### <a name="section-2"></a> 2. Creating String util package. 
+
+##### Create package header
 
 <b>
     
@@ -81,7 +83,7 @@
 
 </b>
     
-#### <a name="section-3"></a> 3. Read a text file into table.
+### <a name="section-3"></a> 3. Read a text file into table.
 
 <b>
     
