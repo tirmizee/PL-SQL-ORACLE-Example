@@ -69,6 +69,18 @@
 
 #### <a name="section-2"></a> 2. Creating String util package. 
 
+<b>
+    
+    CREATE OR REPLACE PACKAGE STRING_UTILS AS
+
+        TYPE LIST_STRING IS TABLE OF NVARCHAR2(500);
+
+        FUNCTION SPLIT_TEXT( text NVARCHAR2, separator CHAR DEFAULT ':') RETURN LIST_STRING;
+
+    END STRING_UTILS;
+
+</b>
+    
 #### <a name="section-3"></a> 3. Read a text file into table.
 
 <b>
