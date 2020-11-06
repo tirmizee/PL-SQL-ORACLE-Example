@@ -2,7 +2,7 @@
 ## Examples
 
 - #### [1. Split large file into multiple file](#section-1)
-- #### [2. Creating String util package](#section-2)
+- #### [2. Creating String util package.](#section-2)
 - #### [3. Read a text file into  table](#section-3)
 
 
@@ -66,7 +66,10 @@
 
 </b>
 
-#### <a name="section-3"></a> 3. Read a text file into  table
+
+#### <a name="section-2"></a> 2. Creating String util package. 
+
+#### <a name="section-3"></a> 3. Read a text file into table.
 
 <b>
     
