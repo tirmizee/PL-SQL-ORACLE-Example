@@ -1,11 +1,11 @@
 
 ## Examples
 
-- #### [Split large file into multiple file](#section-1)
-- #### [Read a text file into  table](#section-2)
+- #### [1. Split large file into multiple file](#section-1)
+- #### [2. Read a text file into  table](#section-2)
 
 
-#### <a name="section-1"></a> 1 Split large file into multiple file 
+#### <a name="section-1"></a> 1. Split large file into multiple file 
 
 <b>
 
@@ -65,7 +65,7 @@
 
 </b>
 
-#### <a name="section-2"></a> 2 Read a text file into  table
+#### <a name="section-2"></a> 2. Read a text file into  table
 
 - UTL_FILE
 
