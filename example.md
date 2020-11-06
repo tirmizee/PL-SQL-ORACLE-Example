@@ -65,5 +65,22 @@
 
 #### <a name="section-2"></a>Read a text file into  table
 
-- STRING_TO_TABLE
 - UTL_FILE
+
+<b>
+    
+    DROP TABLE temp_file;
+
+    CREATE TABLE temp_file (
+        id            NUMBER(19,0) PRIMARY KEY NOT NULL,
+        first_name    NVARCHAR2(100),
+        last_name     NVARCHAR2(100),
+        create_date   TIMESTAMP NOT NULL
+    );
+
+    CREATE SEQUENCE C##ORGANIZATION.seq_temp_file 
+        MINVALUE 1
+        START WITH 1
+        INCREMENT BY 1;
+
+</b>
