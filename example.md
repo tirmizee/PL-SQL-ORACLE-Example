@@ -251,3 +251,44 @@
 </b>
 
 ### <a name="section-4"></a> 4. Export Single table to a Text file.
+
+<b>
+
+    CREATE OR REPLACE PROCEDURE EXPORT_DATA_TO_FILE(dir IN NVARCHAR2, file_name IN NVARCHAR2) 
+    AS
+        v_file       UTL_FILE.FILE_TYPE;
+        v_line       NVARCHAR2(1000);
+        v_temp_file  TEMP_FILE%ROWTYPE;
+
+        CURSOR C_TEMP_FILE IS
+            SELECT * 
+            FROM TEMP_FILE;
+
+    BEGIN
+        v_file := UTL_FILE.FOPEN(dir, file_name, 'W');
+        OPEN C_TEMP_FILE;
+        LOOP
+            FETCH C_TEMP_FILE INTO v_temp_file;
+            EXIT WHEN C_TEMP_FILE%NOTFOUND;
+            v_line := v_temp_file.ID || ',' || v_temp_file.FIRST_NAME || ',' || v_temp_file.LAST_NAME|| ',' || v_temp_file.CREATE_DATE;
+            UTL_FILE.PUT_LINE(v_file, v_line);     
+        END LOOP;    
+        CLOSE C_TEMP_FILE;
+        UTL_FILE.FCLOSE(v_file);
+    END EXPORT_DATA_TO_FILE;
+
+</b>
+
+##### Calling Stored Procedure
+
+<b>
+ 
+    SET SERVEROUTPUT ON;
+    BEGIN
+       EXPORT_DATA_TO_FILE (
+            file_name   => 'export.csv', 
+            dir         => 'TEMP_DIR'
+        );
+    END;
+
+</b>
