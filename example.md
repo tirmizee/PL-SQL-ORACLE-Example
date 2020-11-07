@@ -223,3 +223,27 @@
     END READ_FILE_TO_TEMP;
 
 </b>
+
+#### Bulk Insert, allowing for speed improvements.
+
+<b>
+
+    FORALL i IN 1..v_count 
+        INSERT INTO temp_file VALUES v_temps(i);
+    COMMIT;
+
+</b>
+
+#### Calling Stored Procedure
+
+<b>
+ 
+    SET SERVEROUTPUT ON;
+    BEGIN
+       READ_FILE_TO_TEMP (
+            file_name   => 'transaction.csv', 
+            dir         => 'TEMP_DIR'
+        );
+    END;
+
+</b>
