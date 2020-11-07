@@ -224,7 +224,7 @@
 
 </b>
 
-#### Bulk Insert, allowing for speed improvements.
+##### Bulk Insert, allowing for speed improvements.
 
 <b>
 
@@ -234,7 +234,7 @@
 
 </b>
 
-#### Calling Stored Procedure
+##### Calling Stored Procedure
 
 <b>
  
