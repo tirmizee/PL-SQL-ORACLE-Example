@@ -183,13 +183,13 @@
 
 <b>
 
-    CREATE OR REPLACE PROCEDURE READ_FILE_TO_TMEP(file_name IN NVARCHAR2, dir IN NVARCHAR2) 
+    CREATE OR REPLACE PROCEDURE READ_FILE_TO_TEMP(file_name IN NVARCHAR2, dir IN NVARCHAR2) 
     AS
         v_file    UTL_FILE.FILE_TYPE;
         v_line    NVARCHAR2(1000);
     BEGIN
         v_file := UTL_FILE.FOPEN(dir, file_name,'R', 1000);
         UTL_FILE.FCLOSE(v_file);
-    END READ_FILE_TO_TMEP;
+    END READ_FILE_TO_TEMP;
 
 </b>
