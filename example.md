@@ -159,6 +159,8 @@
 
 ### <a name="section-3"></a> 3. Read a text file into table.
 
+##### Create a table
+
 <b>
     
     DROP TABLE temp_file;
@@ -174,5 +176,20 @@
         MINVALUE 1
         START WITH 1
         INCREMENT BY 1;
+
+</b>
+
+##### procedure
+
+<b>
+
+    CREATE OR REPLACE PROCEDURE READ_FILE_TO_TMEP(file_name IN NVARCHAR2, dir IN NVARCHAR2) 
+    AS
+        v_file    UTL_FILE.FILE_TYPE;
+        v_line    NVARCHAR2(1000);
+    BEGIN
+        v_file := UTL_FILE.FOPEN(dir, file_name,'R', 1000);
+        UTL_FILE.FCLOSE(v_file);
+    END READ_FILE_TO_TMEP;
 
 </b>
