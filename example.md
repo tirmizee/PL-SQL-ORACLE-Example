@@ -4,8 +4,8 @@
  #### [1. Split large file into multiple file](#section-1)
  #### [2. Creating StringUtils package.](#section-2)
  #### [3. Read a text file into  table](#section-3)
- #### [4. Export Single table to a Text file](#section-4)
- #### [5. Export Multiple table to a Text file](#section-5)
+ #### [4. Export single table to a Text file](#section-4)
+ #### [5. Export multiple table to a Text file](#section-5)
 
 
 ### <a name="section-1"></a> 1. Split large file into multiple file 
@@ -250,7 +250,7 @@
 
 </b>
 
-### <a name="section-4"></a> 4. Export Single table to a Text file.
+### <a name="section-4"></a> 4. Export single table to a Text file.
 
 <b>
 
