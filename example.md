@@ -292,3 +292,49 @@
     END;
 
 </b>
+
+### <a name="section-5"></a> 5. Export multiple table to a Text file.
+
+<b>
+
+    CREATE OR REPLACE PROCEDURE EXPORT_DATA_TO_FILE(dir IN NVARCHAR2, file_name IN NVARCHAR2) 
+    AS
+
+        TYPE DETAIL_TYPE IS RECORD(
+            USERNAME   USERS.USERNAME%TYPE,
+            FIRST_NAME PROFILE.FIRST_NAME%TYPE,
+            LAST_NAME  PROFILE.LAST_NAME%TYPE,
+            CITIZEN_ID PROFILE.CITIZEN_ID%TYPE,
+            TEL        PROFILE.TEL%TYPE,
+            EMAIL      PROFILE.EMAIL%TYPE
+        );
+
+        v_file       UTL_FILE.FILE_TYPE;
+        v_line       NVARCHAR2(1000);
+        v_detail     DETAIL_TYPE;
+
+        CURSOR C_DETAIL IS
+            SELECT 
+                U.USERNAME,
+                P.FIRST_NAME,
+                P.LAST_NAME,
+                P.CITIZEN_ID,
+                P.TEL,
+                P.EMAIL
+            FROM USERS U
+            INNER JOIN PROFILE P ON P.PROFILE_ID = U.PROFILE_ID;
+
+    BEGIN
+        v_file := UTL_FILE.FOPEN(dir, file_name, 'W');
+        OPEN C_DETAIL;
+        LOOP
+            FETCH C_DETAIL INTO v_detail;
+            EXIT WHEN C_DETAIL%NOTFOUND;
+            v_line := v_detail.USERNAME || ',' || v_detail.FIRST_NAME || ',' || v_detail.LAST_NAME|| ',' || v_detail.CITIZEN_ID || ',' || v_detail.TEL || ',' || v_detail.EMAIL;
+            UTL_FILE.PUT_LINE(v_file, v_line);     
+        END LOOP;    
+        CLOSE C_DETAIL;
+        UTL_FILE.FCLOSE(v_file);
+    END EXPORT_DATA_TO_FILE;
+
+</b>
