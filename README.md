@@ -5,9 +5,14 @@ Sample PL/SQL Programs.
 https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 
 ## Block
+
 <b>
- 
+
 ```sql
+
+
+ 
+
 
     DECLARE
       Declartion statement
@@ -18,9 +23,14 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
     END;
 
 
+
+
+
+
 ```
 
 </b>
+
 
 - A PL/SQL block without a name is Anonymous block. 
 - A block that has a name is called a Stored Procedure or Function.
@@ -28,17 +38,32 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 ## Variable
 
 #### Declaring variables
-<b>
-    
-    variablename datatype;
-
-</b>
-
-...
 
 <b>
 
 ```sql
+
+
+    
+    variablename datatype;
+
+
+
+```
+
+</b>
+
+
+...
+
+
+<b>
+
+```sql
+
+
+
+
 
     SET SERVEROUTPUT ON;
 
@@ -49,14 +74,24 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
        NULL;
     END;
 
+
+
+
+
 ```
 
 </b>
 
+
 ####  Variable checking
+
 <b>
 
 ```sql
+
+
+
+
 
     SET SERVEROUTPUT ON;
 
@@ -67,12 +102,22 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
        NULL;
     END;
 
+
+
+
+
 ```
 
 </b>
 
+
 #### Variables with initial or default value
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
 
@@ -92,12 +137,22 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
         dbms_output.put_line(vNumber);
     END;
 
+
+
+```
+
 </b>
+
 
 #### Variables constants
 
 you must initialize a constants at its declaration 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
 
@@ -117,12 +172,22 @@ you must initialize a constants at its declaration
         dbms_output.put_line(vMsg);
     END;
   
+
+
+```
+
 </b>
+
 
 ## Data type
 
 #### %TYPE
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
 
@@ -188,10 +253,20 @@ you must initialize a constants at its declaration
         dbms_output.put_line(vAcountExpiredDate);
     END;
 
+
+
+```
+
 </b>
+
     
 #### %ROWTYPE
+
 <b>
+
+```sql
+
+
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -226,10 +301,20 @@ you must initialize a constants at its declaration
         dbms_output.put_line(tempEmp.MANAGER_ID);
     END;
 
+
+
+```
+
 </b>
+
     
 #### Record type
+
 <b>
+
+```sql
+
+
     
     TYPE type_name IS RECORD (
        field_name data_type,
@@ -237,11 +322,21 @@ you must initialize a constants at its declaration
        ...N
     );
 
+
+
+```
+
 </b>
+
 
 .
 
+
 <b>
+
+```sql
+
+
 
     SET SERVEROUTPU ON;
 
@@ -296,7 +391,12 @@ you must initialize a constants at its declaration
         END LOOP;
     END;
 
+
+
+```
+
 </b>
+
     
 #### Collection Data Types
 
@@ -306,23 +406,163 @@ A homogeneous single dimension data structure which is made up of elements of sa
   <img src="https://user-images.githubusercontent.com/15135199/97087455-93f06000-1654-11eb-97ed-0bfb2b2367d7.png" width="650">
 </p>
 
-- <b>Nested Tables</b> : List
-- <b>Variable Sized Arrays or VARRAYs</b> : Array
-- <b>Associative arrays</b> : Map
+- 
+<b>
+
+```sql
+
+Nested Tables
+
+```
+
+</b>
+ : List
+- 
+<b>
+
+```sql
+
+Variable Sized Arrays or VARRAYs
+
+```
+
+</b>
+ : Array
+- 
+<b>
+
+```sql
+
+Associative arrays
+
+```
+
+</b>
+ : Map
 
 #### Collection Methods
 
-- <b>EXISTS</b> :
-- <b>COUNT</b> :
-- <b>LIMIT</b> :
-- <b>FIRST</b> :
-- <b>LAST</b> :
-- <b>EXTEND</b> :
-- <b>DELETE</b> :
-- <b>PRIOR</b> :
-- <b>NEXT</b> :
-- <b>TRIM</b> : 
-- <b>DELETE</b> :
+- 
+<b>
+
+```sql
+
+EXISTS
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+COUNT
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+LIMIT
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+FIRST
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+LAST
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+EXTEND
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+DELETE
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+PRIOR
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+NEXT
+
+```
+
+</b>
+ :
+- 
+<b>
+
+```sql
+
+TRIM
+
+```
+
+</b>
+ : 
+- 
+<b>
+
+```sql
+
+DELETE
+
+```
+
+</b>
+ :
 
 #### Nested Tables
 
@@ -330,22 +570,47 @@ A Nested table is a collection in which the size of the array is not fixed. It h
 
 #### Nested Table syntax
 
+
 <b>
+
+```sql
+
+
     
     TYPE nested_table_name IS TABLE OF element_type [NOT NULL];
 
+
+
+```
+
 </b>
+
     
 #### Nested table as Database Object 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE TYPE NUMBERS_TYPE IS TABLE OF NUMBER;
 
+
+
+```
+
 </b>
+
     
 #### Nested table with simple
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -364,10 +629,20 @@ A Nested table is a collection in which the size of the array is not fixed. It h
 
     END;
 
+
+
+```
+
 </b>
+
     
 #### Nested table (delete and exist)
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -399,20 +674,40 @@ A Nested table is a collection in which the size of the array is not fixed. It h
         END LOOP;
     END;
 
+
+
+```
+
 </b>
+
     
 #### VARRAYs Type
 
 Varray is a collection method in which the size of the array is fixed. The array size cannot be exceeded than its fixed value.     
 
+
 <b>
+
+```sql
+
+
     
     TYPE type_name IS [VARRAY | VARYING ARRAY] (size_limit) OF element_type;
 
+
+
+```
+
 </b>
 
+
 .
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -427,17 +722,37 @@ Varray is a collection method in which the size of the array is fixed. The array
         END LOOP;
     END;
 
+
+
+```
+
 </b>
+
     
 ####  Associative array Type
+
 <b>
+
+```sql
+
+
     
     TYPE aArray_name IS TABLE OF element_datatype [Not Null] INDEX BY index_elements_datatype;
 
+
+
+```
+
 </b>
+
     
 ####  Associative array with simple 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -462,23 +777,43 @@ Varray is a collection method in which the size of the array is fixed. The array
         DBMS_OUTPUT.PUT_LINE ('Value '||isbn (2));
     END;
 
+
+
+```
+
 </b>
+
     
 ## Conditional Statements
 
 #### IF - THEN
+
 <b>
+
+```sql
+
+
     
     IF condition THEN
         statement;
         ...
     END IF;
 
+
+
+```
+
 </b>
+
 
 ...
 
+
 <b>
+
+```sql
+
+
 
     SET SERVEROUTPU ON;
 
@@ -502,11 +837,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+
+
+```
+
 </b>
+
     
 #### IF-THEN-ELSE
 
+
 <b>
+
+```sql
+
+
     
     IF condition THEN
         statement;
@@ -514,11 +859,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         statement;
     END IF;
 
+
+
+```
+
 </b>
+
 
 ...
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -533,11 +888,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
  
- </b>
+ 
+
+```
+
+</b>
+
     
 #### IF-THEN-ELSIF    
 
+
 <b>
+
+```sql
+
+
     
     IF condition1 THEN
         statement;
@@ -549,11 +914,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         statement;
     END IF;
 
+
+
+```
+
 </b>
+
     
 ...
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -574,11 +949,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
  
- </b>
+ 
+
+```
+
+</b>
+
     
 #### Case Expression
 
+
 <b>
+
+```sql
+
+
     
     CASE search_expression
         WHEN input_expression THEN statement;
@@ -586,11 +971,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         ELSE statement;
     END CASE;
 
+
+
+```
+
 </b>
+
     
 ##### Simple Case Expression
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -630,11 +1025,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line(vResult);
     END;
 
+
+
+```
+
 </b>
+
     
 ##### Searched Case Expression
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -671,12 +1076,22 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line(vResult);
     END;
 
+
+
+```
+
 </b>
+
     
 ## LOOP statement
 
 #### Simple loop
+
 <b>
+
+```sql
+
+
     
     LOOP
         statement1;
@@ -684,11 +1099,21 @@ Varray is a collection method in which the size of the array is fixed. The array
         EXIT statement;
     END LOOP;
 
+
+
+```
+
 </b>
+
     
 ##### Simple loop with exit
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -707,10 +1132,20 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+
+
+```
+
 </b>
+
     
 ##### Simple loop with exit when
+
 <b>
+
+```sql
+
+
     
     DECLARE
         vCount NUMBER(3) DEFAULT 0;
@@ -725,21 +1160,41 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+
+
+```
+
 </b>
+
     
 #### While loop
+
 <b>
+
+```sql
+
+
     
     WHILE diffcondition LOOP
         statement1;
         statement1;
     END LOOP;
 
+
+
+```
+
 </b>
+
     
 ...
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -771,22 +1226,42 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+
+
+```
+
 </b>
+
     
 #### FOR Loop
 
+
 <b>
+
+```sql
+
+
     
     FOR count IN [REVERSE] lower .. upper LOOP
         statement;
         statement;
     END LOOP;
 
+
+
+```
+
 </b>
+
 
 ...
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -804,27 +1279,77 @@ Varray is a collection method in which the size of the array is fixed. The array
         dbms_output.put_line('Finish');
     END;
 
+
+
+```
+
 </b>
+
     
 #### FORALL
 
-FORALL statement helps to process bulk data in an optimized manner by sending DML statements or a MERGE statement (if you are using 11g or above) in batches from PL/SQL engine to SQL engine. <b>FORALL is not FOR LOOP</b>
+FORALL statement helps to process bulk data in an optimized manner by sending DML statements or a MERGE statement (if you are using 11g or above) in batches from PL/SQL engine to SQL engine. 
+<b>
+
+```sql
+
+FORALL is not FOR LOOP
+
+```
+
+</b>
+
 
 #### FORALL syntax 
 
+
 <b>
+
+```sql
+
+
     
     FORALL index IN bound_clauses 
         [SAVE EXCEPTION]
         DML statement;
 
+
+
+```
+
 </b>
+
     
-- <b>SAVE EXCEPTION</b> is an optional choice which keeps the FORALL statement running even when DML statement causes an exception. These exceptions are saved in a cursor attribute called SQL%Bulk_Exceptions.
-- <b>DML Statement</b> DML statement could be any DML statement like INSERT, UPDATE or DELETE
+- 
+<b>
+
+```sql
+
+SAVE EXCEPTION
+
+```
+
+</b>
+ is an optional choice which keeps the FORALL statement running even when DML statement causes an exception. These exceptions are saved in a cursor attribute called SQL%Bulk_Exceptions.
+- 
+<b>
+
+```sql
+
+DML Statement
+
+```
+
+</b>
+ DML statement could be any DML statement like INSERT, UPDATE or DELETE
 
 #### FORALL simple with insert   
+
 <b>
+
+```sql
+
+
 
     SET SERVEROUTPUT ON;
     DECLARE
@@ -845,11 +1370,21 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         ROLLBACK;
     END;
 
+
+
+```
+
 </b>
+
     
 #### FORALL simple with update   
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -873,11 +1408,21 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         COMMIT;
     END;
 
+
+
+```
+
 </b>
+
     
 ### Select into
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
 
@@ -903,11 +1448,21 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         dbms_output.put_line(vNumber);
     END;
 
+
+
+```
+
 </b>
+
     
 ### Execute Immediate
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -922,22 +1477,42 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
+
+
+```
+
 </b>
+
 
 #### Immediate Syntax
 
+
 <b>
+
+```sql
+
+
     
     EXECUTE IMMEDIATE <dynamic_query>
     [INTO <variable>]
     [USING <bind_variable_value>]
     [RETURNING|RETURN-INTO <clause>];  
 
+
+
+```
+
 </b>
+
     
 #### Immediate with INTO
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -958,11 +1533,21 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         DBMS_OUTPUT.PUT_LINE (temp);
     END;
 
+
+
+```
+
 </b>
+
     
 #### Immediate with USING 
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -977,11 +1562,21 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
+
+
+```
+
 </b>
+
     
 #### Immediate with BULK COLLECT INTO
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1008,7 +1603,12 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
         END LOOP;
     END;
 
+
+
+```
+
 </b>
+
     
 ## CURSOR
 
@@ -1018,34 +1618,149 @@ FORALL statement helps to process bulk data in an optimized manner by sending DM
 </p>
 
 A Cursor is a pointer to this context area
-- <b>Implicit Cursor</b>
-- <b>Explicit Cursor</b>
+- 
+<b>
+
+```sql
+
+Implicit Cursor
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+Explicit Cursor
+
+```
+
+</b>
+
 
 ### Cursor Action
 
-- <b>DECLARE:</b> the programmer actually creates a named context area for the Select statement. The select statement is declared in this section of the PL/SQL program.
-- <b>OPEN:</b> In this section oracle actually allocates memory for the cursor.
-- <b>FETCH:</b> In this section actual execution starts. The select statement fetches the records from the database and stores it in the allocated memory. The data is fetched record by record way. It is a record level activity. So the set of records is also called Active Set.
-- <b>CLOSE:</b> This statement is used to close the cursor and the memory allocated to the cursor will be released.
+- 
+<b>
+
+```sql
+
+DECLARE:
+
+```
+
+</b>
+ the programmer actually creates a named context area for the Select statement. The select statement is declared in this section of the PL/SQL program.
+- 
+<b>
+
+```sql
+
+OPEN:
+
+```
+
+</b>
+ In this section oracle actually allocates memory for the cursor.
+- 
+<b>
+
+```sql
+
+FETCH:
+
+```
+
+</b>
+ In this section actual execution starts. The select statement fetches the records from the database and stores it in the allocated memory. The data is fetched record by record way. It is a record level activity. So the set of records is also called Active Set.
+- 
+<b>
+
+```sql
+
+CLOSE:
+
+```
+
+</b>
+ This statement is used to close the cursor and the memory allocated to the cursor will be released.
 
 ### Cursor attributes 
 
-- <b>%ROWCOUNT:</b> It tells how many rows are returned by the cursor.
-- <b>%ISOPEN:</b> This attribute returns Boolean which means TRUE if the cursor is open or else FALSE.
-- <b>%FOUND:</b> This attribute also returns Boolean. TRUE if successful fetch has been executed and FALSE if there is unsuccessful fetch (no row returned).
-- <b>%NOTFOUND:</b> This attribute returns opposite of the %FOUND attribute. FALSE if the row is fetched and TRUE if no row is fetched.
+- 
+<b>
+
+```sql
+
+%ROWCOUNT:
+
+```
+
+</b>
+ It tells how many rows are returned by the cursor.
+- 
+<b>
+
+```sql
+
+%ISOPEN:
+
+```
+
+</b>
+ This attribute returns Boolean which means TRUE if the cursor is open or else FALSE.
+- 
+<b>
+
+```sql
+
+%FOUND:
+
+```
+
+</b>
+ This attribute also returns Boolean. TRUE if successful fetch has been executed and FALSE if there is unsuccessful fetch (no row returned).
+- 
+<b>
+
+```sql
+
+%NOTFOUND:
+
+```
+
+</b>
+ This attribute returns opposite of the %FOUND attribute. FALSE if the row is fetched and TRUE if no row is fetched.
 
 #### Syntax
 
+
 <b>
+
+```sql
+
+
     
     CURSOR cursor_name IS select_statement;
 
+
+
+```
+
 </b>
+
     
 #### Explicit Cursor fetch single row
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -1062,11 +1777,21 @@ A Cursor is a pointer to this context area
         CLOSE CURSOR_EMPLOYEE;
     END;
 
+
+
+```
+
 </b>
+
     
 #### Explicit Cursor fetch multiple row
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -1088,11 +1813,21 @@ A Cursor is a pointer to this context area
         CLOSE CURSOR_EMPLOYEE;
     END;
 
+
+
+```
+
 </b>
+
     
 #### Static Cursor FOR Loop
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -1107,12 +1842,22 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
+
+
+```
+
 </b>
+
 
     
 #### Static Cursor FOR LOOP with a SELECT statement
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1126,19 +1871,39 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
+
+
+```
+
 </b>
+
     
 #### Static Cursor with parameterized
 
+
 <b>
+
+```sql
+
+
     
     CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
 
+
+
+```
+
 </b>
+
 
 ....
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -1164,11 +1929,21 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
+
+
+```
+
 </b>
+
 
 #### Static Cursor with parameterized and default value   
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -1183,14 +1958,39 @@ A Cursor is a pointer to this context area
         END LOOP;
     END;
 
+
+
+```
+
 </b>
+
     
 ### Ref Cursors
 
 It is a PL/SQL datatype using which you can declare a special type of variable called Cursor Variable.
 
-- <b>Strong Ref Cursor</b> : Any Ref Cursor which has a fixed return type is called a Strong Ref Cursor.
-- <b>Weak Ref Cursor</b> :  Weak ref cursors are those which do not have any return type.
+- 
+<b>
+
+```sql
+
+Strong Ref Cursor
+
+```
+
+</b>
+ : Any Ref Cursor which has a fixed return type is called a Strong Ref Cursor.
+- 
+<b>
+
+```sql
+
+Weak Ref Cursor
+
+```
+
+</b>
+ :  Weak ref cursors are those which do not have any return type.
     
 | Ref Cursor | Cursor |
 | ------------- | ------------- |
@@ -1201,23 +2001,48 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
 
 #### Syntax of Strong Ref Cursors
 
+
 <b>
+
+```sql
+
+
     
     TYPE cursor_variable_name IS REF CURSOR RETURN (return_type);
 
+
+
+```
+
 </b>
+
     
 #### Syntax of Weak Ref Cursors
 
+
 <b>
+
+```sql
+
+
     
     TYPE ref_cursor_name IS REF CURSOR;
 
+
+
+```
+
 </b>
+
     
 #### Strong Ref Cursors
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1249,11 +2074,21 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_employee;
     END;
 
+
+
+```
+
 </b>
+
     
 #### Strong Ref Cursors with Defined Record Datatype
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1293,11 +2128,21 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_detail;
     END;
 
+
+
+```
+
 </b>
+
     
 #### Weak Ref Cursors
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1313,13 +2158,23 @@ It is a PL/SQL datatype using which you can declare a special type of variable c
         CLOSE cursor_employee;
     END;
 
+
+
+```
+
 </b>
+
     
 #### Weak Ref Cursors SYS_REFCURSOR
 
 SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Oracle database software.
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1337,11 +2192,21 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         CLOSE CURSOR_EMPLOYEE;
     END;
 
+
+
+```
+
 </b>
+
     
 ## Functions 
 
+
 <b>
+
+```sql
+
+
     
     CREATE [OR REPLACE] FUNCTION function_name(Parameter 1, Parameter 2,...) RETURN data_type
     IS
@@ -1351,11 +2216,21 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         RETURN (value);
     END;
 
+
+
+```
+
 </b>
+
     
 #### Functions with simple
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
 
@@ -1373,11 +2248,21 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         dbms_output.put_line(vTemp);
     END;
 
+
+
+```
+
 </b>
+
     
 #### Nested function
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE FUNCTION nested_func(p_number1 NUMBER DEFAULT 0, p_number2 NUMBER DEFAULT 0) RETURN NUMBER
     AS
@@ -1397,7 +2282,12 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         dbms_output.put_line(nested_func(10, 20));
     END;
 
+
+
+```
+
 </b>
+
 
 #### Pipelined Table Function
 
@@ -1405,9 +2295,14 @@ Pipelining negates the need to build huge collections by piping rows out of the 
 
 Pipelined table functions include the PIPELINED clause and use the PIPE ROW call to push rows out of the function as soon as they are created, rather than building up a table collection. Notice the empty RETURN call, since there is no collection to return from the function.
 
+
 <b>
 
 ```sql
+
+
+
+
     
     CREATE [OR REPLACE] PROCEDURE procedure_name(Parameter 1, Parameter 2,...) 
     IS
@@ -1417,25 +2312,85 @@ Pipelined table functions include the PIPELINED clause and use the PIPE ROW call
     EXCEPTION
         executable statement;
     END procedure_name;
+
+
+
+
 ```
 
 </b>
+
 
 ## Stored Procedure 
 
 #### Stored Procedure parameters
 
-- <b>IN</b> type parameter sends values to a Stored Procedure.
-- <b>OUT</b> type parameter gets values from the Stored Procedure.
-- <b>IN OUT</b> type parameter sends and gets values from the procedure.
+- 
+<b>
 
-PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter. 
+```sql
+
+IN
+
+```
+
+</b>
+ type parameter sends values to a Stored Procedure.
+- 
+<b>
+
+```sql
+
+OUT
+
+```
+
+</b>
+ type parameter gets values from the Stored Procedure.
+- 
+<b>
+
+```sql
+
+IN OUT
+
+```
+
+</b>
+ type parameter sends and gets values from the procedure.
+
+PL/SQL procedure has defined 
+<b>
+
+```sql
+
+IN
+
+```
+
+</b>
+ type as 
+<b>
+
+```sql
+
+default
+
+```
+
+</b>
+ parameter. 
 
 #### Stored Procedure without parameters
+
 
 <b>
 
 ```sql
+
+
+
+
     
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
         vCode NVARCHAR2(20) DEFAULT '001';
@@ -1448,15 +2403,25 @@ PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter.
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
 
+
+
+
+
 ```
 
 </b>
+
    
 #### Stored Procedure with parameters   
 
 PL/SQL procedure has defined IN type as default parameter.
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER(pUserId NUMBER, pEnable NUMBER) 
     AS
@@ -1470,11 +2435,21 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC PROC_WITH_PARAMETER(1,1);
 
+
+
+```
+
 </b>
+
     
 #### Stored Procedure with parameters IN 
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER(pUserId IN NUMBER , pEnable IN NUMBER) 
     AS
@@ -1488,11 +2463,21 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC PROC_WITH_PARAMETER(1,1);
 
+
+
+```
+
 </b>
+
     
 #### Stored Procedure with parameters OUT
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER_OUT (
         inProfileId   IN  NUMBER , 
@@ -1539,11 +2524,21 @@ PL/SQL procedure has defined IN type as default parameter.
         dbms_output.put_line(outEmail);
     END;
 
+
+
+```
+
 </b>
+
     
 #### Stored Procedure with SYS_REFCURSOR parameters OUT
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE PROCEDURE PROC_REFCURSOR_OUT(pEefCur OUT SYS_REFCURSOR)
     AS
@@ -1567,11 +2562,21 @@ PL/SQL procedure has defined IN type as default parameter.
         CLOSE ref_cur;
     END;
 
+
+
+```
+
 </b>
+
 
 #### Stored Procedure with handle exception
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
         vCode NVARCHAR2(20);
@@ -1589,18 +2594,48 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
 
+
+
+```
+
 </b>
+
     
 ## Exception
 
 ### Exception type
 
-- <b>NO_DATA_FOUND</b>
-- <b>OTHERS</b>
+- 
+<b>
+
+```sql
+
+NO_DATA_FOUND
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+OTHERS
+
+```
+
+</b>
+
 
 ### Syntax
 
+
 <b>
+
+```sql
+
+
     
     DECLARE
         declare variable statement
@@ -1611,11 +2646,21 @@ PL/SQL procedure has defined IN type as default parameter.
         execute statement
     END;
 
+
+
+```
+
 </b>
+
     
 #### Single exception handling
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1630,11 +2675,21 @@ PL/SQL procedure has defined IN type as default parameter.
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
+
+
+```
+
 </b>
+
     
 #### Multiple exception handling
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1651,11 +2706,21 @@ PL/SQL procedure has defined IN type as default parameter.
              DBMS_OUTPUT.PUT_LINE ('OTHERS');
     END;
 
+
+
+```
+
 </b>
+
     
 #### Exceptions handling with Raise 
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON
     BEGIN
@@ -1671,11 +2736,21 @@ PL/SQL procedure has defined IN type as default parameter.
             DBMS_OUTPUT.put_line('NO_DATA_FOUND Raised');
     END;
 
+
+
+```
+
 </b>
+
     
 #### Exceptions handling with User-define
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1692,11 +2767,21 @@ PL/SQL procedure has defined IN type as default parameter.
             DBMS_OUTPUT.PUT_LINE('Error Error - Your Divisor is Zero');
     END;
 
+
+
+```
+
 </b>
+
     
 #### Exceptions handling with RAISE_APPLICATION_ERROR
 
+
 <b>
+
+```sql
+
+
     
     -- syntax
     raise_application_error (error_number, message , [{TRUE | FALSE}]);
@@ -1715,11 +2800,21 @@ PL/SQL procedure has defined IN type as default parameter.
             DBMS_OUTPUT.PUT_LINE (SQLERRM);
     END;
  
- </b>
+ 
+
+```
+
+</b>
+
     
  #### Exceptions handling with PRAGMA EXCEPTION_INIT
  
- <b>
+ 
+<b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1770,11 +2865,21 @@ PL/SQL procedure has defined IN type as default parameter.
                 DBMS_OUTPUT.PUT_LINE(SQLERRM);  
     END;
 
+
+
+```
+
 </b>
+
     
 #### Nested blocks exception handling
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1793,7 +2898,12 @@ PL/SQL procedure has defined IN type as default parameter.
         WHEN NO_DATA_FOUND THEN DBMS_OUTPUT.PUT_LINE('NO EMP_CODE FOUND FOR '||V_CODE);
     END;
 
+
+
+```
+
 </b>
+
     
 ### Calling Notation 
 
@@ -1801,13 +2911,48 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
 #### Types of Calling Notations
 
-- <b>Positional Notation</b>
-- <b>Named Notation</b>
-- <b>Mixed calling notation</b>
+- 
+<b>
+
+```sql
+
+Positional Notation
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+Named Notation
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+Mixed calling notation
+
+```
+
+</b>
+
 
 #### Using Named Calling Notation
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1831,7 +2976,12 @@ Calling notation is a way of providing values to the parameters of a subroutine 
         CALCULATE2(p_num3 => 10,p_num1 => 4);
     END;
 
+
+
+```
+
 </b>
+
     
 ## Package 
 
@@ -1840,7 +2990,12 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
 #### Package header
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE PACKAGE PKG_SIMPLE AS
         MAX_NUMBER NUMBER DEFAULT 999;
@@ -1856,11 +3011,21 @@ Calling notation is a way of providing values to the parameters of a subroutine 
         PROCEDURE PROC_STRING(fname NVARCHAR2, lname NVARCHAR2);
     END PKG_SIMPLE;
 
+
+
+```
+
 </b>
+
     
 #### Package body
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE PACKAGE BODY PKG_SIMPLE AS
      
@@ -1892,11 +3057,21 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
     END PKG_SIMPLE;
 
+
+
+```
+
 </b>
+
     
 #### Using package
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1922,7 +3097,12 @@ Calling notation is a way of providing values to the parameters of a subroutine 
     EXEC PKG_SIMPLE.PROC_STRING;
     EXEC PKG_SIMPLE.PROC_STRING('PRATYA','YEEKHADAY');
 
+
+
+```
+
 </b>
+
     
 ## Triggers 
 
@@ -1930,37 +3110,142 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 ### Events Which Fires the Database Triggers
 
-- <b>A DML Statement</b> (DELETE, INSERT, UPDATE)
-- <b>A DDL Statement</b> (CREATE, ALTER, DROP, TRUNCATE etc.)
-- <b>A System event or database operations.</b> (SERVERERROR, LOGON, LOGOFF, STARTUP, SHUTDOWN etc)
+- 
+<b>
+
+```sql
+
+A DML Statement
+
+```
+
+</b>
+ (DELETE, INSERT, UPDATE)
+- 
+<b>
+
+```sql
+
+A DDL Statement
+
+```
+
+</b>
+ (CREATE, ALTER, DROP, TRUNCATE etc.)
+- 
+<b>
+
+```sql
+
+A System event or database operations.
+
+```
+
+</b>
+ (SERVERERROR, LOGON, LOGOFF, STARTUP, SHUTDOWN etc)
 
 ### OLD and NEW Pseudorecords
 
-- <b>:old</b> - refers to Old Value
-- <b>:new</b> - refers to New value
+- 
+<b>
+
+```sql
+
+:old
+
+```
+
+</b>
+ - refers to Old Value
+- 
+<b>
+
+```sql
+
+:new
+
+```
+
+</b>
+ - refers to New value
 
 #### For the row that the trigger is processing
 
-- For an <b>INSERT</b> trigger, OLD contains no values, and NEW contains the new values.
-- For an <b>UPDATE</b> trigger, OLD contains the old values, and NEW contains the new values.
-- For a <b>DELETE</b> trigger, OLD contains the old values, and NEW contains no values.
+- For an 
+<b>
+
+```sql
+
+INSERT
+
+```
+
+</b>
+ trigger, OLD contains no values, and NEW contains the new values.
+- For an 
+<b>
+
+```sql
+
+UPDATE
+
+```
+
+</b>
+ trigger, OLD contains the old values, and NEW contains the new values.
+- For a 
+<b>
+
+```sql
+
+DELETE
+
+```
+
+</b>
+ trigger, OLD contains the old values, and NEW contains no values.
     
 ### Avoid trigger
 
-- <b>Do not create recursive triggers.</b>
+- 
+<b>
+
+```sql
+
+Do not create recursive triggers.
+
+```
+
+</b>
+
 
 ### Disabling or Enabling a Single Trigger
 
+
 <b>
+
+```sql
+
+
     
     ALTER TRIGGER eval_change_trigger DISABLE;
     ALTER TRIGGER eval_change_trigger ENABLE;
 
+
+
+```
+
 </b>
+
     
 #### Trigger syntax
 
+
 <b>
+
+```sql
+
+
     
     CREATE [OR REPLACE] TRIGGER ttrigger_name
     {BEFORE|AFTER} triggering_event ON table_name
@@ -1976,11 +3261,21 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
       exception-handling statements
     END;
 
+
+
+```
+
 </b>
+
     
 #### Trigger single event
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE TRIGGER TRG_EMPLOYEE_UPDATE
         AFTER UPDATE ON employee
@@ -2000,11 +3295,21 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
         UPDATE employee set emp_code = 'EM001' WHERE emp_code = 'EM001';
     END;
  
- </b>
+ 
+
+```
+
+</b>
+
     
  #### Trigger multiple event
   
- <b>
+ 
+<b>
+
+```sql
+
+
     
     CREATE OR REPLACE TRIGGER TRG_EMPLOYEE_UPDATE
     AFTER INSERT OR UPDATE OR DELETE ON employee
@@ -2032,41 +3337,101 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
         DELETE FROM employee WHERE emp_id = 4;
     END;
 
+
+
+```
+
 </b>
+
     
 ## DIRECTORY
 
+
 <b>
+
+```sql
+
+
     
     CREATE [OR REPLACE] DIRECTORY directory_name AS 'path_name'
 
+
+
+```
+
 </b>
+
     
 #### Creating a Directory
 
+
 <b>
+
+```sql
+
+
     
     CREATE OR REPLACE DIRECTORY USER_DIR AS '/usr/bin/bfile_dir';
 
+
+
+```
+
 </b>
+
     
 #### Grant Permission
 
+
 <b>
+
+```sql
+
+
     
     GRANT READ ON DIRECTORY USER_DIR TO userName;
     GRANT READ ON DIRECTORY USER_DIR TO PUBLIC;
 
+
+
+```
+
 </b>
+
 
 ### UTL_FILE
 
 UTL_FILE package, PL/SQL programs can read and write operating system text files.
 
-- <b>FILE_TYPE</b>
-- <b>FOPEN</b>
+- 
+<b>
+
+```sql
+
+FILE_TYPE
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+FOPEN
+
+```
+
+</b>
+
+
 
 <b>
+
+```sql
+
+
     
         UTL_FILE.FOPEN (
            location     IN VARCHAR2,
@@ -2075,26 +3440,106 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
            max_linesize IN BINARY_INTEGER ) 
         RETURN file_type;
 
+
+
+```
+
 </b>
 
-- <b>FCLOSE</b>
-- <b>GET_LINE</b>
-- <b>PUT_LINE</b>
-- <b>IS_OPEN</b>
-- <b>FREMOVE</b>
+
+- 
+<b>
+
+```sql
+
+FCLOSE
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+GET_LINE
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+PUT_LINE
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+IS_OPEN
+
+```
+
+</b>
+
+- 
+<b>
+
+```sql
+
+FREMOVE
+
+```
+
+</b>
+
+
 
 <b>
+
+```sql
+
+
     
     UTL_FILE.FREMOVE (
        location IN VARCHAR2,
        filename IN VARCHAR2
     );
 
+
+
+```
+
 </b>
 
-- <b>FCOPY</b>
+
+- 
+<b>
+
+```sql
+
+FCOPY
+
+```
+
+</b>
+
+
 
 <b>
+
+```sql
+
+
     
     UTL_FILE.FCOPY (
         src_location     IN VARCHAR2,
@@ -2105,11 +3550,31 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
         end_line         IN BINARY_INTEGER DEFAULT NULL
     );
 
+
+
+```
+
 </b>
 
-- <b>FRENAME</b>
+
+- 
+<b>
+
+```sql
+
+FRENAME
+
+```
+
+</b>
+
+
 
 <b>
+
+```sql
+
+
     
     UTL_FILE.FRENAME (
          src_location  IN VARCHAR2,
@@ -2119,22 +3584,92 @@ UTL_FILE package, PL/SQL programs can read and write operating system text files
          overwrite IN BOOLEAN DEFAULT FALSE
     );
 
+
+
+```
+
 </b>
+
     
  UTL_FILE Mode
 
-- <b>A</b> append text.
-- <b>R</b> read text.
-- <b>W</b> write text.
-- <b>RB</b> read byte mode.
-- <b>WB</b> write byte mode.
-- <b>AB</b> append byte mode.
+- 
+<b>
+
+```sql
+
+A
+
+```
+
+</b>
+ append text.
+- 
+<b>
+
+```sql
+
+R
+
+```
+
+</b>
+ read text.
+- 
+<b>
+
+```sql
+
+W
+
+```
+
+</b>
+ write text.
+- 
+<b>
+
+```sql
+
+RB
+
+```
+
+</b>
+ read byte mode.
+- 
+<b>
+
+```sql
+
+WB
+
+```
+
+</b>
+ write byte mode.
+- 
+<b>
+
+```sql
+
+AB
+
+```
+
+</b>
+ append byte mode.
 
 If you try to open a file specifying 'a' or 'ab' for open_mode but the file does not exist, the file is created in write mode.
 
 #### Read a single line of file
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -2153,11 +3688,21 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
                 DBMS_OUTPUT.PUT_LINE ('File not found.'); 
     END;
 
+
+
+```
+
 </b>
+
 
 #### Read a multiple line of file
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -2175,11 +3720,21 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         UTL_FILE.FCLOSE(v_file);
     END;
     
+
+
+```
+
 </b>
+
 
 #### Write file
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -2197,11 +3752,21 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         DBMS_OUTPUT.PUT_LINE ('Finish.'); 
     END;
 
+
+
+```
+
 </b>
+
     
 #### Append file
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -2219,11 +3784,21 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         DBMS_OUTPUT.PUT_LINE ('Finish.'); 
     END;
 
+
+
+```
+
 </b>
+
 
 #### Remove file
 
+
 <b>
+
+```sql
+
+
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -2246,11 +3821,21 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         UTL_FILE.fremove (v_dir, v_file_name);
     END;
 
+
+
+```
+
 </b>
+
 
 #### Copy file
 
+
 <b>
+
+```sql
+
+
     
     DECLARE
         v_dir               NVARCHAR2(200) DEFAULT 'TEMP_DIR';
@@ -2273,11 +3858,21 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         );
     END;
 
+
+
+```
+
 </b>
+
 
 #### Rename or move file
 
+
 <b>
+
+```sql
+
+
     
     DECLARE
         v_dir               NVARCHAR2(200) DEFAULT 'TEMP_DIR';
@@ -2301,15 +3896,50 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         );
     END;    
 
+
+
+```
+
 </b>
+
     
 ## Transaction Control Language (TCL)
 
 #### TCL Statements available in Oracle 
 
-- <b>COMMIT</b>       : Make changes done in  transaction permanent.
-- <b>ROLLBACK</b>     : Rollbacks the state of database to the last commit point.
-- <b>SAVEPOINT</b>    : Use to specify a point in transaction to which later you can rollback.
+- 
+<b>
+
+```sql
+
+COMMIT
+
+```
+
+</b>
+       : Make changes done in  transaction permanent.
+- 
+<b>
+
+```sql
+
+ROLLBACK
+
+```
+
+</b>
+     : Rollbacks the state of database to the last commit point.
+- 
+<b>
+
+```sql
+
+SAVEPOINT
+
+```
+
+</b>
+    : Use to specify a point in transaction to which later you can rollback.
 
 
 ### Reference
