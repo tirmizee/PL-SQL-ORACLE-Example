@@ -2501,12 +2501,7 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 - <b>A DML Statement</b> (DELETE, INSERT, UPDATE)
 - <b>A DDL Statement</b> (CREATE, ALTER, DROP, TRUNCATE etc.)
-- <b>A System event or database operations.
-
-```
-
-</b>
- (SERVERERROR, LOGON, LOGOFF, STARTUP, SHUTDOWN etc)
+- <b>A System event or database operations.</b> (SERVERERROR, LOGON, LOGOFF, STARTUP, SHUTDOWN etc)
 
 ### OLD and NEW Pseudorecords
 
