@@ -1849,6 +1849,7 @@ Pipelined table functions include the PIPELINED clause and use the PIPE ROW call
             v_result.extend;
             PIPE ROW(FILE_TYPE(i, DBMS_RANDOM.string('x',10)));
         END LOOP;
+        RETURN;
     END;
     /
     SELECT * FROM TABLE(TABLE_PIPELINED(15));
