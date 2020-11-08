@@ -13,6 +13,8 @@
 
 <b>
 
+```sql
+
     SET SERVEROUTPUT ON;
 
     CREATE OR REPLACE PROCEDURE SPRIT_FILE(
@@ -52,12 +54,16 @@
         DBMS_OUTPUT.PUT_LINE ('Finish.'); 
     END;
 
+```
+
 </b>
 
 
 ##### Using
 
 <b>
+
+```sql
 
     BEGIN
        SPLIT_FILE (
@@ -67,6 +73,8 @@
         );
     END;
 
+```
+
 </b>
 
 
@@ -75,7 +83,9 @@
 ##### Create package header
 
 <b>
-    
+
+```sql
+
     CREATE OR REPLACE PACKAGE STRING_UTILS AS
     
         TYPE LIST_CAHR IS TABLE OF CHAR(1);
@@ -85,12 +95,16 @@
 
     END STRING_UTILS;
 
+```
+
 </b>
 
 ##### Create package body
 
 <b>
-    
+ 
+ ```sql
+ 
     CREATE OR REPLACE PACKAGE BODY STRING_UTILS AS
 
         FUNCTION SPLIT_TEXT( text NVARCHAR2, separator CHAR DEFAULT ':') RETURN LIST_STRING
@@ -143,11 +157,15 @@
 
     END STRING_UTILS;
 
+```
+
 </b>
 
 ##### Using
 
 <b>
+
+```sql
 
     DECLARE
         v_strings STRING_UTILS.LIST_STRING;
@@ -158,6 +176,8 @@
         END LOOP;
     END;
 
+```
+
 </b>
 
 ### <a name="section-3"></a> 3. Read a text file into table.
@@ -165,7 +185,9 @@
 ##### Create a table
 
 <b>
-    
+
+```sql
+
     DROP TABLE temp_file;
 
     CREATE TABLE temp_file (
@@ -180,11 +202,15 @@
         START WITH 1
         INCREMENT BY 1;
 
+```
+
 </b>
 
 ##### Create Procedure
 
 <b>
+
+```sql
 
     CREATE OR REPLACE PROCEDURE READ_FILE_TO_TEMP(file_name IN NVARCHAR2, dir IN NVARCHAR2) 
     AS
@@ -225,21 +251,29 @@
         DBMS_OUTPUT.PUT_LINE ('Finish.');
     END READ_FILE_TO_TEMP;
 
+```
+
 </b>
 
 ##### Bulk Insert, allowing for speed improvements.
 
 <b>
 
+```sql
+
     FORALL i IN 1..v_count 
         INSERT INTO temp_file VALUES v_temps(i);
     COMMIT;
+
+```
 
 </b>
 
 ##### Calling Stored Procedure
 
 <b>
+ 
+ ```sql
  
     SET SERVEROUTPUT ON;
     BEGIN
@@ -249,11 +283,15 @@
         );
     END;
 
+```
+
 </b>
 
 ### <a name="section-4"></a> 4. Export single table to a Text file.
 
 <b>
+
+```sql
 
     CREATE OR REPLACE PROCEDURE EXPORT_DATA_TO_FILE(dir IN NVARCHAR2, file_name IN NVARCHAR2) 
     AS
@@ -278,11 +316,15 @@
         UTL_FILE.FCLOSE(v_file);
     END EXPORT_DATA_TO_FILE;
 
+```
+
 </b>
 
 ##### Calling Stored Procedure
 
 <b>
+ 
+ ```sql
  
     SET SERVEROUTPUT ON;
     BEGIN
@@ -292,11 +334,15 @@
         );
     END;
 
+```
+
 </b>
 
 ### <a name="section-5"></a> 5. Export multiple table to a Text file.
 
 <b>
+
+```sql
 
     CREATE OR REPLACE PROCEDURE EXPORT_DATA_TO_FILE(dir IN NVARCHAR2, file_name IN NVARCHAR2) 
     AS
@@ -338,11 +384,15 @@
         UTL_FILE.FCLOSE(v_file);
     END EXPORT_DATA_TO_FILE;
 
+```
+
 </b>
 
 ##### Calling Stored Procedure
 
 <b>
+ 
+ ```sql
  
     SET SERVEROUTPUT ON;
     BEGIN
@@ -352,6 +402,8 @@
         );
     END;
 
+```
+
 </b>
 
 ### <a name="section-6"></a> 6. Update data from Text file.
@@ -360,6 +412,8 @@
 - utl_file
 
 <b>
+
+```sql
 
     CREATE TABLE TEMP_SALARY (
         ID        NUMBER(19,0),
@@ -377,11 +431,15 @@
         END LOOP;
     END;
 
+```
+
 </b>
 
 ##### Create Procedure
 
 <b>
+
+```sql
 
     CREATE OR REPLACE PROCEDURE UPDATE_SALARY_FROM_FILE(dir NVARCHAR2, file_name NVARCHAR2)
     AS
@@ -414,11 +472,15 @@
 
     END UPDATE_SALARY_FROM_FILE;
 
+```
+
 </b>
 
 ##### Calling Stored Procedure
 
 <b>
+
+```sql
 
     SET SERVEROUTPUT ON;
     BEGIN
@@ -427,5 +489,7 @@
             dir         => 'TEMP_DIR'
         );
     END;
+
+```
 
 </b>
