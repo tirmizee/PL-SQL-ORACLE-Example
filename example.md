@@ -3,9 +3,10 @@
 
  #### [1. Split large file into multiple file](#section-1)
  #### [2. Creating StringUtils package.](#section-2)
- #### [3. Read a text file into  table](#section-3)
+ #### [3. Read a text file into table](#section-3)
  #### [4. Export single table to a Text file](#section-4)
  #### [5. Export multiple table to a Text file](#section-5)
+ #### [6. Update data from Text file.](#section-5)
 
 
 ### <a name="section-1"></a> 1. Split large file into multiple file 
@@ -349,6 +350,28 @@
             file_name   => 'export.csv', 
             dir         => 'TEMP_DIR'
         );
+    END;
+
+</b>
+
+### <a name="section-6"></a> 6. Update data from Text file.
+
+<b>
+
+    CREATE TABLE TEMP_SALARY (
+        ID        NUMBER(19,0),
+        salary    NUMBER(8,2)
+    );
+
+    DECLARE
+        v_temp TEMP_SALARY%ROWTYPE;
+    BEGIN
+        FOR i IN 1..100 LOOP
+            v_temp.id :=  C##ORGANIZATION.seq_temp_file.NEXTVAL;
+            v_temp.salary := dbms_random.value(1,10000);
+            INSERT INTO TEMP_SALARY VALUES v_temp;
+            COMMIT;
+        END LOOP;
     END;
 
 </b>
