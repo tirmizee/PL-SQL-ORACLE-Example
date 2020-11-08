@@ -588,6 +588,8 @@ Varray is a collection method in which the size of the array is fixed. The array
 
 </b>
 
+### Object Type
+
     
 ## Conditional Statements
 
