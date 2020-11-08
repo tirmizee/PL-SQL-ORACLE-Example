@@ -1392,7 +1392,7 @@ Pipelining negates the need to build huge collections by piping rows out of the 
 
 Pipelined table functions include the PIPELINED clause and use the PIPE ROW call to push rows out of the function as soon as they are created, rather than building up a table collection. Notice the empty RETURN call, since there is no collection to return from the function.
 
-```sql
+```plsql
     
     CREATE [OR REPLACE] PROCEDURE procedure_name(Parameter 1, Parameter 2,...) 
     IS
