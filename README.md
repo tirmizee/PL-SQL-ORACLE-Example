@@ -1832,6 +1832,34 @@ Pipelined table functions include the PIPELINED clause and use the PIPE ROW call
 <b>
 
 ```sql
+ 
+    CREATE OR REPLACE TYPE FILE_TYPE IS OBJECT (
+        ID   NUMBER(19,0),
+        NAME NVARCHAR2(200)
+    );
+
+    CREATE OR REPLACE TYPE FILES IS TABLE OF FILE_TYPE;
+
+    CREATE OR REPLACE FUNCTION TABLE_PIPELINED(p_size NUMBER) 
+    RETURN FILES PIPELINED
+    IS
+        v_result FILES DEFAULT FILES();
+    BEGIN
+        FOR i IN 1..p_size LOOP
+            v_result.extend;
+            PIPE ROW(FILE_TYPE(i, DBMS_RANDOM.string('x',10)));
+        END LOOP;
+    END;
+    /
+    SELECT * FROM TABLE(TABLE_PIPELINED(15));
+
+```
+
+## Stored Procedure 
+
+<b>
+
+```sql
     
     CREATE [OR REPLACE] PROCEDURE procedure_name(Parameter 1, Parameter 2,...) 
     IS
@@ -1845,8 +1873,6 @@ Pipelined table functions include the PIPELINED clause and use the PIPE ROW call
 ```
 
 </b>
-
-## Stored Procedure 
 
 #### Stored Procedure parameters
 
