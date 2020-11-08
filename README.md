@@ -2499,34 +2499,9 @@ Triggers are named PL/SQL blocks which are stored in the database.  We can also 
 
 ### Events Which Fires the Database Triggers
 
-- 
-<b>
-
-```sql
-
-A DML Statement
-
-```
-
-</b>
- (DELETE, INSERT, UPDATE)
-- 
-<b>
-
-```sql
-
-A DDL Statement
-
-```
-
-</b>
- (CREATE, ALTER, DROP, TRUNCATE etc.)
-- 
-<b>
-
-```sql
-
-A System event or database operations.
+- <b>A DML Statement</b> (DELETE, INSERT, UPDATE)
+- <b>A DDL Statement</b> (CREATE, ALTER, DROP, TRUNCATE etc.)
+- <b>A System event or database operations.
 
 ```
 
@@ -2535,92 +2510,27 @@ A System event or database operations.
 
 ### OLD and NEW Pseudorecords
 
-- 
-<b>
-
-```sql
-
-:old
-
-```
-
-</b>
- - refers to Old Value
-- 
-<b>
-
-```sql
-
-:new
-
-```
-
-</b>
- - refers to New value
+- <b>:old</b> - refers to Old Value
+- <b>:new</b> - refers to New value
 
 #### For the row that the trigger is processing
 
-- For an 
-<b>
-
-```sql
-
-INSERT
-
-```
-
-</b>
- trigger, OLD contains no values, and NEW contains the new values.
-- For an 
-<b>
-
-```sql
-
-UPDATE
-
-```
-
-</b>
- trigger, OLD contains the old values, and NEW contains the new values.
-- For a 
-<b>
-
-```sql
-
-DELETE
-
-```
-
-</b>
- trigger, OLD contains the old values, and NEW contains no values.
+- For an <b>INSERT</b> trigger, OLD contains no values, and NEW contains the new values.
+- For an <b>UPDATE</b> trigger, OLD contains the old values, and NEW contains the new values.
+- For an DELETE</b> trigger, OLD contains the old values, and NEW contains no values.
     
 ### Avoid trigger
 
-- 
-<b>
-
-```sql
-
-Do not create recursive triggers.
-
-```
-
-</b>
-
+- <b>Do not create recursive triggers.</b>
 
 ### Disabling or Enabling a Single Trigger
 
-
 <b>
 
 ```sql
 
-
-    
     ALTER TRIGGER eval_change_trigger DISABLE;
     ALTER TRIGGER eval_change_trigger ENABLE;
-
-
 
 ```
 
@@ -2633,8 +2543,6 @@ Do not create recursive triggers.
 <b>
 
 ```sql
-
-
     
     CREATE [OR REPLACE] TRIGGER ttrigger_name
     {BEFORE|AFTER} triggering_event ON table_name
@@ -2650,8 +2558,6 @@ Do not create recursive triggers.
       exception-handling statements
     END;
 
-
-
 ```
 
 </b>
@@ -2663,8 +2569,6 @@ Do not create recursive triggers.
 <b>
 
 ```sql
-
-
     
     CREATE OR REPLACE TRIGGER TRG_EMPLOYEE_UPDATE
         AFTER UPDATE ON employee
@@ -2684,12 +2588,9 @@ Do not create recursive triggers.
         UPDATE employee set emp_code = 'EM001' WHERE emp_code = 'EM001';
     END;
  
- 
-
 ```
 
 </b>
-
     
  #### Trigger multiple event
   
@@ -2697,8 +2598,6 @@ Do not create recursive triggers.
 <b>
 
 ```sql
-
-
     
     CREATE OR REPLACE TRIGGER TRG_EMPLOYEE_UPDATE
     AFTER INSERT OR UPDATE OR DELETE ON employee
@@ -2726,62 +2625,42 @@ Do not create recursive triggers.
         DELETE FROM employee WHERE emp_id = 4;
     END;
 
-
-
 ```
 
 </b>
 
-    
 ## DIRECTORY
-
 
 <b>
 
 ```sql
-
-
     
     CREATE [OR REPLACE] DIRECTORY directory_name AS 'path_name'
 
-
-
 ```
 
 </b>
 
-    
 #### Creating a Directory
 
-
 <b>
 
 ```sql
 
-
-    
     CREATE OR REPLACE DIRECTORY USER_DIR AS '/usr/bin/bfile_dir';
-
-
 
 ```
 
 </b>
 
-    
 #### Grant Permission
-
 
 <b>
 
 ```sql
 
-
-    
     GRANT READ ON DIRECTORY USER_DIR TO userName;
     GRANT READ ON DIRECTORY USER_DIR TO PUBLIC;
-
-
 
 ```
 
@@ -2792,35 +2671,12 @@ Do not create recursive triggers.
 
 UTL_FILE package, PL/SQL programs can read and write operating system text files.
 
-- 
-<b>
-
-```sql
-
-FILE_TYPE
-
-```
-
-</b>
-
-- 
-<b>
-
-```sql
-
-FOPEN
-
-```
-
-</b>
-
-
+- <b>FILE_TYPE</b>
+- <b>FOPEN</b>
 
 <b>
 
 ```sql
-
-
     
         UTL_FILE.FOPEN (
            location     IN VARCHAR2,
@@ -2829,57 +2685,16 @@ FOPEN
            max_linesize IN BINARY_INTEGER ) 
         RETURN file_type;
 
-
-
 ```
 
 </b>
 
 
-- 
-<b>
-
-```sql
-
-FCLOSE
-
-```
-
-</b>
-
-- 
-<b>
-
-```sql
-
-GET_LINE
-
-```
-
-</b>
-
-- 
-<b>
-
-```sql
-
-PUT_LINE
-
-```
-
-</b>
-
-- 
-<b>
-
-```sql
-
-IS_OPEN
-
-```
-
-</b>
-
+- <b>FCLOSE</b>
+- <b>GET_LINE</b>
+- <b>PUT_LINE</b>
+- <b>IS_OPEN</b>
+- <b>FCLOSE</b>
 - <b>FREMOVE</b>
 
 <b>
@@ -2901,8 +2716,6 @@ IS_OPEN
 <b>
 
 ```sql
-
-
     
     UTL_FILE.FCOPY (
         src_location     IN VARCHAR2,
@@ -2913,8 +2726,6 @@ IS_OPEN
         end_line         IN BINARY_INTEGER DEFAULT NULL
     );
 
-
-
 ```
 
 </b>
@@ -2924,8 +2735,6 @@ IS_OPEN
 <b>
 
 ```sql
-
-
     
     UTL_FILE.FRENAME (
          src_location  IN VARCHAR2,
@@ -2934,8 +2743,6 @@ IS_OPEN
          dest_filename IN VARCHAR2,
          overwrite IN BOOLEAN DEFAULT FALSE
     );
-
-
 
 ```
 
