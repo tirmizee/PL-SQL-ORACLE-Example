@@ -356,6 +356,9 @@
 
 ### <a name="section-6"></a> 6. Update data from Text file.
 
+- sql%rowcount
+- utl_file
+
 <b>
 
     CREATE TABLE TEMP_SALARY (
