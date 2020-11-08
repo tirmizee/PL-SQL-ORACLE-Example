@@ -1375,97 +1375,17 @@ A Cursor is a pointer to this context area
 
 ### Cursor Action
 
-- 
-<b>
-
-```sql
-
-DECLARE:
-
-```
-
-</b>
- the programmer actually creates a named context area for the Select statement. The select statement is declared in this section of the PL/SQL program.
-- 
-<b>
-
-```sql
-
-OPEN:
-
-```
-
-</b>
- In this section oracle actually allocates memory for the cursor.
-- 
-<b>
-
-```sql
-
-FETCH:
-
-```
-
-</b>
- In this section actual execution starts. The select statement fetches the records from the database and stores it in the allocated memory. The data is fetched record by record way. It is a record level activity. So the set of records is also called Active Set.
-- 
-<b>
-
-```sql
-
-CLOSE:
-
-```
-
-</b>
- This statement is used to close the cursor and the memory allocated to the cursor will be released.
+- <b>DECLARE:</b> the programmer actually creates a named context area for the Select statement. The select statement is declared in this section of the PL/SQL program.
+- <b>OPEN:</b>In this section oracle actually allocates memory for the cursor.
+- <b>FETCH:</b> In this section actual execution starts. The select statement fetches the records from the database and stores it in the allocated memory. The data is fetched record by record way. It is a record level activity. So the set of records is also called Active Set.
+- <b>CLOSE:</b> This statement is used to close the cursor and the memory allocated to the cursor will be released.
 
 ### Cursor attributes 
 
-- 
-<b>
-
-```sql
-
-%ROWCOUNT:
-
-```
-
-</b>
- It tells how many rows are returned by the cursor.
-- 
-<b>
-
-```sql
-
-%ISOPEN:
-
-```
-
-</b>
- This attribute returns Boolean which means TRUE if the cursor is open or else FALSE.
-- 
-<b>
-
-```sql
-
-%FOUND:
-
-```
-
-</b>
- This attribute also returns Boolean. TRUE if successful fetch has been executed and FALSE if there is unsuccessful fetch (no row returned).
-- 
-<b>
-
-```sql
-
-%NOTFOUND:
-
-```
-
-</b>
- This attribute returns opposite of the %FOUND attribute. FALSE if the row is fetched and TRUE if no row is fetched.
+- <b>%ROWCOUNT:</b> It tells how many rows are returned by the cursor.
+- <b>%ISOPEN:</b> This attribute returns Boolean which means TRUE if the cursor is open or else FALSE.
+- <b>%FOUND:</b> This attribute also returns Boolean. TRUE if successful fetch has been executed and FALSE if there is unsuccessful fetch (no row returned).
+- <b>%NOTFOUND:</b> This attribute returns opposite of the %FOUND attribute. FALSE if the row is fetched and TRUE if no row is fetched.
 
 #### Syntax
 
@@ -1474,26 +1394,18 @@ CLOSE:
 
 ```sql
 
-
-    
     CURSOR cursor_name IS select_statement;
-
-
 
 ```
 
 </b>
-
     
 #### Explicit Cursor fetch single row
-
 
 <b>
 
 ```sql
 
-
-    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -1509,21 +1421,15 @@ CLOSE:
         CLOSE CURSOR_EMPLOYEE;
     END;
 
-
-
 ```
 
 </b>
 
-    
 #### Explicit Cursor fetch multiple row
-
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPU ON;
 
@@ -1545,12 +1451,9 @@ CLOSE:
         CLOSE CURSOR_EMPLOYEE;
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Static Cursor FOR Loop
 
@@ -1559,8 +1462,6 @@ CLOSE:
 
 ```sql
 
-
-    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -1574,23 +1475,16 @@ CLOSE:
         END LOOP;
     END;
 
-
-
 ```
 
 </b>
 
-
-    
 #### Static Cursor FOR LOOP with a SELECT statement
-
 
 <b>
 
 ```sql
 
-
-    
     SET SERVEROUTPU ON;
     DECLARE
     BEGIN
@@ -1603,40 +1497,28 @@ CLOSE:
         END LOOP;
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Static Cursor with parameterized
 
-
 <b>
 
 ```sql
 
-
-    
     CURSOR cursor_name(parameter_name data_type, ..N) IS select_statement;
-
-
 
 ```
 
 </b>
 
-
 ....
-
 
 <b>
 
 ```sql
 
-
-    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -1661,8 +1543,6 @@ CLOSE:
         END LOOP;
     END;
 
-
-
 ```
 
 </b>
@@ -1675,8 +1555,6 @@ CLOSE:
 
 ```sql
 
-
-    
     SET SERVEROUTPU ON;
 
     DECLARE
@@ -1690,39 +1568,16 @@ CLOSE:
         END LOOP;
     END;
 
-
-
 ```
 
 </b>
-
     
 ### Ref Cursors
 
 It is a PL/SQL datatype using which you can declare a special type of variable called Cursor Variable.
 
-- 
-<b>
-
-```sql
-
-Strong Ref Cursor
-
-```
-
-</b>
- : Any Ref Cursor which has a fixed return type is called a Strong Ref Cursor.
-- 
-<b>
-
-```sql
-
-Weak Ref Cursor
-
-```
-
-</b>
- :  Weak ref cursors are those which do not have any return type.
+- <b>Strong Ref Cursor</b> : Any Ref Cursor which has a fixed return type is called a Strong Ref Cursor.
+- <b>Weak Ref Cursor</b> :  Weak ref cursors are those which do not have any return type.
     
 | Ref Cursor | Cursor |
 | ------------- | ------------- |
@@ -1737,44 +1592,30 @@ Weak Ref Cursor
 <b>
 
 ```sql
-
-
     
     TYPE cursor_variable_name IS REF CURSOR RETURN (return_type);
 
-
-
 ```
 
 </b>
 
-    
 #### Syntax of Weak Ref Cursors
-
 
 <b>
 
 ```sql
-
-
     
     TYPE ref_cursor_name IS REF CURSOR;
 
-
-
 ```
 
 </b>
 
-    
 #### Strong Ref Cursors
-
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1806,21 +1647,15 @@ Weak Ref Cursor
         CLOSE cursor_employee;
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Strong Ref Cursors with Defined Record Datatype
-
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1860,21 +1695,15 @@ Weak Ref Cursor
         CLOSE cursor_detail;
     END;
 
-
-
 ```
 
 </b>
 
-    
 #### Weak Ref Cursors
-
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1890,23 +1719,17 @@ Weak Ref Cursor
         CLOSE cursor_employee;
     END;
 
-
-
 ```
 
 </b>
 
-    
 #### Weak Ref Cursors SYS_REFCURSOR
 
 SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Oracle database software.
 
-
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPU ON;
     DECLARE
@@ -1924,21 +1747,15 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         CLOSE CURSOR_EMPLOYEE;
     END;
 
-
-
 ```
 
 </b>
-
     
 ## Functions 
-
 
 <b>
 
 ```sql
-
-
     
     CREATE [OR REPLACE] FUNCTION function_name(Parameter 1, Parameter 2,...) RETURN data_type
     IS
@@ -1948,22 +1765,16 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         RETURN (value);
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Functions with simple
-
 
 <b>
 
 ```sql
 
-
-    
     SET SERVEROUTPU ON;
 
     CREATE OR REPLACE FUNCTION funcAdd(num1 NUMBER, num2 NUMBER) RETURN NUMBER
@@ -1980,21 +1791,15 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         dbms_output.put_line(vTemp);
     END;
 
-
-
 ```
 
 </b>
 
-    
 #### Nested function
-
 
 <b>
 
 ```sql
-
-
     
     CREATE OR REPLACE FUNCTION nested_func(p_number1 NUMBER DEFAULT 0, p_number2 NUMBER DEFAULT 0) RETURN NUMBER
     AS
@@ -2014,12 +1819,9 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
         dbms_output.put_line(nested_func(10, 20));
     END;
 
-
-
 ```
 
 </b>
-
 
 #### Pipelined Table Function
 
@@ -2027,14 +1829,9 @@ Pipelining negates the need to build huge collections by piping rows out of the 
 
 Pipelined table functions include the PIPELINED clause and use the PIPE ROW call to push rows out of the function as soon as they are created, rather than building up a table collection. Notice the empty RETURN call, since there is no collection to return from the function.
 
-
 <b>
 
 ```sql
-
-
-
-
     
     CREATE [OR REPLACE] PROCEDURE procedure_name(Parameter 1, Parameter 2,...) 
     IS
@@ -2045,83 +1842,25 @@ Pipelined table functions include the PIPELINED clause and use the PIPE ROW call
         executable statement;
     END procedure_name;
 
-
-
-
 ```
 
 </b>
-
 
 ## Stored Procedure 
 
 #### Stored Procedure parameters
 
-- 
-<b>
+- <b>IN</b> type parameter sends values to a Stored Procedure.
+- <b>OUT</b> type parameter gets values from the Stored Procedure.
+- <b>IN OUT</b> type parameter sends and gets values from the procedure.
 
-```sql
-
-IN
-
-```
-
-</b>
- type parameter sends values to a Stored Procedure.
-- 
-<b>
-
-```sql
-
-OUT
-
-```
-
-</b>
- type parameter gets values from the Stored Procedure.
-- 
-<b>
-
-```sql
-
-IN OUT
-
-```
-
-</b>
- type parameter sends and gets values from the procedure.
-
-PL/SQL procedure has defined 
-<b>
-
-```sql
-
-IN
-
-```
-
-</b>
- type as 
-<b>
-
-```sql
-
-default
-
-```
-
-</b>
- parameter. 
+PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter. 
 
 #### Stored Procedure without parameters
 
-
 <b>
 
 ```sql
-
-
-
 
     
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
@@ -2135,25 +1874,17 @@ default
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
 
-
-
-
-
 ```
 
 </b>
-
    
 #### Stored Procedure with parameters   
 
 PL/SQL procedure has defined IN type as default parameter.
 
-
 <b>
 
 ```sql
-
-
     
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER(pUserId NUMBER, pEnable NUMBER) 
     AS
@@ -2167,21 +1898,15 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC PROC_WITH_PARAMETER(1,1);
 
-
-
 ```
 
 </b>
 
-    
 #### Stored Procedure with parameters IN 
-
 
 <b>
 
 ```sql
-
-
     
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER(pUserId IN NUMBER , pEnable IN NUMBER) 
     AS
@@ -2195,21 +1920,15 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC PROC_WITH_PARAMETER(1,1);
 
-
-
 ```
 
 </b>
 
-    
 #### Stored Procedure with parameters OUT
-
 
 <b>
 
 ```sql
-
-
     
     CREATE OR REPLACE PROCEDURE PROC_WITH_PARAMETER_OUT (
         inProfileId   IN  NUMBER , 
@@ -2256,21 +1975,15 @@ PL/SQL procedure has defined IN type as default parameter.
         dbms_output.put_line(outEmail);
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Stored Procedure with SYS_REFCURSOR parameters OUT
-
 
 <b>
 
 ```sql
-
-
     
     CREATE OR REPLACE PROCEDURE PROC_REFCURSOR_OUT(pEefCur OUT SYS_REFCURSOR)
     AS
@@ -2294,21 +2007,15 @@ PL/SQL procedure has defined IN type as default parameter.
         CLOSE ref_cur;
     END;
 
-
-
 ```
 
 </b>
 
-
 #### Stored Procedure with handle exception
-
 
 <b>
 
 ```sql
-
-
     
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
         vCode NVARCHAR2(20);
@@ -2326,39 +2033,16 @@ PL/SQL procedure has defined IN type as default parameter.
     SET SERVEROUTPU ON;
     EXEC SIMPLE_PROCEDURE;
 
-
-
 ```
 
 </b>
-
     
 ## Exception
 
 ### Exception type
 
-- 
-<b>
-
-```sql
-
-NO_DATA_FOUND
-
-```
-
-</b>
-
-- 
-<b>
-
-```sql
-
-OTHERS
-
-```
-
-</b>
-
+- <b>NO_DATA_FOUND</b>
+- <b>OTHERS</b>
 
 ### Syntax
 
@@ -2367,8 +2051,6 @@ OTHERS
 
 ```sql
 
-
-    
     DECLARE
         declare variable statement
     BEGIN
@@ -2378,21 +2060,15 @@ OTHERS
         execute statement
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Single exception handling
-
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -2407,15 +2083,11 @@ OTHERS
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
-
-
 ```
 
 </b>
 
-    
 #### Multiple exception handling
-
 
 <b>
 
@@ -2438,21 +2110,15 @@ OTHERS
              DBMS_OUTPUT.PUT_LINE ('OTHERS');
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Exceptions handling with Raise 
-
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON
     BEGIN
@@ -2468,22 +2134,16 @@ OTHERS
             DBMS_OUTPUT.put_line('NO_DATA_FOUND Raised');
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Exceptions handling with User-define
-
 
 <b>
 
 ```sql
 
-
-    
     SET SERVEROUTPUT ON;
     DECLARE
         v_dividend NUMBER := 24;
@@ -2499,13 +2159,10 @@ OTHERS
             DBMS_OUTPUT.PUT_LINE('Error Error - Your Divisor is Zero');
     END;
 
-
-
 ```
 
 </b>
 
-    
 #### Exceptions handling with RAISE_APPLICATION_ERROR
 
 
