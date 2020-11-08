@@ -6,7 +6,9 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 
 ## Block
 <b>
-    
+ 
+```sql
+
     DECLARE
       Declartion statement
     BEGIN 
@@ -14,6 +16,9 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
     Exceptions
       Exception handling statement
     END;
+
+
+```
 
 </b>
 
@@ -32,7 +37,9 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 ...
 
 <b>
-    
+
+```sql
+
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -42,11 +49,15 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
        NULL;
     END;
 
+```
+
 </b>
 
 ####  Variable checking
 <b>
-    
+
+```sql
+
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -55,6 +66,8 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
     BEGIN
        NULL;
     END;
+
+```
 
 </b>
 
