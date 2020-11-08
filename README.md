@@ -590,6 +590,7 @@ Varray is a collection method in which the size of the array is fixed. The array
 
 ### Object Type
 
+    https://github.com/tirmizee/PL-SQL-ORACLE-Example/edit/main/README_OBJECT_TYPE.md
     
 ## Conditional Statements
 
