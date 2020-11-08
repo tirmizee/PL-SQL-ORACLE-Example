@@ -351,127 +351,23 @@ A homogeneous single dimension data structure which is made up of elements of sa
 
 #### Collection Methods
 
-- 
-<b>
-
-```sql
-
-EXISTS
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-COUNT
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-LIMIT
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-FIRST
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-LAST
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-EXTEND
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-DELETE
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-PRIOR
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-NEXT
-
-```
-
-</b>
- :
-- 
-<b>
-
-```sql
-
-TRIM
-
-```
-
-</b>
- : 
-- 
-<b>
-
-```sql
-
-DELETE
-
-```
-
-</b>
- :
+- <b>EXISTS</b> :
+- <b>COUNT</b> :
+- <b>LIMIT</b> :
+- <b>FIRST</b> :
+- <b>LAST</b> :
+- <b>EXTEND</b> :
+- <b>DELETE</b> :
+- <b>PRIOR</b> :
+- <b>TRIM</b> :
+- <b>XXX</b> :
+- <b>XXX</b> :
+- <b>XXX</b> :
+- <b>XXX</b> :
+- <b>XXX</b> :
+- <b>XXX</b> :
+- <b>XXX</b> :
+- <b>XXX</b> :
 
 #### Nested Tables
 
@@ -1229,28 +1125,9 @@ FORALL is not FOR LOOP
 </b>
 
     
-- 
-<b>
+- <b>SAVE EXCEPTION</b>is an optional choice which keeps the FORALL statement running even when DML statement causes an exception. These exceptions are saved in a cursor attribute called SQL%Bulk_Exceptions.
 
-```sql
-
-SAVE EXCEPTION
-
-```
-
-</b>
- is an optional choice which keeps the FORALL statement running even when DML statement causes an exception. These exceptions are saved in a cursor attribute called SQL%Bulk_Exceptions.
-- 
-<b>
-
-```sql
-
-DML Statement
-
-```
-
-</b>
- DML statement could be any DML statement like INSERT, UPDATE or DELETE
+- <b>DML Statement</b> DML statement could be any DML statement like INSERT, UPDATE or DELETE
 
 #### FORALL simple with insert   
 
@@ -1280,7 +1157,6 @@ DML Statement
     END;
 
 
-
 ```
 
 </b>
@@ -1292,8 +1168,6 @@ DML Statement
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1317,8 +1191,6 @@ DML Statement
         COMMIT;
     END;
 
-
-
 ```
 
 </b>
@@ -1330,8 +1202,6 @@ DML Statement
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
 
@@ -1357,8 +1227,6 @@ DML Statement
         dbms_output.put_line(vNumber);
     END;
 
-
-
 ```
 
 </b>
@@ -1370,8 +1238,6 @@ DML Statement
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1386,8 +1252,6 @@ DML Statement
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
-
-
 ```
 
 </b>
@@ -1395,33 +1259,24 @@ DML Statement
 
 #### Immediate Syntax
 
-
 <b>
 
 ```sql
-
-
     
     EXECUTE IMMEDIATE <dynamic_query>
     [INTO <variable>]
     [USING <bind_variable_value>]
     [RETURNING|RETURN-INTO <clause>];  
 
-
-
 ```
 
 </b>
 
-    
 #### Immediate with INTO
-
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1442,20 +1297,15 @@ DML Statement
         DBMS_OUTPUT.PUT_LINE (temp);
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Immediate with USING 
-
 
 <b>
 
 ```sql
-
 
     
     SET SERVEROUTPUT ON;
@@ -1471,8 +1321,6 @@ DML Statement
              DBMS_OUTPUT.PUT_LINE ('NO_DATA_FOUND');
     END;
 
-
-
 ```
 
 </b>
@@ -1484,8 +1332,6 @@ DML Statement
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -1512,43 +1358,20 @@ DML Statement
         END LOOP;
     END;
 
-
-
 ```
 
 </b>
 
-    
 ## CURSOR
-
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15135199/96413139-6733e700-1215-11eb-821d-00313cb60c8e.png" width="650">
 </p>
 
 A Cursor is a pointer to this context area
-- 
-<b>
 
-```sql
-
-Implicit Cursor
-
-```
-
-</b>
-
-- 
-<b>
-
-```sql
-
-Explicit Cursor
-
-```
-
-</b>
-
+- <b>Implicit Cursor</b>
+- <b>Explicit Cursor</b>
 
 ### Cursor Action
 
