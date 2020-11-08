@@ -3086,12 +3086,9 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 
 #### Read a multiple line of file
 
-
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -3109,12 +3106,9 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         UTL_FILE.FCLOSE(v_file);
     END;
     
-
-
 ```
 
 </b>
-
 
 #### Write file
 
@@ -3123,8 +3117,6 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 
 ```sql
 
-
-    
     SET SERVEROUTPUT ON;
     DECLARE
         v_file         UTL_FILE.FILE_TYPE;
@@ -3141,21 +3133,15 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         DBMS_OUTPUT.PUT_LINE ('Finish.'); 
     END;
 
-
-
 ```
 
 </b>
 
-    
 #### Append file
-
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
     DECLARE
@@ -3173,22 +3159,16 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         DBMS_OUTPUT.PUT_LINE ('Finish.'); 
     END;
 
-
-
 ```
 
 </b>
 
-
 #### Remove file
-
 
 <b>
 
 ```sql
 
-
-    
     SET SERVEROUTPUT ON;
     DECLARE
         v_file         UTL_FILE.FILE_TYPE;
@@ -3210,21 +3190,15 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         UTL_FILE.fremove (v_dir, v_file_name);
     END;
 
-
-
 ```
 
 </b>
 
-
 #### Copy file
-
 
 <b>
 
 ```sql
-
-
     
     DECLARE
         v_dir               NVARCHAR2(200) DEFAULT 'TEMP_DIR';
@@ -3247,8 +3221,6 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         );
     END;
 
-
-
 ```
 
 </b>
@@ -3256,13 +3228,10 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 
 #### Rename or move file
 
-
 <b>
 
 ```sql
 
-
-    
     DECLARE
         v_dir               NVARCHAR2(200) DEFAULT 'TEMP_DIR';
         v_file_name         NVARCHAR2(200) DEFAULT 'temp.txt';
@@ -3285,51 +3254,17 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
         );
     END;    
 
-
-
 ```
 
 </b>
 
-    
 ## Transaction Control Language (TCL)
 
 #### TCL Statements available in Oracle 
 
-- 
-<b>
-
-```sql
-
-COMMIT
-
-```
-
-</b>
-       : Make changes done in  transaction permanent.
-- 
-<b>
-
-```sql
-
-ROLLBACK
-
-```
-
-</b>
-     : Rollbacks the state of database to the last commit point.
-- 
-<b>
-
-```sql
-
-SAVEPOINT
-
-```
-
-</b>
-    : Use to specify a point in transaction to which later you can rollback.
-
+- <b>COMMIT</b>       : Make changes done in  transaction permanent.
+- <b>ROLLBACK</b>     : Rollbacks the state of database to the last commit point.
+- <b>SAVEPOINT</b>    : Use to specify a point in transaction to which later you can rollback.
 
 ### Reference
 
