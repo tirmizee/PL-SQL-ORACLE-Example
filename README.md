@@ -2880,24 +2880,11 @@ IS_OPEN
 
 </b>
 
-- 
-<b>
-
-```sql
-
-FREMOVE
-
-```
-
-</b>
-
-
+- <b>FREMOVE</b>
 
 <b>
 
 ```sql
-
-
     
     UTL_FILE.FREMOVE (
        location IN VARCHAR2,
@@ -2905,24 +2892,11 @@ FREMOVE
     );
 
 
-
 ```
 
 </b>
 
-
-- 
-<b>
-
-```sql
-
-FCOPY
-
-```
-
-</b>
-
-
+- <b>FCOPY</b>
 
 <b>
 
@@ -2945,19 +2919,7 @@ FCOPY
 
 </b>
 
-
-- 
-<b>
-
-```sql
-
-FRENAME
-
-```
-
-</b>
-
-
+- <b>FRENAME</b>
 
 <b>
 
@@ -2982,72 +2944,12 @@ FRENAME
     
  UTL_FILE Mode
 
-- 
-<b>
-
-```sql
-
-A
-
-```
-
-</b>
- append text.
-- 
-<b>
-
-```sql
-
-R
-
-```
-
-</b>
- read text.
-- 
-<b>
-
-```sql
-
-W
-
-```
-
-</b>
- write text.
-- 
-<b>
-
-```sql
-
-RB
-
-```
-
-</b>
- read byte mode.
-- 
-<b>
-
-```sql
-
-WB
-
-```
-
-</b>
- write byte mode.
-- 
-<b>
-
-```sql
-
-AB
-
-```
-
-</b>
- append byte mode.
+- <b>A</b> append text.
+- <b>R</b> read text.
+- <b>W</b> write text.
+- <b>RB</b> read byte mode.
+- <b>WB</b> write byte mode.
+- <b>AB</b> append byte mode.
 
 If you try to open a file specifying 'a' or 'ab' for open_mode but the file does not exist, the file is created in write mode.
 
@@ -3058,8 +2960,6 @@ If you try to open a file specifying 'a' or 'ab' for open_mode but the file does
 
 ```sql
 
-
-    
     SET SERVEROUTPUT ON;
     DECLARE
         v_length NUMBER DEFAULT 200;
