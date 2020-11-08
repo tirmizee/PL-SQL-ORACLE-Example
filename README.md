@@ -1385,9 +1385,17 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
     END;
 
 </b>
-    
+
+#### Pipelined Table Function
+
+
 ## Stored Procedure 
 
+Pipelining negates the need to build huge collections by piping rows out of the function as they are created, saving memory and allowing subsequent processing to start before all the rows are generated.
+
+Pipelined table functions include the PIPELINED clause and use the PIPE ROW call to push rows out of the function as soon as they are created, rather than building up a table collection. Notice the empty RETURN call, since there is no collection to return from the function.
+
+```python
 <b>
     
     CREATE [OR REPLACE] PROCEDURE procedure_name(Parameter 1, Parameter 2,...) 
@@ -1400,7 +1408,8 @@ SYS_REFCURSOR is a predefined weak ref cursor which comes built-in with the Orac
     END procedure_name;
 
 </b>
-    
+```
+
 #### Stored Procedure parameters
 
 - <b>IN</b> type parameter sends values to a Stored Procedure.
