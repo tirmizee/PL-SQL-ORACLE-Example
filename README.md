@@ -1420,6 +1420,8 @@ PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter.
 
 #### Stored Procedure without parameters
 
+<b>
+
 ```sql
     
     CREATE OR REPLACE PROCEDURE SIMPLE_PROCEDURE AS
@@ -1434,7 +1436,9 @@ PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter.
     EXEC SIMPLE_PROCEDURE;
 
 ```
-    
+
+</b>
+   
 #### Stored Procedure with parameters   
 
 PL/SQL procedure has defined IN type as default parameter.
