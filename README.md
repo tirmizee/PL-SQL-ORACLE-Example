@@ -10,10 +10,6 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 
 ```sql
 
-
- 
-
-
     DECLARE
       Declartion statement
     BEGIN 
@@ -21,11 +17,6 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
     Exceptions
       Exception handling statement
     END;
-
-
-
-
-
 
 ```
 
@@ -42,28 +33,18 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
 <b>
 
 ```sql
-
-
     
     variablename datatype;
-
-
 
 ```
 
 </b>
 
-
 ...
-
 
 <b>
 
 ```sql
-
-
-
-
 
     SET SERVEROUTPUT ON;
 
@@ -74,24 +55,15 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
        NULL;
     END;
 
-
-
-
-
 ```
 
 </b>
-
 
 ####  Variable checking
 
 <b>
 
 ```sql
-
-
-
-
 
     SET SERVEROUTPUT ON;
 
@@ -102,22 +74,15 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
        NULL;
     END;
 
-
-
-
-
 ```
 
 </b>
-
 
 #### Variables with initial or default value
 
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
 
@@ -137,8 +102,6 @@ https://github.com/tirmizee/PL-SQL-ORACLE-Example/blob/main/example.md
         dbms_output.put_line(vNumber);
     END;
 
-
-
 ```
 
 </b>
@@ -151,8 +114,6 @@ you must initialize a constants at its declaration
 <b>
 
 ```sql
-
-
     
     SET SERVEROUTPUT ON;
 
@@ -171,13 +132,10 @@ you must initialize a constants at its declaration
         dbms_output.put_line(vPI);
         dbms_output.put_line(vMsg);
     END;
-  
-
 
 ```
 
 </b>
-
 
 ## Data type
 
@@ -187,8 +145,6 @@ you must initialize a constants at its declaration
 
 ```sql
 
-
-    
     SET SERVEROUTPUT ON;
 
     DECLARE 
@@ -253,19 +209,15 @@ you must initialize a constants at its declaration
         dbms_output.put_line(vAcountExpiredDate);
     END;
 
-
-
 ```
 
 </b>
 
-    
 #### %ROWTYPE
 
 <b>
 
 ```sql
-
 
     SET SERVEROUTPUT ON;
 
@@ -301,20 +253,15 @@ you must initialize a constants at its declaration
         dbms_output.put_line(tempEmp.MANAGER_ID);
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Record type
 
 <b>
 
 ```sql
-
-
     
     TYPE type_name IS RECORD (
        field_name data_type,
@@ -322,21 +269,16 @@ you must initialize a constants at its declaration
        ...N
     );
 
-
-
 ```
 
 </b>
 
-
-.
+....
 
 
 <b>
 
 ```sql
-
-
 
     SET SERVEROUTPU ON;
 
@@ -391,12 +333,9 @@ you must initialize a constants at its declaration
         END LOOP;
     END;
 
-
-
 ```
 
 </b>
-
     
 #### Collection Data Types
 
@@ -406,39 +345,9 @@ A homogeneous single dimension data structure which is made up of elements of sa
   <img src="https://user-images.githubusercontent.com/15135199/97087455-93f06000-1654-11eb-97ed-0bfb2b2367d7.png" width="650">
 </p>
 
-- 
-<b>
-
-```sql
-
-Nested Tables
-
-```
-
-</b>
- : List
-- 
-<b>
-
-```sql
-
-Variable Sized Arrays or VARRAYs
-
-```
-
-</b>
- : Array
-- 
-<b>
-
-```sql
-
-Associative arrays
-
-```
-
-</b>
- : Map
+- <b>Nested Tables</b> : List
+- <b>Variable Sized Arrays or VARRAYs</b> : Array
+- <b>Associative arrays</b> : Map
 
 #### Collection Methods
 
