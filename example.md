@@ -338,3 +338,17 @@
     END EXPORT_DATA_TO_FILE;
 
 </b>
+
+##### Calling Stored Procedure
+
+<b>
+ 
+    SET SERVEROUTPUT ON;
+    BEGIN
+       EXPORT_DATA_TO_FILE (
+            file_name   => 'export.csv', 
+            dir         => 'TEMP_DIR'
+        );
+    END;
+
+</b>
