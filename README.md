@@ -2300,40 +2300,10 @@ Calling notation is a way of providing values to the parameters of a subroutine 
 
 #### Types of Calling Notations
 
-- 
-<b>
-
-```sql
-
-Positional Notation
-
-```
-
-</b>
-
-- 
-<b>
-
-```sql
-
-Named Notation
-
-```
-
-</b>
-
-- 
-<b>
-
-```sql
-
-Mixed calling notation
-
-```
-
-</b>
-
-
+- <b>Positional Notation</b>
+- <b>Named Notation</b>
+- <b>Mixed calling notation
+    
 #### Using Named Calling Notation
 
 
