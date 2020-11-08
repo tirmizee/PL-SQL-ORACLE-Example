@@ -378,3 +378,54 @@
     END;
 
 </b>
+
+##### Create Procedure
+
+<b>
+
+    CREATE OR REPLACE PROCEDURE UPDATE_SALARY_FROM_FILE(dir NVARCHAR2, file_name NVARCHAR2)
+    AS
+        v_file       UTL_FILE.FILE_TYPE;
+        v_line       NVARCHAR2(1000);
+        v_row_count  PLS_INTEGER;
+        v_raw        STRING_UTILS.LIST_STRING;
+
+    BEGIN
+        v_file := UTL_FILE.FOPEN(dir, file_name, 'R', 1000);
+        LOOP
+            BEGIN 
+                UTL_FILE.GET_LINE(v_file, v_line);
+                v_raw := STRING_UTILS.split_text(v_line, ',');
+
+                UPDATE TEMP_SALARY 
+                    SET salary = v_raw(2)
+                WHERE ID = v_raw(1);
+                 v_row_count := SQL%rowcount; 
+                COMMIT;
+                DBMS_OUTPUT.PUT_LINE (v_row_count);
+
+            EXCEPTION
+            WHEN NO_DATA_FOUND THEN 
+                UTL_FILE.FCLOSE(v_file);
+                EXIT;
+            END;
+        END LOOP;
+        UTL_FILE.FCLOSE(v_file);
+
+    END UPDATE_SALARY_FROM_FILE;
+
+</b>
+
+##### Calling Stored Procedure
+
+<b>
+
+    SET SERVEROUTPUT ON;
+    BEGIN
+       UPDATE_SALARY_FROM_FILE (
+            file_name   => 'update.csv', 
+            dir         => 'TEMP_DIR'
+        );
+    END;
+
+</b>
