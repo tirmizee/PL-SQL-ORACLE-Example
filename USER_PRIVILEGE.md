@@ -1,0 +1,4 @@
+
+
+
+SELECT * FROM USER_SYS_PRIVS;
