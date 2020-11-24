@@ -1886,6 +1886,13 @@ Pipelined table functions include the PIPELINED clause and use the PIPE ROW call
 
 PL/SQL procedure has defined <b>IN</b> type as <b>default</b> parameter. 
 
+#### Stored Procedure Right
+
+- <b>AUTHID CURRENT_USER</b> :
+- <b>AUTHID DEFINER</b> : 
+
+ procedure has defined <b>AUTHID DEFINER</b> Right as <b>default</b>
+
 #### Stored Procedure without parameters
 
 <b>
