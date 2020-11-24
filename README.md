@@ -2986,3 +2986,10 @@ SET AUTOTRACE TRACE EXPLAIN
 - https://www.databasestar.com/oracle-sqlcode-sqlerrm/
 
 - https://www.oracleappsdna.com/2014/06/authid-current_user-and-authid-definer (procedure right)
+
+### Problems
+
+- Execute Immediate within a stored procedure keeps giving insufficient priviliges error
+
+    https://stackoverflow.com/questions/30461235/why-doesnt-pl-sql-respect-privileges-granted-by-roles
+    https://stackoverflow.com/questions/996198/execute-immediate-within-a-stored-procedure-keeps-giving-insufficient-priviliges
