@@ -2991,5 +2991,8 @@ SET AUTOTRACE TRACE EXPLAIN
 
 - Execute Immediate within a stored procedure keeps giving insufficient priviliges error
 
-    https://stackoverflow.com/questions/30461235/why-doesnt-pl-sql-respect-privileges-granted-by-roles
     https://stackoverflow.com/questions/996198/execute-immediate-within-a-stored-procedure-keeps-giving-insufficient-priviliges
+
+- Why doesn't PL/SQL respect privileges granted by Roles?
+
+    https://stackoverflow.com/questions/30461235/why-doesnt-pl-sql-respect-privileges-granted-by-roles    
