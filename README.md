@@ -2984,3 +2984,5 @@ SET AUTOTRACE TRACE EXPLAIN
 - https://itsourteamwork.wordpress.com/2009/12/29/anchor-data-types-using-rowtype-in-oracle/
 
 - https://www.databasestar.com/oracle-sqlcode-sqlerrm/
+
+- https://www.oracleappsdna.com/2014/06/authid-current_user-and-authid-definer (procedure right)
