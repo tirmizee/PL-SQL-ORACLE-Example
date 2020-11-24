@@ -1874,7 +1874,6 @@ Pipelined table functions include the PIPELINED clause and use the PIPE ROW call
         executable statement;
     END procedure_name;
 
-
 ```
 
 </b>
