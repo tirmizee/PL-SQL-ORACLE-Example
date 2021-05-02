@@ -2987,6 +2987,8 @@ SET AUTOTRACE TRACE EXPLAIN
 
 - https://www.oracleappsdna.com/2014/06/authid-current_user-and-authid-definer (procedure right)
 
+- https://www.oracletutorial.com/oracle-administration/oracle-create-tablespace/ (Tablespace)
+
 ### Problems
 
 - Execute Immediate within a stored procedure keeps giving insufficient priviliges error
